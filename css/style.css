@@ -58,6 +58,21 @@ header {
   border: thin solid black;
   flex-basis: 15%;
 }
+.trait{
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+.messageContainer{
+  text-align: center;
+  line-height: 2.25rem;
+}
+#errorMessage{
+  size: 1.5rem;
+  color: white;
+}
+li{
+  list-style-type: none;
+}
 
 footer {
 

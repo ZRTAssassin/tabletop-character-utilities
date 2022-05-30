@@ -12,6 +12,7 @@
 	<!-- external CSS link -->
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="script" href="/js/main.js">
 </head>
 
 <body>
@@ -38,6 +39,16 @@
 			<li class="cha">CHA</li>
 		</ul>
 	</section>
+
+	<form action="/traits" method="post">
+		<fieldset>
+			<legend>New Trait</legend>
+			<input type="text" placeholder="name" name="name">
+			<input type="text" placeholder="description" name="description">
+			<input type="text" placeholder="XGE 151" name="source">
+			<button type="submit">Submit</button>
+		</fieldset>
+	</form>
 
 
 

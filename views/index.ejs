@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Your description goes here">
+    <meta name="keywords" content="one, two, three">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Blank Template</title>
+
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="script" href="/js/main.js">
+</head>
+
+<body>
+
+    <button class="getData">Get data</button>
+    <button class="logStorage">Console Log Storage</button>
+    <button class="displayData">Display Data</button>
+
+    <input type="file" id="file" multiple>
+
+    <h1 class="name"></h1>
+
+    <section class="charImgContainer">
+        <img class="charImg" src="" alt="">
+    </section>
+
+    <section class="abilityContainer">
+        <ul class="abilities">
+            <li class="str">STR</li>
+            <li class="dex">DEX</li>
+            <li class="con">CON</li>
+            <li class="wis">WIS</li>
+            <li class="int">INT</li>
+            <li class="cha">CHA</li>
+        </ul>
+    </section>
+
+    <form action="/traits" method="post">
+        <fieldset>
+            <legend>Enter New Trait</legend>
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="description" name="description">
+            <input type="text" placeholder="XGE 151" name="source">
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+
+    <section class="savedAbilities">
+        <h3>Traits</h3>
+        <!-- <%= traits %> -->
+        <ul class="traits">
+            <% for(var i=0; i < traits.length; i++) {%>
+                <li class="trait">
+                    <span>
+                        <%= traits[i].name %>:
+                    </span>
+
+                    <span>
+                        <%= traits[i].description %>
+                    </span>
+
+                </li>
+                <% } %>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Randomize trait!</h2>
+        <p>
+            Replace a trait with another random trait.
+        </p>
+        <button id="update-button">Replace Trait</button>
+    </section>
+
+    <section>
+        <h2>Remove a trait!</h2>
+        <p>
+            Deletes a trait. Probably spellcasting. Unless one doesn't exist?
+        </p>
+        <button id="delete-button">Delete Spellcasting</button>
+        <section class="messageContainer">
+            <span id="errorMessage"></span>
+        </section>
+
+
+    </section>
+
+
+
+
+    <!-- <script type="text/javascript" src="js/liana.json"></script> -->
+    <!-- <script type="text/javascript" src="/js/main.js"></script> -->
+    <script src="/main.js"></script>
+
+
+</body>
+
+</html>

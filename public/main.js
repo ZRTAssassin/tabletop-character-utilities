@@ -1,14 +1,17 @@
 const message = document.querySelector("#errorMessage");
 
-const deleteButton = document.querySelector("#delete-button");
-deleteButton.addEventListener("click", deleteTrait);
+const deleteButtons = document.querySelectorAll(".delete-button");
+deleteButtons.forEach((element) => {
+  element.addEventListener("click", deleteTrait);
+});
+
 function deleteTrait() {
-  console.log(target);
+  console.log(event.target.classList);
   fetch("/traits", {
     method: "delete",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      name: "Spellcasting",
+      name: `${event.target.classList[1]}`,
     }),
   })
     .then((res) => {

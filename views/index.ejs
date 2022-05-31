@@ -50,24 +50,7 @@
         </fieldset>
     </form>
 
-    <section class="savedAbilities">
-        <h3>Traits</h3>
-        <!-- <%= traits %> -->
-        <ul class="traits">
-            <% for(var i=0; i < traits.length; i++) {%>
-                <li class="trait">
-                    <span>
-                        <%= traits[i].name %>:
-                    </span>
 
-                    <span>
-                        <%= traits[i].description %>
-                    </span>
-
-                </li>
-                <% } %>
-        </ul>
-    </section>
 
     <section>
         <h2>Randomize trait!</h2>
@@ -82,7 +65,7 @@
         <p>
             Deletes a trait. Probably spellcasting. Unless one doesn't exist?
         </p>
-        <button id="delete-button">Delete Spellcasting</button>
+        <!-- <button class="delete-button">Delete Spellcasting</button> -->
         <section class="messageContainer">
             <span id="errorMessage"></span>
         </section>
@@ -90,7 +73,28 @@
 
     </section>
 
+    <section class="savedAbilities">
+        <h3>Traits</h3>
+        <!-- <%= traits %> -->
+        <ul class="traits">
+            <% for(var i=0; i < traits.length; i++) {%>
+                <li class="trait <%= traits[i].name %>">
+                    <span>
+                        <%= traits[i].source %>
+                    </span>
+                    <span>
+                        <%= traits[i].name %>:
+                    </span>
 
+                    <span>
+                        <%= traits[i].description %>
+                    </span>
+                    <button class="delete-button <%= traits[i].name %>">&#10006;</button>
+
+                </li>
+                <% } %>
+        </ul>
+    </section>
 
 
     <!-- <script type="text/javascript" src="js/liana.json"></script> -->

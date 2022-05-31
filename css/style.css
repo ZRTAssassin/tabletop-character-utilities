@@ -66,6 +66,14 @@ header {
   text-align: center;
   line-height: 2.25rem;
 }
+.delete-button{
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  color: red; 
+}
 #errorMessage{
   size: 1.5rem;
   color: white;

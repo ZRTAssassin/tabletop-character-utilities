@@ -125,9 +125,9 @@ MongoClient.connect(
     });
 
     app.get("/js/liana.json", (req, res) => {
-      res.sendFile(__dirname + '/js/liana.json');
+      res.sendFile(__dirname + "/js/liana.json");
     });
-    
+
     app.get("/traits", (req, res) => {
       traitsCollection
         .find()

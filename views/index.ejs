@@ -79,18 +79,16 @@
         <ul class="traits">
             <% for(var i=0; i < traits.length; i++) {%>
                 <li class="trait <%= traits[i].name %>">
-                    <span>
-                        <%= traits[i].source %>
-                    </span>
+                    <button class="delete-button <%= traits[i].name %>">&#10006;</button>
                     <span>
                         <%= traits[i].name %>:
                     </span>
-
                     <span>
                         <%= traits[i].description %>
                     </span>
-                    <button class="delete-button <%= traits[i].name %>">&#10006;</button>
-
+                    <span>
+                        (<%= traits[i].source %>)
+                    </span>
                 </li>
                 <% } %>
         </ul>

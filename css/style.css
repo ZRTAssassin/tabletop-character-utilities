@@ -4,6 +4,7 @@
 }
 html {
   size: 10px;
+  
 }
 
 /* Clear fix hack */
@@ -25,12 +26,14 @@ html {
 /*******************************************/
 
 body {
-  background-color: #2C4251;
+  color: #1E90FF;
+  background-color: #333333;
 
 }
 body > * {
   /* border: thin solid red; */
 }
+
 
 
 
@@ -73,6 +76,9 @@ header {
   background: none;
   outline: none;
   color: red; 
+}
+.trait{
+  border: thin solid black;
 }
 #errorMessage{
   size: 1.5rem;

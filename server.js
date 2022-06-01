@@ -123,6 +123,20 @@ MongoClient.connect(
     app.get("/js/main.js", (req, res) => {
       res.sendFile(__dirname + "/js/main.js");
     });
+
+    app.get("/js/liana.json", (req, res) => {
+      res.sendFile(__dirname + '/js/liana.json');
+    });
+    
+    app.get("/traits", (req, res) => {
+      traitsCollection
+        .find()
+        .toArray()
+        .then((results) => {
+          res.json(results);
+        });
+    });
+
     app.post("/traits", (req, res) => {
       console.log("/traits getting a thing!");
       traitsCollection

@@ -9,6 +9,7 @@ const res = require("express/lib/response");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
+const uri = process.env.MONGOBD_URI;
 
 // const server = http.createServer((req, res) => {
 //   const page = url.parse(req.url).pathname;
@@ -90,7 +91,8 @@ const PORT = 8000;
 // });
 
 MongoClient.connect(
-  "mongodb+srv://dbuser:S1d08o7Onb940T4I@cluster0.hxhao.mongodb.net/?retryWrites=true&w=majority"
+  // "mongodb+srv://dbuser:S1d08o7Onb940T4I@cluster0.hxhao.mongodb.net/?retryWrites=true&w=majority"
+  uri
 )
   .then((client) => {
     console.log("Connected to the database");

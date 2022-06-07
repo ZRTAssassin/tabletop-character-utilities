@@ -9,7 +9,7 @@ const res = require("express/lib/response");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
-const uri = process.env.MONGOBD_URI;
+const uri = process.env.MONGODB_URI;
 
 // const server = http.createServer((req, res) => {
 //   const page = url.parse(req.url).pathname;

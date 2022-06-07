@@ -91,8 +91,8 @@ const uri = process.env.MONGODB_URI;
 // });
 
 MongoClient.connect(
-  // "mongodb+srv://dbuser:S1d08o7Onb940T4I@cluster0.hxhao.mongodb.net/?retryWrites=true&w=majority"
   uri
+  // "mongodb+srv://dbuser:S1d08o7Onb940T4I@cluster0.hxhao.mongodb.net/?retryWrites=true&w=majority"
 )
   .then((client) => {
     console.log("Connected to the database");

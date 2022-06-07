@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const res = require("express/lib/response");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
+const PORT = 8000;
 
 // const server = http.createServer((req, res) => {
 //   const page = url.parse(req.url).pathname;
@@ -187,7 +188,7 @@ MongoClient.connect(
         });
     });
 
-    app.listen(8000, () => {
+    app.listen(process.env.PORT || PORT, () => {
       console.log("listening on 8000");
     });
   })

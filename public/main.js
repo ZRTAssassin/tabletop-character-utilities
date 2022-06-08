@@ -1,53 +1,63 @@
-const message = document.querySelector("#errorMessage");
+document.querySelector(".getData").addEventListener("click", clickFetch);
+document
+  .querySelector(".logStorage")
+  .addEventListener("click", ConsoleLogStorage);
+document.querySelector(".displayData").addEventListener("click", updateDisplay);
 
-const deleteButtons = document.querySelectorAll(".delete-button");
-deleteButtons.forEach((element) => {
-  element.addEventListener("click", deleteTrait);
-});
+function clickFetch() {
+  fetch("/js/liana.json")
+    .then((res) => res.json()) // parse response as JSON
+    .then((data) => {
+      localStorage.setItem("liana", JSON.stringify(data));
+      //console.log(localStorage.getItem("liana"));
+    }).then(() => {
+      ConsoleLogStorage();
 
-function deleteTrait() {
-  console.log(event.target.classList);
-  fetch("/traits", {
-    method: "delete",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: `${event.target.classList[1]}`,
-    }),
-  })
-    .then((res) => {
-      if (res.ok) return res.json();
     })
-    .then((reponse) => {
-      console.log(reponse);
-      if (reponse === "No Spellcasting trait to delete") {
-        message.textContent = "No Spellcasting trait to delete";
-      } else {
-        window.location.reload();
-      }
+    .catch((err) => {
+      console.log(`error ${err}`);
     });
 }
+function ConsoleLogStorage() {
+  console.log(JSON.parse(localStorage.getItem("liana")));
+  const data = JSON.parse(localStorage.getItem("liana"));
+  updateDisplay(data);
+}
 
-// main.js
-const update = document.querySelector("#update-button");
+function updateDisplay(data) {
+  let nameVar = document.querySelector(".name");
+  let picture = document.querySelector(".charImg");
+  const abilities = document.querySelector(".abilities");
+  console.log(data);
+  nameVar.innerHTML = data.name;
+  picture.src = data.img;
+  picture.width = "500";
+  picture.height = "500";
 
-update.addEventListener("click", (_) => {
-  // Send PUT Request here
-  fetch("/traits", {
-    method: "put",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: "Spellcasting",
-      description: "Congrats, you're a magic man.",
-      source: "",
-    }),
-  })
-    .then((res) => {
-      if (res.ok) return res.json();
-    })
-    .then((response) => {
-      console.log(response);
-    })
-    .then((reponse) => {
-      window.location.reload(true);
-    });
-});
+  // console.log(data.data.abilities.str.value);
+  // console.log(abilities.querySelector(".str").innerHTML);
+  // abilities.querySelector(
+  //   `.str`
+  // ).innerHTML = `Strength: ${data.data.abilities.str.value}`;
+
+  const abilityList = Object.keys(data.data.abilities);
+
+  console.log(abilityList);
+  for (const key of abilityList) {
+    console.log(abilities.querySelector(`.${key}`).innerHTML);
+    abilities.querySelector(`.${key}`).innerHTML = `${key.toUpperCase()}: ${data.data.abilities[key].value
+      }`;
+  }
+}
+
+/*
+
+let guns = ["light", "shells", "heavy", "rifle"];
+        function getGuns(arr) {
+            return arr[Math.floor(Math.random() * 4)]
+        }
+        console.log("Beth gets:", getGuns(guns));
+        console.log("Tom gets:", getGuns(guns));
+        console.log("Ryan gets:", getGuns(guns));
+
+        */

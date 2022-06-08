@@ -105,7 +105,7 @@ MongoClient.connect(
     app.use(express.static("public"));
     app.get("/", (req, res) => {
       traitsCollection
-        .find()
+        .find().sort(traits.name, -1)
         .toArray()
         .then((results) => {
           // console.log(results);
@@ -117,20 +117,6 @@ MongoClient.connect(
 
       // res.sendFile(__dirname + "/index.html")
     });
-
-    // app.get("/css/normalize.css", (req, res) => {
-    //   res.sendFile(__dirname + "/css/normalize.css");
-    // });
-    // app.get("/css/style.css", (req, res) => {
-    //   res.sendFile(__dirname + "/css/style.css");
-    // });
-    // app.get("/js/main.js", (req, res) => {
-    //   res.sendFile(__dirname + "/js/main.js");
-    // });
-
-    // app.get("/js/liana.json", (req, res) => {
-    //   res.sendFile(__dirname + "/js/liana.json");
-    // });
 
     app.get("/traits", (req, res) => {
       traitsCollection

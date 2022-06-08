@@ -132,11 +132,11 @@ MongoClient.connect(
     });
 
     app.post("/traits", (req, res) => {
-      console.log("/traits getting a thing!");
+      //console.log("/traits getting a thing!");
       traitsCollection
         .insertOne(req.body)
         .then((result) => {
-          console.log(result);
+          console.log(`${req.body.name} added`);
           res.redirect("/");
         })
         .catch((error) => {

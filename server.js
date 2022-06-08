@@ -9,7 +9,9 @@ const res = require("express/lib/response");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
-const uri = process.env.MONGODB_URI;
+const uri =
+  process.env.MONGODB_URI ||
+  "mongodb+srv://dbuser:S1d08o7Onb940T4I@cluster0.hxhao.mongodb.net/?retryWrites=true&w=majority";
 
 // const server = http.createServer((req, res) => {
 //   const page = url.parse(req.url).pathname;
@@ -105,9 +107,11 @@ MongoClient.connect(
     app.use(express.static("public"));
     app.get("/", (req, res) => {
       traitsCollection
-        .find().sort(traits.name, -1)
+        .find()
+        .sort({name:1})
         .toArray()
         .then((results) => {
+          // console.log(results);
           // console.log(results);
           res.render("index.ejs", { traits: results });
         })

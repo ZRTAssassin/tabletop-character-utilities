@@ -133,6 +133,7 @@ MongoClient.connect(
 
     app.post("/traits", (req, res) => {
       //console.log("/traits getting a thing!");
+      // req.body.name.trim(); don't know if this is gonna work, but it's worth trying.
       traitsCollection
         .insertOne(req.body)
         .then((result) => {

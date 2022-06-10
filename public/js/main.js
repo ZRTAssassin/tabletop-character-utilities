@@ -6,12 +6,17 @@ deleteButtons.forEach((element) => {
 });
 
 function deleteTrait() {
-  console.log(event.target.classList);
+  // console.log(this.parentNode.childNodes[5].innerText);
+  const name = this.parentNode.childNodes[5].innerText;
+  // console.log(JSON.stringify({
+  //   name: `${name}`
+  // }))
+  
   fetch("/traits", {
     method: "delete",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      name: `${event.target.classList[1]}`,
+      name: `${name}`,
     }),
   })
     .then((res) => {

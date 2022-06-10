@@ -1,3 +1,4 @@
+require("dotenv").config();
 const http = require("http");
 const fs = require("fs");
 const url = require("url");
@@ -9,9 +10,8 @@ const res = require("express/lib/response");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
-const uri =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://dbuser:S1d08o7Onb940T4I@cluster0.hxhao.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.DB_STRING;
+
 
 // const server = http.createServer((req, res) => {
 //   const page = url.parse(req.url).pathname;
@@ -92,10 +92,7 @@ const uri =
 //   console.log("connected to the database");
 // });
 
-MongoClient.connect(
-  uri
-  // "mongodb+srv://dbuser:S1d08o7Onb940T4I@cluster0.hxhao.mongodb.net/?retryWrites=true&w=majority"
-)
+MongoClient.connect(uri)
   .then((client) => {
     console.log("Connected to the database");
     const db = client.db("tabletop-character-traits");
@@ -108,7 +105,7 @@ MongoClient.connect(
     app.get("/", (req, res) => {
       traitsCollection
         .find()
-        .sort({name:1})
+        .sort({ name: 1 })
         .toArray()
         .then((results) => {
           // console.log(results);
@@ -160,7 +157,7 @@ MongoClient.connect(
           }
         )
         .then((result) => {
-          console.log(result);
+          // console.log(result);
           res.json("Success");
         })
         .catch((error) => {
@@ -186,11 +183,3 @@ MongoClient.connect(
     });
   })
   .catch((error) => console.log(error));
-
-// fs.readFile('index.html', function (err, data) {
-//   res.writeHead(200, { 'Content-Type': 'text/html' });
-//   res.write(data);
-//   res.end();
-// });
-
-// mongodb+srv://dbuser:<S1d08o7Onb940T4I>@cluster0.hxhao.mongodb.net/?retryWrites=true&w=majority

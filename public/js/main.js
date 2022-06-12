@@ -7,7 +7,7 @@ deleteButtons.forEach((element) => {
 
 function deleteTrait() {
   console.log(this.parentNode.childNodes[5].innerText);
-  const name = this.parentNode.childNodes[5].innerText.trim();
+  const abilityName = this.parentNode.childNodes[5].innerText.trim();
   // console.log(JSON.stringify({
   //   name: `${name}`
   // }))
@@ -16,7 +16,7 @@ function deleteTrait() {
     method: "delete",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      name: `${name}`,
+      abilityName: `${abilityName}`,
     }),
   })
     .then((res) => {

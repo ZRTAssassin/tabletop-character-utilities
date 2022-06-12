@@ -43,9 +43,9 @@
     <form action="/traits" method="post">
         <fieldset>
             <legend>Enter New Trait</legend>
-            <input type="text" placeholder="name" name="name">
-            <input type="text" placeholder="description" name="description">
-            <input type="text" placeholder="XGE 151" name="source">
+            <input type="text" placeholder="name" name="abilityName" required>
+            <input type="text" placeholder="description" name="abilityDescription" required>
+            <input type="text" placeholder="PHB (151)" name="sourceBook" required pattern="[a-zA-Z]+ \([0-9]+\)">
             <button type="submit">Submit</button>
         </fieldset>
     </form>
@@ -79,18 +79,18 @@
         <ul class="traits">
             <% for(var i=0; i < traits.length; i++) {%>
                 <li class="trait <%= traits[i].name %>">
-                    <button class="delete-button <%= traits[i].name %>">&#128465;</button>
+                    <button class="delete-button <%= traits[i].Abilityname %>">&#128465;</button>
 
                     <button type="button" class="edit-button">&#128393;</button>
 
                     <span>
-                        <%= traits[i].name %>
+                        <%= traits[i].abilityName %>
                     </span>
                     <span>
-                        <%= traits[i].description %>
+                        <%= traits[i].abilityDescription %>
                     </span>
-                    <span>
-                        (<%= traits[i].source %>)
+                    <span id="source">
+                        <%= traits[i].sourceBook %>
                     </span>
                 </li>
                 <% } %>

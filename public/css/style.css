@@ -3,8 +3,7 @@
   box-sizing: border-box;
 }
 html {
-  size: 10px;
-  
+  font-size: 20px;
 }
 
 /* Clear fix hack */
@@ -95,5 +94,11 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+input:focus:invalid{
+  border: red solid 3px;
+}
 
-
+#source{
+  font-size: 0.75rem;
+  opacity: 50%;
+}

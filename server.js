@@ -12,7 +12,6 @@ const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
 const uri = process.env.DB_STRING;
 
-
 // const server = http.createServer((req, res) => {
 //   const page = url.parse(req.url).pathname;
 //   const params = querystring.parse(url.parse(req.url).query);
@@ -118,6 +117,9 @@ MongoClient.connect(uri)
 
       // res.sendFile(__dirname + "/index.html")
     });
+    // app.get("/upload"(req, res)=>{
+
+    // })
 
     app.get("/traits", (req, res) => {
       traitsCollection
@@ -132,15 +134,20 @@ MongoClient.connect(uri)
       //console.log("/traits getting a thing!");
       // req.body.name.trim(); don't know if this is gonna work, but it's worth trying.
       traitsCollection
-        .insertOne(req.body)
+        .insertOne({
+          abilityName: req.body.abilityName,
+          abilityDescription: req.body.abilityDescription,
+          sourceBook: req.body.sourceBook,
+        })
         .then((result) => {
-          console.log(`${req.body.name} added`);
+          console.log(`${req.body.abilityName} added`);
           res.redirect("/");
         })
         .catch((error) => {
           console.error(error);
         });
     });
+
     app.put("/traits", (req, res) => {
       //console.log(req.body);
       traitsCollection
@@ -148,12 +155,12 @@ MongoClient.connect(uri)
           { name: "Test" },
           {
             $set: {
-              name: req.body.name,
-              description: req.body.description,
+              abilityName: req.body.abilityName,
+              abilityDescription: req.body.abilityDescription,
             },
           },
           {
-            upsert: true,
+            upsert: false,
           }
         )
         .then((result) => {
@@ -166,7 +173,7 @@ MongoClient.connect(uri)
     });
     app.delete("/traits", (req, res) => {
       traitsCollection
-        .deleteOne({ name: req.body.name })
+        .deleteOne({ abilityName: req.body.abilityName })
         .then((result) => {
           if (result.deletedCount === 0) {
             return res.json("No Spellcasting trait to delete");

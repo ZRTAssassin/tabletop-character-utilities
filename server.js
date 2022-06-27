@@ -5,19 +5,19 @@ const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
 const uri = process.env.DB_STRING;
-// let repo = require('./repo/characterRepo');
+let characterRepo = require("./repo/characterRepo");
 
 MongoClient.connect(uri)
   .then((client) => {
     console.log("Connected to the database");
     const db = client.db("tabletop-character-traits");
     const traitsCollection = db.collection("traits");
-
+    
     app.set("view engine", "ejs");
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
     app.use(express.static("public"));
-    
+
     app.get("/", (req, res) => {
       traitsCollection
         .find()
@@ -34,6 +34,16 @@ MongoClient.connect(uri)
 
       // res.sendFile(__dirname + "/index.html")
     });
+
+    app.get("/character", (req, res) => {
+      characterRepo.get(function(data){
+        res.json(data);
+      }, function(err){
+        next(err);
+      });
+      
+    });
+
     // app.get("/upload"(req, res)=>{
 
     // })

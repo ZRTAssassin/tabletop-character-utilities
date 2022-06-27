@@ -1,6 +1,6 @@
 let fs = require('fs');
 
-const FILE_NAME = "./liana.json"
+const FILE_NAME = "./repo/liana.json"
 
 let repo = {
     get: function(resolve, reject){

@@ -5,13 +5,26 @@ deleteButtons.forEach((element) => {
   element.addEventListener("click", deleteTrait);
 });
 
+const displayButton = document.querySelector(".display-button");
+displayButton.addEventListener("click", displayCharacter);
+
+function displayCharacter() {
+  fetch("/character")
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(`error ${err}`);
+    });
+}
+
 function deleteTrait() {
   console.log(this.parentNode.childNodes[5].innerText);
   const abilityName = this.parentNode.childNodes[5].innerText.trim();
   // console.log(JSON.stringify({
   //   name: `${name}`
   // }))
-  
+
   fetch("/traits", {
     method: "delete",
     headers: { "Content-Type": "application/json" },

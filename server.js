@@ -5,6 +5,7 @@ const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
 const uri = process.env.DB_STRING;
+// let repo = require('./repo/characterRepo');
 
 MongoClient.connect(uri)
   .then((client) => {
@@ -16,6 +17,7 @@ MongoClient.connect(uri)
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
     app.use(express.static("public"));
+    
     app.get("/", (req, res) => {
       traitsCollection
         .find()

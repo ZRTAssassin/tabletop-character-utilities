@@ -5,19 +5,7 @@ deleteButtons.forEach((element) => {
   element.addEventListener("click", deleteTrait);
 });
 
-const displayButton = document.querySelector(".display-button");
-displayButton.addEventListener("click", displayCharacter);
 
-function displayCharacter() {
-  fetch("/character")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(`error ${err}`);
-    });
-}
 
 function deleteTrait() {
   console.log(this.parentNode.childNodes[5].innerText);

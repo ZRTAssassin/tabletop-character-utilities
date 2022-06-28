@@ -48,7 +48,8 @@ MongoClient.connect(uri)
     app.get("/character", (req, res) => {
       characterRepo.get(function(data){
         // console.log(data);
-        res.json(data);
+        res.render("character.ejs", {data: data});
+        // res.json(data);
       }, function(err){
         next(err);
       });

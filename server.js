@@ -12,6 +12,16 @@ MongoClient.connect(uri)
     console.log("Connected to the database");
     const db = client.db("tabletop-character-traits");
     const traitsCollection = db.collection("traits");
+
+    // const character = characterRepo.get(function(data){
+    //   if (data){
+    //     console.log(data);
+    //   }
+    // }, function(err){
+    //     if (err){
+    //       console.log(err);
+    //     }
+    // });
     
     app.set("view engine", "ejs");
     app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,6 +47,7 @@ MongoClient.connect(uri)
 
     app.get("/character", (req, res) => {
       characterRepo.get(function(data){
+        // console.log(data);
         res.json(data);
       }, function(err){
         next(err);

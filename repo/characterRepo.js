@@ -1,6 +1,14 @@
-let fs = require('fs');
+let fs = require("fs");
 
-const FILE_NAME = "./repo/liana.json"
+const FILE_NAME = "./repo/liana.json";
+// let data = fs.readFile("liana.json", (err, data) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   let character = JSON.parse(data);
+//   console.log(character);
+// });
+
 
 let repo = {
     get: function(resolve, reject){

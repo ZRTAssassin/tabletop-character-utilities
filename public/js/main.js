@@ -10,6 +10,7 @@ displayButton.addEventListener("click", displayCharacter);
 
 function displayCharacter() {
   fetch("/character")
+    .then((res) => res.json())
     .then((data) => {
       console.log(data);
     })

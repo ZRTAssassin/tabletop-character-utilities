@@ -6,6 +6,7 @@ const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
 const uri = process.env.DB_STRING;
 let characterRepo = require("./repo/characterRepo");
+const { json } = require("body-parser");
 
 MongoClient.connect(uri)
   .then((client) => {
@@ -47,8 +48,11 @@ MongoClient.connect(uri)
 
     app.get("/character", (req, res) => {
       characterRepo.get(function(data){
+        
+        
         // console.log(data);
-        res.render("character.ejs", {data: data});
+        res.render('character.ejs', {data: data});
+        
         // res.json(data);
       }, function(err){
         next(err);

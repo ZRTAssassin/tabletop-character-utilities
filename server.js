@@ -36,7 +36,7 @@ MongoClient.connect(uri)
         .then((results) => {
           // console.log(results);
           // console.log(results);
-
+          // console.log(typeof results);
           res.render("index.ejs", { traits: results });
         })
         .catch((error) => {
@@ -50,9 +50,9 @@ MongoClient.connect(uri)
       characterRepo.get(
         function (data) {
           
-          console.log(data);
+          // console.log(typeof data);
           // console.log(data);
-          res.render("character.ejs", { data: data });
+          res.render("character.ejs", { character: data });
 
           // res.json(data);
         },

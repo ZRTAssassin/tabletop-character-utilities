@@ -15,6 +15,11 @@
     </section>
     <section id="old">
         
+        <% for(const key of Object.keys(character)) {%>
+            <li class="trait <%= key %>">
+                <%= key %>
+            </li>
+            <% } %>        
 
     </section>
 

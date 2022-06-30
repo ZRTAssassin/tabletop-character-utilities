@@ -5,13 +5,15 @@ const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
 const uri = process.env.DB_STRING;
-let characterRepo = require("./repo/characterRepo");
+// let characterRepo = require("./repo/characterRepo");
 
 MongoClient.connect(uri)
   .then((client) => {
     console.log("Connected to the database");
     const db = client.db("tabletop-character-traits");
     const traitsCollection = db.collection("traits");
+    const characterDb = client.db("tabletop-characters");
+    const characterCollection = characterDb.collection("characters");
 
     // const character = characterRepo.get(function(data){
     //   if (data){
@@ -45,22 +47,29 @@ MongoClient.connect(uri)
 
       // res.sendFile(__dirname + "/index.html")
     });
-
     app.get("/character", (req, res) => {
-      characterRepo.get(
-        function (data) {
-          
-          // console.log(typeof data);
-          // console.log(data);
-          res.render("character.ejs", { character: data });
-
-          // res.json(data);
-        },
-        function (err) {
-          next(err);
-        }
-      );
+      characterCollection
+        .find()
+        .toArray()
+        .then((results) => {
+          res.render("character.ejs", { character: results });
+        });
     });
+
+    // app.get("/character", (req, res) => {
+    //   characterRepo.get(
+    //     function (data) {
+    //       // console.log(typeof data);
+    //       // console.log(data);
+    //       res.render("character.ejs", { character: data });
+
+    //       // res.json(data);
+    //     },
+    //     function (err) {
+    //       next(err);
+    //     }
+    //   );
+    // });
 
     // app.get("/upload"(req, res)=>{
 

@@ -1,5 +1,5 @@
 const displayButton = document.querySelector(".display-button");
-// displayButton.addEventListener("click", displayCharacter);
+displayButton.addEventListener("click", displayCharacter);
 
 function displayCharacter() {
   fetch("/character")

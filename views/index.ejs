@@ -19,23 +19,28 @@
 
 
 
-    <form action="/traits" method="post">
+    <form action="/traits/add" method="post" id="newAbility">
         <fieldset>
             <legend>Enter New Trait</legend>
-            <input type="text" placeholder="name" name="abilityName" required>
-            <input type="text" placeholder="description" name="abilityDescription" required>
-            <input type="text" placeholder="PHB (151)" name="sourceBook" required pattern="[a-zA-Z]+ \([0-9]+\)">
+            <fieldset>
+                <legend>Basic Information</legend>
+                    <input type="text" placeholder="name" name="abilityName" required>
+                    <input type="text" placeholder="description" name="abilityDescription" required>
+                    <input type="text" placeholder="PHB (151)" name="sourceBook" required
+                        pattern="[a-zA-Z]+ \([0-9]+\)">
 
-            <!-- <label for="damage-types">Choose a damage type:</label>
-            <input list="damage-types" id="damage-type" name="damage-type" />
-            <datalist id="damage-types">
-                <option value="Bludgeoning">
-                <option value="Piercing">
-                <option value="Slashing">
-                <option value="Psychic">
-                <option value="Fire">
-            </datalist> -->
-            <button type="submit">Submit</button>
+                    <label for="damage-types">Choose a damage type:</label>
+                    <select form="newAbility" name="damageType" id="damage-types" required>
+                        <option value="None">None</option>
+                        <option value="Bludgeoning">Bludgeoning</option>
+                        <option value="Piercing">Piercing</option>
+                        <option value="Slashing">Slashing</option>
+                        <option value="Psychic">Psychic</option>
+                        <option value="Fire">Fire</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                
+            </fieldset>
         </fieldset>
     </form>
 
@@ -75,6 +80,9 @@
                     </h4>
                     <p>
                         <%= traits[i].abilityDescription %>
+                    </p>
+                    <p>
+                        <%= traits[i].damageType %>
                     </p>
                     <span id="source">
                         <%= traits[i].sourceBook %>

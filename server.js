@@ -84,7 +84,8 @@ MongoClient.connect(uri)
         });
     });
 
-    app.post("/traits", (req, res) => {
+    app.post("/traits/add", (req, res) => {
+      // console.log(req.body);
       //console.log("/traits getting a thing!");
       // req.body.name.trim(); don't know if this is gonna work, but it's worth trying.
       traitsCollection
@@ -92,6 +93,7 @@ MongoClient.connect(uri)
           abilityName: req.body.abilityName,
           abilityDescription: req.body.abilityDescription,
           sourceBook: req.body.sourceBook,
+          damageType: req.body.damageType
         })
         .then((result) => {
           console.log(`${req.body.abilityName} added`);

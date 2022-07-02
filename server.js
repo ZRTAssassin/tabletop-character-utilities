@@ -85,9 +85,11 @@ MongoClient.connect(uri)
     });
 
     app.post("/traits/add", (req, res) => {
-      // console.log(req.body);
+      const canAdd = true;
+      console.log(req.body);
       //console.log("/traits getting a thing!");
       // req.body.name.trim(); don't know if this is gonna work, but it's worth trying.
+      if (canAdd){
       traitsCollection
         .insertOne({
           abilityName: req.body.abilityName,
@@ -102,7 +104,10 @@ MongoClient.connect(uri)
         .catch((error) => {
           console.error(error);
         });
-    });
+    } else {
+      // console.log(`${req.body} added`);
+      res.redirect("/");
+    }});
 
     app.put("/traits", (req, res) => {
       //console.log(req.body);

@@ -46,7 +46,7 @@ MongoClient.connect(uri)
           console.error(error);
         });
 
-      // res.sendFile(__dirname + "/index.html")
+      // res.sendFile(__dirname + "/index.html");
     });
     app.get("/character", (req, res) => {
       characterCollection

@@ -9,55 +9,55 @@
 </head>
 
 <body>
-    <div class="container">
-        <%- include('partials/navbar') %>
 
-            <button class="display-button">Display Data</button>
-            <section class="messageContainer">
-                <span id="errorMessage"></span>
-            </section>
-            <section id="old">
+    <%- include('partials/navbar') %>
 
-                <% for(var i=0; i < character.length; i++) {%>
-                    <h4 class="character <%= character._id %>">
-                        <%= character[i].name %>
-                    </h4>
+        <button class="display-button">Display Data</button>
+        <section class="messageContainer">
+            <span id="errorMessage"></span>
+        </section>
+        <section id="old">
 
-                    <% for (const key of Object.keys(character[i].data.abilities)) { %>
+            <% for(var i=0; i < character.length; i++) {%>
+                <h4 class="character <%= character[i]._id %>">
+                    <%= character[i].name %>
+                </h4>
 
-                        <li class=<%=key %>>
-                            <%= key %>
-                                <%= character[i].data.abilities[key].value %>
-                        </li>
+                <% for (const key of Object.keys(character[i].data.abilities)) { %>
+
+                    <li class=<%=key %>>
+                        <%= key %>
+                            <%= character[i].data.abilities[key].value %>
+                    </li>
+                    <% } %>
                         <% } %>
-                            <% } %>
 
-            </section>
+        </section>
 
-            <button class="getData">Get data</button>
-            <button class="logStorage">Console Log Storage</button>
-            <button class="displayData">Display Data</button>
+        <button class="getData">Get data</button>
+        <button class="logStorage">Console Log Storage</button>
+        <button class="displayData">Display Data</button>
 
-            <input type="file" id="file" multiple>
+        <input type="file" id="file" multiple>
 
-            <h1 class="name"></h1>
+        <h1 class="name"></h1>
 
-            <section class="charImgContainer">
-                <img class="charImg" src="" alt="">
-            </section>
+        <section class="charImgContainer">
+            <img class="charImg" src="" alt="">
+        </section>
 
-            <section class="abilityContainer">
-                <ul class="abilities">
-                    <li class="str">STR</li>
-                    <li class="dex">DEX</li>
-                    <li class="con">CON</li>
-                    <li class="wis">WIS</li>
-                    <li class="int">INT</li>
-                    <li class="cha">CHA</li>
-                </ul>
-            </section>
-            </section>
-            <script src="js/character.js"></script>
+        <section class="abilityContainer">
+            <ul class="abilities">
+                <li class="str">STR</li>
+                <li class="dex">DEX</li>
+                <li class="con">CON</li>
+                <li class="wis">WIS</li>
+                <li class="int">INT</li>
+                <li class="cha">CHA</li>
+            </ul>
+        </section>
+        </section>
+        <script src="js/character.js"></script>
 </body>
 
 </html>

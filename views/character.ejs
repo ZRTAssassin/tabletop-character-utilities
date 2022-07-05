@@ -14,12 +14,20 @@
         <span id="errorMessage"></span>
     </section>
     <section id="old">
-        
-        <% for(const key of Object.keys(character)) {%>
-            <li class="trait <%= key %>">
-                <%= key %>
+
+        <% for(var i=0; i < character.length; i++) {%>
+            <li class="character <%= character._id %>">
+                <%= character[i].name %>
             </li>
-            <% } %>        
+
+            <% for (const key of Object.keys(character[i].data.abilities)) { %>
+
+                <li class="str">
+                    <%= key %>
+                    <%= character[i].data.abilities[key].value %>
+                </li>
+                <% } %>
+                    <% } %>
 
     </section>
 

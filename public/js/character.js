@@ -2,7 +2,7 @@ const displayButton = document.querySelector(".display-button");
 displayButton.addEventListener("click", displayCharacter);
 
 function displayCharacter() {
-  fetch("/character")
+  fetch("/character/Veteran")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);

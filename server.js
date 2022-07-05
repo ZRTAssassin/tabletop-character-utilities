@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
+const { name } = require("ejs");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
@@ -52,8 +53,17 @@ MongoClient.connect(uri)
         .find()
         .toArray()
         .then((results) => {
+          // console.log(results);
           res.render("character.ejs", { character: results });
         });
+    });
+    app.get("/character/:name", (req, res) => {
+      console.log(req.params);
+      characterCollection
+        .findOne({
+          name: req.params.name,
+        })
+        .then((results) => res.json(results));
     });
 
     // app.get("/character", (req, res) => {
@@ -89,25 +99,26 @@ MongoClient.connect(uri)
       console.log(req.body);
       //console.log("/traits getting a thing!");
       // req.body.name.trim(); don't know if this is gonna work, but it's worth trying.
-      if (canAdd){
-      traitsCollection
-        .insertOne({
-          abilityName: req.body.abilityName,
-          abilityDescription: req.body.abilityDescription,
-          sourceBook: req.body.sourceBook,
-          damageType: req.body.damageType
-        })
-        .then((result) => {
-          console.log(`${req.body.abilityName} added`);
-          res.redirect("/");
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    } else {
-      // console.log(`${req.body} added`);
-      res.redirect("/");
-    }});
+      if (canAdd) {
+        traitsCollection
+          .insertOne({
+            abilityName: req.body.abilityName,
+            abilityDescription: req.body.abilityDescription,
+            sourceBook: req.body.sourceBook,
+            damageType: req.body.damageType,
+          })
+          .then((result) => {
+            console.log(`${req.body.abilityName} added`);
+            res.redirect("/");
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      } else {
+        // console.log(`${req.body} added`);
+        res.redirect("/");
+      }
+    });
 
     app.put("/traits", (req, res) => {
       //console.log(req.body);

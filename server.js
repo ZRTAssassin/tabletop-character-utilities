@@ -57,6 +57,9 @@ MongoClient.connect(uri)
           res.render("character.ejs", { character: results });
         });
     });
+    app.get("/register", (req, res) => {
+      res.render("register.ejs");
+    })
     app.get("/character/:name", (req, res) => {
       console.log(req.params);
       characterCollection

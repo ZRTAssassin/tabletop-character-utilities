@@ -29,7 +29,7 @@ MongoClient.connect(uri)
     app.set("view engine", "ejs");
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
-    app.use(express.static("public"));
+    app.use(express.static(__dirname + "/public"));
 
     app.get("/", (req, res) => {
       traitsCollection
@@ -46,7 +46,7 @@ MongoClient.connect(uri)
           console.error(error);
         });
 
-      // res.sendFile(__dirname + "/index.html")
+      // res.sendFile(__dirname + "/index.html");
     });
     app.get("/character", (req, res) => {
       characterCollection

@@ -1,10 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
-const { name } = require("ejs");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
+const bcrypt = require("bcrypt");
 const uri = process.env.DB_STRING;
 // let characterRepo = require("./repo/characterRepo");
 
@@ -16,20 +16,39 @@ MongoClient.connect(uri)
     const characterDb = client.db("tabletop-characters");
     const characterCollection = characterDb.collection("characters");
 
-    // const character = characterRepo.get(function(data){
-    //   if (data){
-    //     console.log(data);
-    //   }
-    // }, function(err){
-    //     if (err){
-    //       console.log(err);
-    //     }
-    // });
+    const users = [];
 
     app.set("view engine", "ejs");
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
     app.use(express.static(__dirname + "/public"));
+
+    app.post("/users", async (req, res) => {
+      try {
+        hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const user = { name: req.body.name, password: hashedPassword };
+        users.push(user);
+        res.status(201).send();
+      } catch (error) {
+        res.status(500).send();
+      }
+    });
+    app.post("/users/login", async (req, res) => {
+      const user = users.find((user) => (user.name = req.body.name));
+      if (user == null) {
+        return res.status(400).send("Cannot find user");
+      }
+      try {
+        if (await bcrypt.compare(req.body.password, user.password)) {
+          console.log(await bcrypt.compare(req.body.password, user.password));
+          res.send("Success");
+        } else {
+          res.send("Not Allowed");
+        }
+      } catch {
+        res.status(500).send();
+      }
+    });
 
     app.get("/", (req, res) => {
       traitsCollection
@@ -45,8 +64,9 @@ MongoClient.connect(uri)
         .catch((error) => {
           console.error(error);
         });
-
-      // res.sendFile(__dirname + "/index.html");
+    });
+    app.get("/users", (req, res) => {
+      res.json(users);
     });
     app.get("/character", (req, res) => {
       characterCollection
@@ -59,7 +79,7 @@ MongoClient.connect(uri)
     });
     app.get("/register", (req, res) => {
       res.render("register.ejs");
-    })
+    });
     app.get("/character/:name", (req, res) => {
       console.log(req.params);
       characterCollection

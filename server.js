@@ -50,7 +50,11 @@ MongoClient.connect(uri)
       }
     });
 
-    app.get("/", (req, res) => {
+    app.get('/', (req, res) => {
+      res.render("index.ejs", {name: "Ryan"});
+    })
+
+    app.get("/abilities", (req, res) => {
       traitsCollection
         .find()
         .sort({ name: 1 })
@@ -59,7 +63,7 @@ MongoClient.connect(uri)
           // console.log(results);
           // console.log(results);
           // console.log(typeof results);
-          res.render("index.ejs", { traits: results });
+          res.render("abilities.ejs", { traits: results });
         })
         .catch((error) => {
           console.error(error);

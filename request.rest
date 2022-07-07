@@ -19,3 +19,6 @@ Content-Type: application/json
     "name": "Ryan",
     "password": "passwo"
 }
+
+### 
+GET http://localhost:8000/

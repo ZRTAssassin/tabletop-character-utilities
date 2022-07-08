@@ -73,7 +73,9 @@ MongoClient.connect(uri)
     // });
 
     app.get("/", (req, res) => {
-      console.log(req.user);
+      if (!req.user){
+        res.redirect("/login");
+      }
       res.render("index.ejs", { name: req.user.name });
     });
     app.get("/login", (req, res) => {

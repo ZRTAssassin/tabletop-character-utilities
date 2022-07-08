@@ -13,18 +13,20 @@
 <body>
     <%- include('partials/navbar') %>
         <h1>Login</h1>
-        <form action="/login" method="POST">
-
-            <section>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
-            </section>
-            <section>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
-            </section>
-            <button type="submit">Register</button>
-        </form>
+        <% if (messages.error) { %>
+            <%= messages.error %>
+                <% } %>
+                    <form action="/login" method="POST">
+                        <section>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required>
+                        </section>
+                        <section>
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" required>
+                        </section>
+                        <button type="submit">Login</button>
+                    </form>
 
 
 </body>

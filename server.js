@@ -23,6 +23,10 @@ MongoClient.connect(uri)
     app.use(bodyParser.json());
     app.use(express.static(__dirname + "/public"));
 
+    app.get("/users", (req, res) => {
+      res.json(users);
+    });
+
     app.post("/users", async (req, res) => {
       try {
         hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -50,9 +54,16 @@ MongoClient.connect(uri)
       }
     });
 
-    app.get('/', (req, res) => {
-      res.render("index.ejs", {name: "Ryan"});
-    })
+    app.get("/", (req, res) => {
+      res.render("index.ejs", { name: "Ryan" });
+    });
+    app.get("/login", (req, res) => {
+      res.render("login.ejs");
+    });
+
+    app.get("/register", (req, res) => {
+      res.render("register.ejs");
+    });
 
     app.get("/abilities", (req, res) => {
       traitsCollection
@@ -69,9 +80,7 @@ MongoClient.connect(uri)
           console.error(error);
         });
     });
-    app.get("/users", (req, res) => {
-      res.json(users);
-    });
+
     app.get("/character", (req, res) => {
       characterCollection
         .find()
@@ -81,9 +90,7 @@ MongoClient.connect(uri)
           res.render("character.ejs", { character: results });
         });
     });
-    app.get("/register", (req, res) => {
-      res.render("register.ejs");
-    });
+
     app.get("/character/:name", (req, res) => {
       console.log(req.params);
       characterCollection
@@ -92,25 +99,6 @@ MongoClient.connect(uri)
         })
         .then((results) => res.json(results));
     });
-
-    // app.get("/character", (req, res) => {
-    //   characterRepo.get(
-    //     function (data) {
-    //       // console.log(typeof data);
-    //       // console.log(data);
-    //       res.render("character.ejs", { character: data });
-
-    //       // res.json(data);
-    //     },
-    //     function (err) {
-    //       next(err);
-    //     }
-    //   );
-    // });
-
-    // app.get("/upload"(req, res)=>{
-
-    // })
 
     app.get("/traits", (req, res) => {
       traitsCollection

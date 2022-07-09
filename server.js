@@ -83,6 +83,7 @@ MongoClient.connect(uri)
     app.get("/login", checkUserNotAuthenticated, (req, res) => {
       res.render("login.ejs");
     });
+
     app.post(
       "/login",
       checkUserNotAuthenticated,

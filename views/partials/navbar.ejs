@@ -1,32 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- views/partials/navbar.ejs -->
+<header class="header clearfix">
+    <nav>
+        <ul class="nav">
+            <li><a class="navLink" href="/">Home</a></li>
+            <li><a class="navLink" href="/character">Characters</a></li>
+            <li><a class="navLink" href="/abilities">Abilities</a></li>
+            <li><a class="navLink" href="/register">Register</a></li>
+            <li><a class="navLink" href="/login">Login</a></li>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <!-- views/partials/navbar.ejs -->
-    <!-- https://medium.com/@henslejoseph/ejs-partials-f6f102cb7433 -->
-    <section class="header clearfix">
-        <nav>
-            <ul class="nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/character">Characters</a></li>
-                <li><a href="/abilities">Abilities</a></li>
-                <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
-            </ul>
             <form action="/logout?_method=DELETE" method="POST">
                 <button type="submit">Log Out</button>
             </form>
-            
-        </nav>
-    </section>
+        </ul>
 
-</body>
-
-</html>
+    </nav>
+</header>

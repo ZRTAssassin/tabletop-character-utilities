@@ -18,6 +18,9 @@ html {
   clear: both; }
 
 /******************************************
+  /* Variables
+  /*******************************************/
+/******************************************
   /* BASE STYLES
   /*******************************************/
 body {
@@ -30,8 +33,41 @@ body > * {
 /******************************************
   /* LAYOUT
   /*******************************************/
+.header {
+  outline: thin solid #33A5A5;
+  overflow: hidden; }
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+
+.nav > li {
+  display: inline-block;
+  list-style-type: none; }
+
+.navLink {
+  text-decoration: none;
+  color: #33A5A5; }
+
+.centeredForm {
+  text-align: right;
+  margin: 5% 0; }
+
 .charImgContainer {
   text-align: center; }
+
+.centeredContainer {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-basis: 25%; }
 
 .abilities {
   display: flex;
@@ -67,9 +103,6 @@ body > * {
 #errorMessage {
   size: 1.5rem;
   color: white; }
-
-li {
-  list-style-type: none; }
 
 /******************************************
   /* ADDITIONAL STYLES

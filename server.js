@@ -10,6 +10,7 @@ const uri = process.env.DB_STRING;
 const flash = require("express-flash");
 const session = require("express-session");
 const initializePassport = require("./passport-config");
+const methodOverride = require("method-override");
 
 MongoClient.connect(uri)
   .then((client) => {
@@ -21,7 +22,7 @@ MongoClient.connect(uri)
     initializePassport(
       passport,
       (email) => users.find((user) => user.email === email),
-      (id) => users.find(user => user.id === id)
+      (id) => users.find((user) => user.id === id)
     );
 
     const users = [];
@@ -40,6 +41,7 @@ MongoClient.connect(uri)
     );
     app.use(passport.initialize());
     app.use(passport.session());
+    app.use(methodOverride("_method"));
 
     app.get("/users", (req, res) => {
       res.json(users);
@@ -72,30 +74,38 @@ MongoClient.connect(uri)
     //   }
     // });
 
-    app.get("/", (req, res) => {
-      if (!req.user){
+    app.get("/", checkUserAuthenticated, (req, res) => {
+      if (!req.user) {
         res.redirect("/login");
       }
       res.render("index.ejs", { name: req.user.name });
     });
-    app.get("/login", (req, res) => {
+    app.get("/login", checkUserNotAuthenticated, (req, res) => {
       res.render("login.ejs");
     });
     app.post(
       "/login",
+      checkUserNotAuthenticated,
       passport.authenticate("local", {
         successRedirect: "/",
         failureRedirect: "/login",
         failureFlash: true,
       })
-      
     );
+    app.delete("/logout", (req, res) => {
+      req.logOut(function (err) {
+        if (err) {
+          return next(err);
+        }
+        res.redirect("/login");
+      });
+    });
 
-    app.get("/register", (req, res) => {
+    app.get("/register", checkUserNotAuthenticated, (req, res) => {
       res.render("register.ejs");
     });
 
-    app.post("/register", async (req, res) => {
+    app.post("/register", checkUserNotAuthenticated, async (req, res) => {
       try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
         users.push({
@@ -217,6 +227,20 @@ MongoClient.connect(uri)
           console.error(error);
         });
     });
+
+    function checkUserAuthenticated(req, res, next) {
+      if (req.isAuthenticated()) {
+        return next();
+      }
+      res.redirect("/login");
+    }
+
+    function checkUserNotAuthenticated(req, res, next) {
+      if (req.isAuthenticated()) {
+        return res.redirect("/");
+      }
+      next();
+    }
 
     app.listen(process.env.PORT || PORT, () => {
       console.log("listening on 8000");

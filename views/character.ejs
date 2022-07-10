@@ -49,14 +49,22 @@
         </section>
 
         <section class="abilityContainer">
-            <ul class="abilities">
-                <li class="str">STR</li>
-                <li class="dex">DEX</li>
-                <li class="con">CON</li>
-                <li class="wis">WIS</li>
-                <li class="int">INT</li>
-                <li class="cha">CHA</li>
-            </ul>
+
+            <% for(var i=0; i < character.length; i++) {%>
+                <h4 class="character <%= character[i]._id %>">
+                    <%= character[i].name %>
+                </h4>
+                <ul class="abilities">
+                    <% for (const key of Object.keys(character[i].data.abilities)) { %>
+
+                        <li class=<%=key %>>
+                            <%= key %>
+                                <%= character[i].data.abilities[key].value %>
+                        </li>
+                        <% } %>
+                            <% } %>
+
+                </ul>
         </section>
         </section>
         <script src="js/character.js"></script>

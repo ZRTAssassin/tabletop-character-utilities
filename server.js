@@ -78,6 +78,7 @@ MongoClient.connect(uri)
       if (!req.user) {
         res.redirect("/login");
       }
+      console.log(req.user.email);
       res.render("index.ejs", { name: req.user.name });
     });
     app.get("/login", checkUserNotAuthenticated, (req, res) => {
@@ -119,12 +120,12 @@ MongoClient.connect(uri)
       } catch {
         res.redirect("/register");
       }
-      console.log(users);
+      // console.log(users);
     });
 
     app.get("/abilities", checkUserAuthenticated, (req, res) => {
       traitsCollection
-        .find()
+        .find({userEmail: req.user.email})
         .sort({ name: 1 })
         .toArray()
         .then((results) => {
@@ -140,7 +141,7 @@ MongoClient.connect(uri)
 
     app.get("/character", checkUserAuthenticated, (req, res) => {
       characterCollection
-        .find()
+        .find({userEmail: req.user.email})
         .toArray()
         .then((results) => {
           // console.log(results);
@@ -178,10 +179,11 @@ MongoClient.connect(uri)
             abilityDescription: req.body.abilityDescription,
             sourceBook: req.body.sourceBook,
             damageType: req.body.damageType,
+            userEmail: req.user.email,
           })
           .then((result) => {
             console.log(`${req.body.abilityName} added`);
-            res.redirect("/");
+            res.redirect("/traits");
           })
           .catch((error) => {
             console.error(error);

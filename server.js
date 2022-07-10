@@ -122,7 +122,7 @@ MongoClient.connect(uri)
       console.log(users);
     });
 
-    app.get("/abilities", (req, res) => {
+    app.get("/abilities", checkUserAuthenticated, (req, res) => {
       traitsCollection
         .find()
         .sort({ name: 1 })
@@ -138,7 +138,7 @@ MongoClient.connect(uri)
         });
     });
 
-    app.get("/character", (req, res) => {
+    app.get("/character", checkUserAuthenticated, (req, res) => {
       characterCollection
         .find()
         .toArray()
@@ -157,7 +157,7 @@ MongoClient.connect(uri)
         .then((results) => res.json(results));
     });
 
-    app.get("/traits", (req, res) => {
+    app.get("/traits", checkUserAuthenticated, (req, res) => {
       traitsCollection
         .find()
         .toArray()

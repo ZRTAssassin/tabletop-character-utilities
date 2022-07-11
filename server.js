@@ -19,11 +19,18 @@ MongoClient.connect(uri)
     const traitsCollection = db.collection("traits");
     const characterDb = client.db("tabletop-characters");
     const characterCollection = characterDb.collection("characters");
+    const userDb = client.db("userDB");
+    const usersCollection = userDb.collection("users");
     initializePassport(
       passport,
       (email) => users.find((user) => user.email === email),
       (id) => users.find((user) => user.id === id)
     );
+    // initializePassport(
+    //   passport,
+    //   (email) => usersCollection.findOne({email: email}),
+    //   (id) => usersCollection.findOne({_id: id})
+    // );
 
     const users = [];
 
@@ -78,7 +85,7 @@ MongoClient.connect(uri)
       if (!req.user) {
         res.redirect("/login");
       }
-      console.log(req.user.email);
+      console.log("app.get('/')", req.user);
       res.render("index.ejs", { name: req.user.name });
     });
     app.get("/login", checkUserNotAuthenticated, (req, res) => {
@@ -110,6 +117,11 @@ MongoClient.connect(uri)
     app.post("/register", checkUserNotAuthenticated, async (req, res) => {
       try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        usersCollection.insertOne({
+          name: req.body.name,
+          email: req.body.email,
+          password: hashedPassword,
+        });
         users.push({
           id: Date.now().toString(),
           name: req.body.name,
@@ -125,7 +137,7 @@ MongoClient.connect(uri)
 
     app.get("/abilities", checkUserAuthenticated, (req, res) => {
       traitsCollection
-        .find({userEmail: req.user.email})
+        .find({ userEmail: req.user.email })
         .sort({ name: 1 })
         .toArray()
         .then((results) => {
@@ -141,7 +153,7 @@ MongoClient.connect(uri)
 
     app.get("/character", checkUserAuthenticated, (req, res) => {
       characterCollection
-        .find({userEmail: req.user.email})
+        .find({ userEmail: req.user.email })
         .toArray()
         .then((results) => {
           // console.log(results);

@@ -12,25 +12,28 @@
 
 <body>
     <%- include('partials/navbar') %>
-        <fieldset class="centeredContainer">
-            <h1>Login</h1>
-            <% if (messages.error) { %>
-                <%= messages.error %>
-                    <% } %>
-                        <form action="/login" method="POST">
-                            <section class="centeredForm">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" id="email" required>
-                            </section>
-                            <section class="centeredForm">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" id="password" required>
-                            </section>
-                            <section>
-                                <button type="submit">Login</button>
-                            </section>
-                        </form>
-        </fieldset>
+        <section class="content altBGColor centeredChildren txtSize2">
+            <fieldset class="centeredContainer altBGColor2">
+                <h1>Login</h1>
+                <% if (messages.error) { %>
+                    <%= messages.error %>
+                        <% } %>
+                            <form action="/login" method="POST">
+                                <section class="centeredForm">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" required>
+                                </section>
+                                <section class="centeredForm">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" required>
+                                </section>
+                                <section>
+                                    <button type="submit">Login</button>
+                                </section>
+                            </form>
+            </fieldset>
+        </section>
+        <%- include('partials/footer') %>
 
 </body>
 

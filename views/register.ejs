@@ -12,27 +12,29 @@
 
 <body>
     <%- include('partials/navbar') %>
-        <fieldset class="centeredContainer">
-            <h1>Register</h1>
-            <form action="/register" method="POST">
-                <section class="centeredForm">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" required>
-                </section>
-                <section class="centeredForm">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
-                </section>
-                <section class="centeredForm">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
-                </section>
-                <section>
-                    <button type="submit">Register</button>
-                </section>
-            </form>
-        </fieldset>
-
+        <section class="content altBGColor centeredChildren">
+            <fieldset class="centeredContainer altBGColor2 txtSize2">
+                <h1>Register</h1>
+                <form action="/register" method="POST">
+                    <section class="centeredForm">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" required>
+                    </section>
+                    <section class="centeredForm">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </section>
+                    <section class="centeredForm">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" required>
+                    </section>
+                    <section>
+                        <button type="submit">Register</button>
+                    </section>
+                </form>
+            </fieldset>
+        </section>
+        <%- include('partials/footer') %>
 </body>
 
 </html>

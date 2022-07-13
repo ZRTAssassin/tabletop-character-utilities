@@ -3,7 +3,10 @@
   box-sizing: border-box; }
 
 html {
-  font-size: 20px; }
+  font-size: 62.5%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
 
 /* Clear fix hack */
 .clearfix:after {
@@ -25,17 +28,37 @@ html {
   /*******************************************/
 body {
   color: #33A5A5;
-  background-color: #333333; }
-
-body > * {
-  /* border: thin solid red; */ }
+  background-color: #222325;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; }
 
 /******************************************
   /* LAYOUT
   /*******************************************/
 .header {
   outline: thin solid #33A5A5;
-  overflow: hidden; }
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-basis: 5rem; }
+
+.footer {
+  flex-shrink: 0;
+  flex-basis: 8rem; }
+
+.flex {
+  display: flex; }
+
+.flxDirCol {
+  flex-direction: column; }
+
+.flxJusCen {
+  justify-content: center; }
+
+.txtSize2 {
+  font-size: 2rem; }
 
 .nav {
   display: flex;
@@ -59,15 +82,28 @@ body > * {
   text-align: center; }
 
 .centeredContainer {
-  width: 50%;
-  margin: 0 auto;
+  flex-basis: 40%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-basis: 25%; }
+  text-align: center; }
+
+.centeredChildren {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.altBGColor {
+  background-color: #333333; }
+
+.altBGColor2 {
+  background-color: #414141; }
+
+.content {
+  flex: 1 0 auto; }
 
 .abilities {
   display: flex;

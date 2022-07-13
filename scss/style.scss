@@ -3,7 +3,10 @@
     box-sizing: border-box;
   }
   html {
-    font-size: 20px;
+    font-size: 62.5%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   /* Clear fix hack */
@@ -24,7 +27,9 @@
   /* Variables
   /*******************************************/
   $base-color: #33A5A5;
-  $base-bg-color: #333333;
+  $alt-bg-color: #333333;
+  $base-bg-color: rgba(34, 35, 37, 1);
+  $alt-bg-color2: #414141;
 
   /******************************************
   /* BASE STYLES
@@ -33,10 +38,11 @@
   body {
     color: $base-color;
     background-color: $base-bg-color;
-  
-  }
-  body > * {
-    /* border: thin solid red; */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
   
 
@@ -48,6 +54,24 @@
   .header {
     outline: thin solid $base-color;
     overflow: hidden;
+    flex-shrink: 0;
+    flex-basis: 5rem;
+  }
+  .footer {
+    flex-shrink: 0;
+    flex-basis: 8rem;
+  }
+  .flex {
+    display: flex;
+  }
+  .flxDirCol{
+    flex-direction: column;
+  }
+  .flxJusCen{
+    justify-content: center;
+  }
+  .txtSize2{
+    font-size: 2rem;
   }
   .nav {
     display: flex;
@@ -72,15 +96,28 @@
     text-align: center;
   }
   .centeredContainer{
-    width: 50%;
-    margin: 0 auto;
+    flex-basis: 40%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    flex-basis: 25%;
+  }
+  .centeredChildren{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .altBGColor{
+    background-color: $alt-bg-color;
+  }
+  .altBGColor2{
+    background-color: $alt-bg-color2;
+  }
+  .content{
+    flex: 1 0 auto;
   }
   .abilities{
     display: flex;

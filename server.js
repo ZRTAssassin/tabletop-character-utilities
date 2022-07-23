@@ -21,16 +21,16 @@ MongoClient.connect(uri)
     const characterCollection = characterDb.collection("characters");
     const userDb = client.db("userDB");
     const usersCollection = userDb.collection("users");
-    initializePassport(
-      passport,
-      (email) => users.find((user) => user.email === email),
-      (id) => users.find((user) => user.id === id)
-    );
     // initializePassport(
     //   passport,
-    //   (email) => usersCollection.findOne({email: email}),
-    //   (id) => usersCollection.findOne({_id: id})
+    //   (email) => users.find((user) => user.email === email),
+    //   (id) => users.find((user) => user.id === id)
     // );
+    initializePassport(
+      passport,
+      (email) => usersCollection.findOne({ email: email }),
+      (id) => usersCollection.findOne({ _id: id })
+    );
 
     const users = [];
 
@@ -51,7 +51,13 @@ MongoClient.connect(uri)
     app.use(methodOverride("_method"));
 
     app.get("/users", (req, res) => {
-      res.json(users);
+      usersCollection
+        .find()
+        .toArray()
+        .then((results) => {
+          res.json(results);
+        });
+      // res.json(users);
     });
 
     // app.post("/users", async (req, res) => {
@@ -82,10 +88,11 @@ MongoClient.connect(uri)
     // });
 
     app.get("/", checkUserAuthenticated, (req, res) => {
+      // console.log(req.user);
       if (!req.user) {
         res.redirect("/login");
       }
-      console.log("app.get('/')", req.user);
+      // console.log("app.get('/')", req.user, req);
       res.render("index.ejs", { name: req.user.name });
     });
     app.get("/login", checkUserNotAuthenticated, (req, res) => {
@@ -96,10 +103,13 @@ MongoClient.connect(uri)
       "/login",
       checkUserNotAuthenticated,
       passport.authenticate("local", {
-        successRedirect: "/",
         failureRedirect: "/login",
         failureFlash: true,
-      })
+      }), async function (req, res) {
+        console.log(req.user);
+        res.redirect("/");
+        // console.log(req.user);
+      }
     );
     app.delete("/logout", (req, res) => {
       req.logOut(function (err) {
@@ -244,6 +254,7 @@ MongoClient.connect(uri)
     });
 
     function checkUserAuthenticated(req, res, next) {
+      console.log(req.isAuthenticated());
       if (req.isAuthenticated()) {
         return next();
       }

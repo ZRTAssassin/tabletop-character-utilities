@@ -11,6 +11,8 @@ const flash = require("express-flash");
 const session = require("express-session");
 const initializePassport = require("./passport-config");
 const methodOverride = require("method-override");
+const fs = require("fs");
+const { parse } = require("path");
 
 MongoClient.connect(uri)
   .then((client) => {
@@ -21,6 +23,11 @@ MongoClient.connect(uri)
     const characterCollection = characterDb.collection("characters");
     const userDb = client.db("userDB");
     const usersCollection = userDb.collection("users");
+
+    // gett users from a local repo?
+    const users = [];
+    getUsers();
+    
     initializePassport(
       passport,
       (email) => users.find((user) => user.email === email),
@@ -31,8 +38,6 @@ MongoClient.connect(uri)
     //   (email) => usersCollection.findOne({ email: email }),
     //   (id) => usersCollection.findOne({ _id: id })
     // );
-
-    const users = [];
 
     app.set("view engine", "ejs");
     app.use(bodyParser.urlencoded({ extended: false }));
@@ -96,9 +101,9 @@ MongoClient.connect(uri)
       res.render("index.ejs", { name: req.user.name });
     });
     app.get("/login", checkUserNotAuthenticated, (req, res) => {
+      console.log(users);
       res.render("login.ejs");
     });
-
     app.post(
       "/login",
       checkUserNotAuthenticated,
@@ -129,11 +134,12 @@ MongoClient.connect(uri)
     app.post("/register", checkUserNotAuthenticated, async (req, res) => {
       try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        usersCollection.insertOne({
-          name: req.body.name,
-          email: req.body.email,
-          password: hashedPassword,
-        });
+        // puts the user to the mongodb collection
+        // usersCollection.insertOne({
+        //   name: req.body.name,
+        //   email: req.body.email,
+        //   password: hashedPassword,
+        // });
         users.push({
           id: Date.now().toString(),
           name: req.body.name,
@@ -268,6 +274,25 @@ MongoClient.connect(uri)
         return res.redirect("/");
       }
       next();
+    }
+    function getUsers() {
+      fs.readFile("./repo/users.json", "utf8", (err, jsonString) => {
+        if (err) {
+          console.log("File read failed:", err);
+          return;
+        }
+        try {
+          const user = JSON.parse(jsonString);
+          for (const iterator of user) {
+            users.push(iterator);
+          }
+          console.log(userArr);
+          console.log("getUsers() called");
+          // return userArr;
+          // console.log(user);
+          // console.log("File data:", jsonString);
+        } catch {}
+      });
     }
 
     app.listen(process.env.PORT || PORT, () => {

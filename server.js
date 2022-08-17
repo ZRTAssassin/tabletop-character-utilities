@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: "./config/.env" });
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -12,7 +12,9 @@ const session = require("express-session");
 const initializePassport = require("./passport-config");
 const methodOverride = require("method-override");
 const fs = require("fs");
-const { parse } = require("path");
+const connectDB = require("./config/database");
+const homeRoutes = require("./routes/home");
+const traitRoutes = require("./routes/traits");
 
 MongoClient.connect(uri, { useUnifiedTopology: true })
   .then((client) => {

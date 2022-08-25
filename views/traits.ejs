@@ -80,7 +80,7 @@
             <!-- <%= traits %> -->
             <ul class="traits">
                 <% for(var i=0; i < traits.length; i++) {%>
-                    <li class="trait <%= traits[i].abilityName %>">
+                    <li class="trait" data-id=<%=traits[i]._id%>>
                         <button class="delete-button <%= traits[i].abilityName %>">&#128465;</button>
 
                         <button type="button" class="edit-button">&#128393;</button>

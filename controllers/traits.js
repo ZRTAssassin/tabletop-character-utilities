@@ -24,4 +24,14 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteTrait: async (request, response) => {
+    console.log(request.body.idFromJS);
+    try {
+      await Trait.findOneAndDelete({ _id: request.body.idFromJS });
+      console.log(`deleted trait ${request.body.idFromJS}!`);
+      response.json("deleted it!");
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };

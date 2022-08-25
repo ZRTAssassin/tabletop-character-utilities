@@ -6,4 +6,6 @@ router.get("/", traitsController.getTraits);
 
 router.post("/addTrait", traitsController.addTrait);
 
+router.delete("/deleteTrait", traitsController.deleteTrait);
+
 module.exports = router;

@@ -5,20 +5,18 @@ deleteButtons.forEach((element) => {
   element.addEventListener("click", deleteTrait);
 });
 
-
-
 function deleteTrait() {
-  console.log(this.parentNode.childNodes[5].innerText);
-  const abilityName = this.parentNode.childNodes[5].innerText.trim();
+  const traitID = this.parentNode.dataset.id;
+  console.log(traitID);
   // console.log(JSON.stringify({
   //   name: `${name}`
   // }))
 
-  fetch("/traits", {
+  fetch("/traits/deleteTrait", {
     method: "delete",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      abilityName: `${abilityName}`,
+      "idFromJS": traitID,
     }),
   })
     .then((res) => {

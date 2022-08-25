@@ -4,6 +4,6 @@ const traitsController = require("../controllers/traits");
 
 router.get("/", traitsController.getTraits);
 
-// router.post("/createTrait", traitsController.createTrait);
+router.post("/addTrait", traitsController.addTrait);
 
 module.exports = router;

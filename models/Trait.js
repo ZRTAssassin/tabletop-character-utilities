@@ -13,7 +13,7 @@ const TraitSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  damage: {
+  doesDamage: {
     type: Boolean,
     required: true,
   },

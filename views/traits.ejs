@@ -12,21 +12,20 @@
     <!-- external CSS link -->
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- <link rel="script" href="/js/main.js"> -->
 </head>
 
 <body>
 
     <%- include('partials/navbar') %>
 
-        <form action="/traits/add" method="post" id="newAbility">
+        <form action="/traits/addTrait" method="post" id="newAbility">
             <fieldset>
                 <legend>Enter New Trait</legend>
                 <fieldset>
                     <legend>Basic Information</legend>
                     <input type="text" placeholder="name" name="abilityName"> <!-- required> -->
                     <input type="text" placeholder="description" name="abilityDescription"> <!-- required> -->
-                    <input type="text" placeholder="PHB (151)" name="sourceBook" pattern="[a-zA-Z]+ \([0-9]+\)">
+                    <input type="text" placeholder="PHB (151)" name="source" pattern="[a-zA-Z]+ \([0-9]+\)">
                     <!-- required> -->
 
                     <label for="damage-types">Choose a damage type:</label>
@@ -103,7 +102,7 @@
             </ul>
         </section>
 
-        <script src="js/abilities.js"></script>
+        <script src="js/traits.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+const { response } = require("express");
 const Trait = require("../models/Trait");
 
 module.exports = {
@@ -33,5 +34,9 @@ module.exports = {
     } catch (error) {
       console.log(error);
     }
+  },
+  editTrait: (request, response) => {
+    response.json("Successful!");
+    console.log(request.params.id);
   },
 };

@@ -4,6 +4,8 @@ const traitsController = require("../controllers/traits");
 
 router.get("/", traitsController.getTraits);
 
+router.get("/edit/:id", traitsController.editTrait);
+
 router.post("/addTrait", traitsController.addTrait);
 
 router.delete("/deleteTrait", traitsController.deleteTrait);

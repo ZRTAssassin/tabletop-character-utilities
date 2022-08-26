@@ -35,24 +35,29 @@ function deleteTrait() {
 // main.js
 const update = document.querySelector("#update-button");
 
-update.addEventListener("click", (_) => {
-  // Send PUT Request here
-  fetch("/traits", {
-    method: "put",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: "Spellcasting",
-      description: "Congrats, you're a magic man.",
-      source: "",
-    }),
-  })
-    .then((res) => {
-      if (res.ok) return res.json();
-    })
-    .then((response) => {
-      console.log(response);
-    })
-    .then((reponse) => {
-      window.location.reload(true);
-    });
-});
+update.addEventListener("click", () => {
+
+})
+
+// old way to update a random trait
+// update.addEventListener("click", (_) => {
+//   // Send PUT Request here
+//   fetch("/traits", {
+//     method: "put",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//       name: "Spellcasting",
+//       description: "Congrats, you're a magic man.",
+//       source: "",
+//     }),
+//   })
+//     .then((res) => {
+//       if (res.ok) return res.json();
+//     })
+//     .then((response) => {
+//       console.log(response);
+//     })
+//     .then((reponse) => {
+//       window.location.reload(true);
+//     });
+// });

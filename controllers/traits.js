@@ -35,8 +35,14 @@ module.exports = {
       console.log(error);
     }
   },
-  editTrait: (request, response) => {
-    response.json("Successful!");
+  editTrait: async (request, response) => {
     console.log(request.params.id);
+    try {
+      const trait = await Trait.findById(request.params.id);
+      response.render("edit", { trait: trait });
+      // response.json("Successful!");
+    } catch (error) {
+      console.log(error);
+    }
   },
 };

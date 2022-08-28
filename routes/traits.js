@@ -6,7 +6,7 @@ router.get("/", traitsController.getTraits);
 
 router.get("/edit/:id", traitsController.editTrait);
 
-// router.put("/edit/:id", traitsController.
+router.put("/:id", traitsController.requestEditTrait);
 
 router.post("/addTrait", traitsController.addTrait);
 

@@ -1,7 +1,8 @@
-const { response } = require("express");
 const Trait = require("../models/Trait");
 
 module.exports = {
+  // render list of traits
+  // @route GET /traits/
   getTraits: async (request, response) => {
     try {
       const traitItems = await Trait.find();
@@ -10,6 +11,8 @@ module.exports = {
       console.error(err);
     }
   },
+  //
+  // @route /traits/addTrait
   addTrait: async (request, response) => {
     try {
       await Trait.create({
@@ -25,6 +28,8 @@ module.exports = {
       console.log(err);
     }
   },
+  //
+  // @route /traits/deleteTrait
   deleteTrait: async (request, response) => {
     console.log(request.body.idFromJS);
     try {
@@ -35,14 +40,36 @@ module.exports = {
       console.log(error);
     }
   },
+  //
+  // @route GET /traits/edit/:id
   editTrait: async (request, response) => {
-    console.log(request.params.id);
+    // console.log(request.params.id);
     try {
       const trait = await Trait.findById(request.params.id);
-      response.render("edit", { trait: trait });
+      response.render("traits/edit", { trait: trait });
       // response.json("Successful!");
     } catch (error) {
       console.log(error);
     }
+  },
+  // @description Update trait
+  // @route PUT /trait/:id
+  requestEditTrait: async (request, response) => {
+    console.log(`RequestEditTrait called. ID: ${request.params.id}`);
+    let trait = await Trait.findById(request.params.id);
+
+    if (!trait) {
+      return response.render("/error/404");
+    }
+    trait = await Trait.findOneAndUpdate(
+      { _id: request.params.id },
+      request.body,
+      {
+        new: false,
+        runValidators: true,
+      }
+    );
+
+    response.redirect("/traits");
   },
 };

@@ -16,9 +16,10 @@
 
 <body>
 
-    <%- include('partials/navbar') %>
+    <%- include('../partials/navbar') %>
 
-        <form action="/traits/addTrait" method="post" id="newAbility">
+        <form action="/traits/<%= trait._id %>" method="POST" id="newAbility">
+            <input type="hidden" name="_method" value="PUT">
             <fieldset>
                 <legend>Enter New Trait</legend>
                 <fieldset>
@@ -33,15 +34,15 @@
 
                     <label for="damage-types">Choose a damage type:</label>
                     <select form="newAbility" name="damageType" id="damage-types" required>
-                        <option value="None" <%=trait.damageType=="None" ? 'selected' : '' %>>None</option>
-                        <option value="Bludgeoning" <%=trait.damageType=="Bludgeoning" ? 'selected' : '' %>>Bludgeoning
+                        <option value="None" <%=trait.damageType==="None" ? 'selected' : '' %>>None</option>
+                        <option value="Bludgeoning" <%=trait.damageType==="Bludgeoning" ? 'selected' : '' %>>Bludgeoning
                         </option>
-                        <option value="Piercing" <%=trait.damageType=="Piercing" ? 'selected' : '' %>>Piercing
+                        <option value="Piercing" <%=trait.damageType==="Piercing" ? 'selected' : '' %>>Piercing
                         </option>
-                        <option value="Slashing" <%=trait.damageType=="Slashing" ? 'selected' : '' %>>Slashing
+                        <option value="Slashing" <%=trait.damageType==="Slashing" ? 'selected' : '' %>>Slashing
                         </option>
-                        <option value="Psychic" <%=trait.damageType=="Psychic" ? 'selected' : '' %>>Psychic</option>
-                        <option value="Fire" <%=trait.damageType=="Fire" ? 'selected' : '' %>>Fire</option>
+                        <option value="Psychic" <%=trait.damageType==="Psychic" ? 'selected' : '' %>>Psychic</option>
+                        <option value="Fire" <%=trait.damageType==="Fire" ? 'selected' : '' %>>Fire</option>
                     </select>
                     <input type="text" placeholder="damage-type" name="damage-type" value="<%= trait.damageType %>">
                     <!-- required> -->

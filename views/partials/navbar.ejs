@@ -1,16 +1,18 @@
-<header class="header clearfix txtSize2 flex flexAlignItemsCenter">
-    <nav class="flex flexDirectionRow flexBasis100 flexSpaceAround">
-        <section class=" flex flexDirectionRow flexBasis25 flexSpaceAround">
-        <a class="navLink" href="/">Home</a>
-        <a class="navLink" href="/character">Characters</a>
-        <a class="navLink" href="/traits">Abilities</a>
-        </section>
-        <section class="flex flexDirectionRow flexBasis25 flexSpaceAround">
-            <a class="navLink" href="/register">Register</a>
-            <a class="navLink" href="/login">Login</a>
-            <form action="/logout?_method=DELETE" method="POST">
-                <button type="submit">Log Out</button>
-            </form>
+<header class="header clearfix txtSize2 baseBGColor">
+    <nav class="nav">
+        <section class="container flex flexBasis100 flexSpaceBetween flexAlignItemsCenter">
+            <section class="container flex flexSpaceAround flexBasis100">
+                <a class="navLink" href="/">Home</a>
+                <a class="navLink" href="/character">Characters</a>
+                <a class="navLink" href="/traits">Abilities</a>
+            </section>
+            <section class="container flex flexSpaceAround flexBasis100">
+                <a class="navLink" href="/register">Register</a>
+                <a class="navLink" href="/login">Login</a>
+                <form action="/logout?_method=DELETE" method="POST">
+                    <button class="accent-button " type="submit">Logout</button>
+                </form>
+            </section>
         </section>
     </nav>
 </header>

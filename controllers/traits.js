@@ -36,8 +36,8 @@ module.exports = {
       await Trait.findOneAndDelete({ _id: request.body.idFromJS });
       console.log(`deleted trait ${request.body.idFromJS}!`);
       response.json("deleted it!");
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
   },
   //
@@ -48,8 +48,8 @@ module.exports = {
       const trait = await Trait.findById(request.params.id);
       response.render("traits/edit", { trait: trait });
       // response.json("Successful!");
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
   },
   // @description Update trait
@@ -71,5 +71,31 @@ module.exports = {
     );
 
     response.redirect("/traits");
+  },
+  addTestTrait: async (request, response) => {
+    console.log("Random trait requested!");
+    let date = new Date();
+    let time = date.toLocaleTimeString();
+    let description = "";
+
+    let chars = "ABCDEFGHIJLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+    for (let index = 0; index < 10; index++) {
+      description += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    const fakeSource = "PHB (100)";
+
+    try {
+      await Trait.create({
+        abilityName: time,
+        abilityDescription: description,
+        source: fakeSource,
+        doesDamage: true || false,
+        damageType: "None",
+      });
+      console.log(`${time} added!`);
+      response.redirect("/traits");
+    } catch (err) {
+      console.log(err);
+    }
   },
 };

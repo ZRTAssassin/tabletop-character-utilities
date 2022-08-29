@@ -16,7 +16,7 @@ function deleteTrait() {
     method: "delete",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      "idFromJS": traitID,
+      idFromJS: traitID,
     }),
   })
     .then((res) => {
@@ -33,11 +33,7 @@ function deleteTrait() {
 }
 
 // main.js
-const update = document.querySelector("#update-button");
 
-update.addEventListener("click", () => {
-
-})
 
 // old way to update a random trait
 // update.addEventListener("click", (_) => {

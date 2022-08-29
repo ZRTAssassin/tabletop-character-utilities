@@ -10,6 +10,8 @@ router.put("/:id", traitsController.requestEditTrait);
 
 router.post("/addTrait", traitsController.addTrait);
 
+router.post("/addTestTrait", traitsController.addTestTrait);
+
 router.delete("/deleteTrait", traitsController.deleteTrait);
 
 module.exports = router;

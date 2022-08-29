@@ -4,7 +4,6 @@
   }
   html {
     font-size: 62.5%;
-    height: 100%;
     margin: 0;
     padding: 0;
   }
@@ -52,9 +51,11 @@
   /* LAYOUT
   /*******************************************/
   .header {
+    display: inline-block;
+    vertical-align: middle;
     overflow: hidden;
     flex-shrink: 0;
-    flex-basis: 5rem;
+    flex-basis: 6rem;
   }
   .footer {
     flex-shrink: 0;
@@ -71,6 +72,9 @@
   }
   .flexAlignItemsCenter{
     align-items: center;
+  }
+  .flexSpaceBetween{
+    justify-content: space-between;
   }
   .flexSpaceAround{
     justify-content: space-around;
@@ -103,20 +107,21 @@
     font-size: 2rem;
   }
   .nav {
+    height: 100%;
+    padding: 0.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
   }
-  .nav > li {
-    display: inline-block;
-    list-style-type: none;
-    
-  }
   .navLink {
     text-decoration: none;
     color: $base-color;
   } 
+  .container{
+    max-width: 80%;
+    margin: 0 auto;
+  }
   .centeredForm{
     text-align: right;
     margin: 5% 0;
@@ -138,6 +143,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+  .baseBGColor{
+    background-color: $base-bg-color;
   }
   .altBGColor{
     background-color: $alt-bg-color;
@@ -167,20 +175,24 @@
     flex-basis: 15%;
   }
   .trait{
+    list-style-type: none;
     font-size: 1.5rem;
     line-height: 2.25rem;
+  }
+  .traits{
+    padding-left: 0;
   }
   .messageContainer{
     text-align: center;
     line-height: 2.25rem;
   }
-  .delete-button{
+  .accent-button{
     cursor: pointer;
     padding: 0;
     border: none;
     background: none;
     outline: none;
-    color: white;
+    color: $base-color;
   }
   .trait{
     border: thin solid black;
@@ -190,9 +202,6 @@
     color: white;
   }
   
-  footer {
-  
-  }
   
   /******************************************
   /* ADDITIONAL STYLES

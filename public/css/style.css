@@ -42,7 +42,8 @@ body {
   vertical-align: middle;
   overflow: hidden;
   flex-shrink: 0;
-  flex-basis: 6rem; }
+  flex-basis: 6rem;
+  margin-bottom: 1em; }
 
 .footer {
   flex-shrink: 0;

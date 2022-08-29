@@ -3,6 +3,7 @@ const app = express();
 const connectDB = require("./config/database");
 const homeRoutes = require("./routes/home");
 const traitRoutes = require("./routes/traits");
+const authRoutes = require("./routes/auth");
 const methodOverride = require("method-override");
 
 require("dotenv").config({ path: "./config/.env" });
@@ -32,6 +33,7 @@ app.use(
 // Routes
 app.use("/", homeRoutes);
 app.use("/traits", traitRoutes);
+app.use("/auth", authRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");

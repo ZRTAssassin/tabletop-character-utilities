@@ -1,18 +1,30 @@
-<header class="header clearfix txtSize2 baseBGColor">
-    <nav class="nav">
-        <section class="container flex flexBasis100 flexSpaceBetween flexAlignItemsCenter">
-            <section class="container flex flexSpaceAround flexBasis100">
-                <a class="navLink" href="/">Home</a>
-                <a class="navLink" href="/character">Characters</a>
-                <a class="navLink" href="/traits">Abilities</a>
-            </section>
-            <section class="container flex flexSpaceAround flexBasis100">
-                <a class="navLink" href="/auth/register">Register</a>
-                <a class="navLink" href="/auth/login">Login</a>
-                <form action="/logout?_method=DELETE" method="POST">
-                    <button class="accent-button " type="submit">Logout</button>
-                </form>
-            </section>
-        </section>
+<header class="header">
+
+    <section class="container">
+        <button class="navToggle" aria-label="open navigation">
+            <span class="hamburger"></span>
+        </button>
+        <a href="/" class="logo">
+            <img class="svg" src="/img/logoedit.svg" alt="">
+        </a>
+        <nav class="nav">
+            <ul class="navList navList--primary">
+                <li class="navItem"><a class="navLink" href="/">Home</a></li>
+                <li class="navItem"><a class="navLink" href="/character">Characters</a></li>
+                <li class="navItem"><a class="navLink" href="/traits">Abilities</a></li>
+            </ul>
+
+            <ul class="navList navList--secondary">
+                <li class="navItem"><a class="navLink" href="/auth/register">Register</a></li>
+                <li class="navItem"><a class="navLink" href="/auth/login">Login</a></li>
+                <li class="navItem">
+                    <form action="/logout?_method=DELETE" method="POST">
+                        <button class="accent-button " type="submit">Logout</button>
+                    </form>
+                </li>
+            </ul>
+
+        </nav>
+    </section>
     </nav>
 </header>

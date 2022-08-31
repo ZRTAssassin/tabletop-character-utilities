@@ -117,20 +117,25 @@ body {
 .charImgContainer {
   text-align: center; }
 
-.centeredContainer {
-  flex-basis: 500px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center; }
+.authContainer {
+  min-width: 350px;
+  width: 100%;
+  margin: 20vw auto; }
 
-.centeredChildren {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; }
+.authContainerHeading {
+  text-align: center;
+  font-size: 2.5rem; }
+
+.authContainerLabel {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 3.0rem; }
+
+.authContainerInput {
+  min-width: 100%;
+  margin: 1em auto;
+  display: block;
+  line-height: 3.0rem; }
 
 .baseBGColor {
   background-color: #222325; }

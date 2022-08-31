@@ -131,9 +131,8 @@
     text-align: center;
   }
   .authContainer{
-    min-width: 350px;
-    width: 100%;
-    margin: 20vw auto;
+    width: 350px;
+    margin: 10vh auto;
   }
   .authContainerHeading{
     text-align: center;
@@ -149,6 +148,26 @@
     margin: 1em auto;
     display: block;
     line-height: 3.0rem;
+  }
+  .authRibbon{
+    line-height: 3rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .authRedirect{
+    text-align: center;
+    display: block;
+    font-size: 2rem;
+    line-height: 3rem;
+    max-width: 25%;
+    margin: 0 auto;
+    text-decoration: none;
+    color: white;
+    border: thin solid $base-color;
+    background-color: $base-color;
+  }
+  .authRedirect:hover{
+    opacity: 50%;
   }
   .baseBGColor{
     background-color: $base-bg-color;

@@ -34,15 +34,20 @@
 
                     <label for="damage-types">Choose a damage type:</label>
                     <select form="newAbility" name="damageType" id="damage-types" required>
-                        <option value="None" <%=trait.damageType==="None" ? 'selected' : '' %>>None</option>
-                        <option value="Bludgeoning" <%=trait.damageType==="Bludgeoning" ? 'selected' : '' %>>Bludgeoning
-                        </option>
-                        <option value="Piercing" <%=trait.damageType==="Piercing" ? 'selected' : '' %>>Piercing
-                        </option>
-                        <option value="Slashing" <%=trait.damageType==="Slashing" ? 'selected' : '' %>>Slashing
-                        </option>
-                        <option value="Psychic" <%=trait.damageType==="Psychic" ? 'selected' : '' %>>Psychic</option>
+                        <option value="None"  <%=trait.damageType==="None" ? 'selected' : '' %>>None</option>
+                        <option value="Acid" <%=trait.damageType==="Acid" ? 'selected' : '' %>>Acid</option>
+                        <option value="Bludgeoning" <%=trait.damageType==="Bludgeoning" ? 'selected' : '' %>>Bludgeoning</option>
+                        <option value="Cold" <%=trait.damageType==="Cold" ? 'selected' : '' %>>Cold</option>
                         <option value="Fire" <%=trait.damageType==="Fire" ? 'selected' : '' %>>Fire</option>
+                        <option value="Force" <%=trait.damageType==="Force" ? 'selected' : '' %>>Force</option>
+                        <option value="Lightning" <%=trait.damageType==="Lightning" ? 'selected' : '' %>>Lightning</option>
+                        <option value="Necrotic" <%=trait.damageType==="Necrotic" ? 'selected' : '' %>>Necrotic</option>
+                        <option value="Piercing" <%=trait.damageType==="Piercing" ? 'selected' : '' %>>Piercing</option>
+                        <option value="Poison" <%=trait.damageType==="Poison" ? 'selected' : '' %>>Poison</option>
+                        <option value="Psychic" <%=trait.damageType==="Psychic" ? 'selected' : '' %>>Psychic</option>
+                        <option value="Radiant" <%=trait.damageType==="Radiant" ? 'selected' : '' %>>Radiant</option>
+                        <option value="Slashing" <%=trait.damageType==="Slashing" ? 'selected' : '' %>>Slashing</option>
+                        <option value="Thunder" <%=trait.damageType==="Thunder" ? 'selected' : '' %>>Thunder</option>
                     </select>
                     <input type="text" placeholder="damage-type" name="damage-type" value="<%= trait.damageType %>">
                     <!-- required> -->

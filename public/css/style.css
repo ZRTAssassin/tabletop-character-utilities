@@ -107,7 +107,7 @@ body {
   color: #33A5A5; }
 
 .container {
-  max-width: 80%;
+  max-width: 80vw;
   margin: 0 auto; }
 
 .centeredForm {
@@ -141,6 +141,9 @@ body {
 .altBGColor2 {
   background-color: #414141; }
 
+.textArea {
+  width: 100%; }
+
 .content {
   flex: 1 0 auto; }
 
@@ -168,7 +171,8 @@ body {
   line-height: 2.25rem; }
 
 .traits {
-  padding-left: 0; }
+  padding-left: 0;
+  min-width: 80vw; }
 
 .messageContainer {
   text-align: center;

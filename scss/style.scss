@@ -120,7 +120,7 @@
     color: $base-color;
   } 
   .container{
-    max-width: 80%;
+    max-width: 80vw;
     margin: 0 auto;
   }
   .centeredForm{
@@ -154,6 +154,9 @@
   .altBGColor2{
     background-color: $alt-bg-color2;
   }
+  .textArea{
+    width: 100%;
+  }
   .content{
     flex: 1 0 auto;
   }
@@ -182,6 +185,7 @@
   }
   .traits{
     padding-left: 0;
+    min-width: 80vw;
   }
   .messageContainer{
     text-align: center;

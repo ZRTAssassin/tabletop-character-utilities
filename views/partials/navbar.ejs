@@ -1,11 +1,11 @@
 <header class="header">
 
-    <section class="container">
+    <section class="container row">
         <button class="navToggle" aria-label="open navigation">
             <span class="hamburger"></span>
         </button>
-        <a href="/" class="logo">
-            <img class="svg" src="/img/logoedit.svg" alt="">
+        <a class="logo" href="/">
+            <img class="svg" src="/img/logoedit.svg" alt="tabletop role playing game builder logo">
         </a>
         <nav class="nav">
             <ul class="navList navList--primary">
@@ -19,7 +19,7 @@
                 <li class="navItem"><a class="navLink" href="/auth/login">Login</a></li>
                 <li class="navItem">
                     <form action="/logout?_method=DELETE" method="POST">
-                        <button class="accent-button " type="submit">Logout</button>
+                        <button class="accent-button logOutBtn" type="submit">Logout</button>
                     </form>
                 </li>
             </ul>
@@ -27,4 +27,5 @@
         </nav>
     </section>
     </nav>
+    <script src="/js/navbar.js" defer></script>
 </header>

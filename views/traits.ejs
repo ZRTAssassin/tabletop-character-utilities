@@ -10,9 +10,14 @@
     <title>Table Top Trait Database</title>
     <%- include('partials/icon') %>
 
-    <!-- external CSS link -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- external CSS link -->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
 </head>
 
 <body class="altBGColor2">
@@ -23,11 +28,12 @@
             <form action="/traits/addTrait" method="POST" id="newAbility">
                 <fieldset>
                     <legend>Enter New Trait</legend>
-                    <fieldset>
+                    <fieldset class="flex-vert-list">
                         <legend>Basic Information</legend>
                         <input type="text" placeholder="name" name="abilityName"> <!-- required> -->
                         <input type="text" placeholder="PHB (151)" name="source" pattern="[a-zA-Z]+ \([0-9]+\)">
-                        <textarea class="textArea" placeholder="description" name="abilityDescription"></textarea><!-- required> -->
+                        <textarea class="textArea" placeholder="description" name="abilityDescription"></textarea>
+                        <!-- required> -->
                         <!-- required> -->
 
                         <label for="damage-types">Choose a damage type:</label>
@@ -45,17 +51,17 @@
                             <option value="Psychic">Psychic</option>
                             <option value="Radiant">Radiant</option>
                             <option value="Slashing">Slashing</option>
-                            <option value="Thunder">Thunder</option>                           
+                            <option value="Thunder">Thunder</option>
                         </select>
-                    </fieldset>
-                    <fieldset id="flex-vert-list">
+
                         <legend>Options</legend>
-                        <input type="checkbox" id="doesDamage" name="doesDamage" value="true">
+
                         <label for="doesDamage">This ability does damage</label>
-                        <input type="checkbox" id="buffs" name="buffs" value="true">
+                        <input type="checkbox" id="doesDamage" name="doesDamage" value="true">
                         <label for="buff">This ability provides a buff</label>
-                        <input type="checkbox" id="debuffs" name="bebuffs" value="true">
+                        <input type="checkbox" id="buffs" name="buffs" value="true">
                         <label for="bebuffs">This ability inflicts a debuff</label>
+                        <input type="checkbox" id="debuffs" name="bebuffs" value="true">
                     </fieldset>
 
                     <button type="submit">Submit</button>
@@ -104,6 +110,8 @@
         </section>
 
         <script src="js/traits.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 </body>
 
 </html>

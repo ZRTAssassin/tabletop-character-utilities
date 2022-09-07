@@ -262,6 +262,7 @@ nav {
   line-height: 2.25rem; }
 
 .traits {
+  max-width: 1100px;
   padding-left: 0;
   min-width: 80vw; }
 

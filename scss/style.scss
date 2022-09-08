@@ -210,17 +210,21 @@ nav {
 }
 .authContainer {
   width: 350px;
-  margin: 10vh auto;
+  margin: 5vh auto;
 }
 .authContainerHeading {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
-.authContainerLabel {
-  display: inline-block;
-  font-size: 2rem;
-  line-height: 3rem;
+.input-field{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
+// .authContainerLabel {
+//   display: inline-block;
+//   font-size: 2rem;
+//   line-height: 3rem;
+// }
 .authContainerInput {
   min-width: 100%;
   margin: 1em auto;
@@ -337,9 +341,9 @@ nav {
 /******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
-input:focus:invalid {
-  border: red solid 3px;
-}
+// input:focus:invalid {
+//   border: red solid 3px;
+// }
 
 #source {
   font-size: 0.75rem;

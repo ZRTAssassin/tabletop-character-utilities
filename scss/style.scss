@@ -49,7 +49,7 @@ body {
   /*******************************************/
 .header {
   background: $base-bg-color;
-  padding: 1em 0;
+  padding: 2em 0;
   text-align: center;
 }
 .footer {
@@ -102,12 +102,12 @@ body {
 .txtSize2 {
   font-size: 2rem;
 }
-.svg{
+.svg {
   z-index: 0;
   width: 50px;
   height: 50px;
 }
-.logo{
+.logo {
   z-index: 2;
 }
 .nav {
@@ -122,16 +122,19 @@ body {
   list-style-type: none;
   padding: 0.25em;
 }
-.navLink, .logOutBtn {
-  
+.navLink,
+.logOutBtn {
   text-decoration: none;
   color: $base-color;
   text-transform: uppercase;
 }
-.navLink:hover, .navLink:focus, .logOutBtn:hover, .logOutBtn:focus{
+.navLink:hover,
+.navLink:focus,
+.logOutBtn:hover,
+.logOutBtn:focus {
   opacity: 0.75;
 }
-.navToggle{
+.navToggle {
   cursor: pointer;
   border: 0;
   width: 4em;
@@ -187,6 +190,8 @@ nav {
   visibility: visible;
   height: auto;
   position: relative;
+  top: 10px;
+  // outline: thin solid white;
 }
 
 .container {
@@ -249,7 +254,8 @@ nav {
   background-color: $alt-bg-color;
 }
 .altBGColor2 {
-  background-color: $alt-bg-color2;
+  outline: thin solid black;
+  // background-color: $alt-bg-color2;
 }
 .textArea {
   width: 100%;
@@ -304,7 +310,7 @@ nav {
   size: 1.5rem;
   color: white;
 }
-@media (min-width: 900px){
+@media (min-width: 900px) {
   .navToggle {
     display: none;
   }
@@ -315,13 +321,13 @@ nav {
     height: auto;
     margin: auto;
     align-items: center;
-    justify-content: center
+    justify-content: center;
   }
-  .navList{
+  .navList {
     margin: 0;
     display: flex;
   }
-  .row{
+  .row {
     display: flex;
     justify-content: space-between;
     align-items: center;

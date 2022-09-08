@@ -39,7 +39,7 @@ body {
   /*******************************************/
 .header {
   background: #222325;
-  padding: 1em 0;
+  padding: 2em 0;
   text-align: center; }
 
 .footer {
@@ -111,12 +111,16 @@ body {
   list-style-type: none;
   padding: 0.25em; }
 
-.navLink, .logOutBtn {
+.navLink,
+.logOutBtn {
   text-decoration: none;
   color: #33a5a5;
   text-transform: uppercase; }
 
-.navLink:hover, .navLink:focus, .logOutBtn:hover, .logOutBtn:focus {
+.navLink:hover,
+.navLink:focus,
+.logOutBtn:hover,
+.logOutBtn:focus {
   opacity: 0.75; }
 
 .navToggle {
@@ -168,7 +172,8 @@ nav {
 .navVisible {
   visibility: visible;
   height: auto;
-  position: relative; }
+  position: relative;
+  top: 10px; }
 
 .container {
   width: 80%;
@@ -229,7 +234,7 @@ nav {
   background-color: #333333; }
 
 .altBGColor2 {
-  background-color: #414141; }
+  outline: thin solid black; }
 
 .textArea {
   width: 100%; }

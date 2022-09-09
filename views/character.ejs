@@ -1,30 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/header') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Characters</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <button class="display-button">Display Data</button>
+    <section class="messageContainer">
+        <span id="errorMessage"></span>
+    </section>
+    <section id="old">
 
-<body>
+        <% for(var i=0; i < character.length; i++) {%>
+            <h4 class="character <%= character[i]._id %>">
+                <%= character[i].name %>
+            </h4>
 
-    <%- include('partials/navbar') %>
+            <% for (const key of Object.keys(character[i].data.abilities)) { %>
 
-        <button class="display-button">Display Data</button>
-        <section class="messageContainer">
-            <span id="errorMessage"></span>
-        </section>
-        <section id="old">
+                <li class=<%=key %>>
+                    <%= key %>
+                        <%= character[i].data.abilities[key].value %>
+                </li>
+                <% } %>
+                    <% } %>
 
-            <% for(var i=0; i < character.length; i++) {%>
-                <h4 class="character <%= character[i]._id %>">
-                    <%= character[i].name %>
-                </h4>
+    </section>
 
+    <button class="getData">Get data</button>
+    <button class="logStorage">Console Log Storage</button>
+    <button class="displayData">Display Data</button>
+
+    <input type="file" id="file" multiple>
+
+    <h1 class="name"></h1>
+
+    <section class="charImgContainer">
+        <img class="charImg" src="" alt="">
+    </section>
+
+    <section class="abilityContainer">
+
+        <% for(var i=0; i < character.length; i++) {%>
+            <h4 class="character <%= character[i]._id %>">
+                <%= character[i].name %>
+            </h4>
+            <ul class="abilities">
                 <% for (const key of Object.keys(character[i].data.abilities)) { %>
 
                     <li class=<%=key %>>
@@ -34,40 +50,7 @@
                     <% } %>
                         <% } %>
 
-        </section>
-
-        <button class="getData">Get data</button>
-        <button class="logStorage">Console Log Storage</button>
-        <button class="displayData">Display Data</button>
-
-        <input type="file" id="file" multiple>
-
-        <h1 class="name"></h1>
-
-        <section class="charImgContainer">
-            <img class="charImg" src="" alt="">
-        </section>
-
-        <section class="abilityContainer">
-
-            <% for(var i=0; i < character.length; i++) {%>
-                <h4 class="character <%= character[i]._id %>">
-                    <%= character[i].name %>
-                </h4>
-                <ul class="abilities">
-                    <% for (const key of Object.keys(character[i].data.abilities)) { %>
-
-                        <li class=<%=key %>>
-                            <%= key %>
-                                <%= character[i].data.abilities[key].value %>
-                        </li>
-                        <% } %>
-                            <% } %>
-
-                </ul>
-        </section>
-        </section>
-        <script src="js/character.js"></script>
-</body>
-
-</html>
+            </ul>
+    </section>
+    </section>
+    <%- include('partials/footer') %>

@@ -1,132 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/header') %>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Your description goes here">
-    <meta name="keywords" content="one, two, three">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="container">
+        <form action="/traits/addTrait" method="POST" id="newAbility">
 
-    <title>Table Top Trait Database</title>
-    <%- include('partials/icon') %>
+            <h1>Enter New Trait</h1>
+            <fieldset class="flex-vert-list">
+                <legend>Basic Information</legend>
+                <input type="text" placeholder="name" name="abilityName" /> <!-- required> -->
+                <input type="text" placeholder="PHB (151)" name="source" pattern="[a-zA-Z]+ \([0-9]+\)" />
+                <textarea class="textArea" placeholder="description" name="abilityDescription"></textarea>
+                <!-- required> -->
+                <!-- required> -->
 
-        <link rel="stylesheet" href="/css/normalize.css">
-        <!-- external style sheets -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <!-- font awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- custom -->
-        <link rel="stylesheet" href="/css/style.css">
+                <label for="damage-types">Choose a damage type:</label>
+                <select form="newAbility" name="damageType" id="damage-types" required>
+                    <option value="None">None</option>
+                    <option value="Acid">Acid</option>
+                    <option value="Bludgeoning">Bludgeoning</option>
+                    <option value="Cold">Cold</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Force">Force</option>
+                    <option value="Lightning">Lightning</option>
+                    <option value="Necrotic">Necrotic</option>
+                    <option value="Piercing">Piercing</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Slashing">Slashing</option>
+                    <option value="Thunder">Thunder</option>
+                </select>
 
+                <legend>Options</legend>
+                <p class="flex flexSpaceAround">
+                    <label for="doesDamage">
+                        <input type="checkbox" id="doesDamage" class="filled-in" name="doesDamage" value="true" />
+                        <span>Damage</span>
+                    </label>
 
-</head>
+                    <label for="buffs">
+                        <input type="checkbox" id="buffs" class="filled-in" name="buffs" value="true" />
+                        <span>Buff</span>
+                    </label>
 
-<body class="grey darken-4">
-
-    <%- include('partials/navbar') %>
-
-        <div class="container">
-            <form action="/traits/addTrait" method="POST" id="newAbility">
-
-                <h1>Enter New Trait</h1>
-                <fieldset class="flex-vert-list">
-                    <legend>Basic Information</legend>
-                    <input type="text" placeholder="name" name="abilityName" /> <!-- required> -->
-                    <input type="text" placeholder="PHB (151)" name="source" pattern="[a-zA-Z]+ \([0-9]+\)" />
-                    <textarea class="textArea" placeholder="description" name="abilityDescription"></textarea>
-                    <!-- required> -->
-                    <!-- required> -->
-
-                    <label for="damage-types">Choose a damage type:</label>
-                    <select form="newAbility" name="damageType" id="damage-types" required>
-                        <option value="None">None</option>
-                        <option value="Acid">Acid</option>
-                        <option value="Bludgeoning">Bludgeoning</option>
-                        <option value="Cold">Cold</option>
-                        <option value="Fire">Fire</option>
-                        <option value="Force">Force</option>
-                        <option value="Lightning">Lightning</option>
-                        <option value="Necrotic">Necrotic</option>
-                        <option value="Piercing">Piercing</option>
-                        <option value="Poison">Poison</option>
-                        <option value="Psychic">Psychic</option>
-                        <option value="Radiant">Radiant</option>
-                        <option value="Slashing">Slashing</option>
-                        <option value="Thunder">Thunder</option>
-                    </select>
-
-                    <legend>Options</legend>
-                    <p class="flex flexSpaceAround">
-                        <label for="doesDamage">
-                            <input type="checkbox" id="doesDamage" class="filled-in" name="doesDamage" value="true" />
-                            <span>Damage</span>
-                        </label>
-
-                        <label for="buffs">
-                            <input type="checkbox" id="buffs" class="filled-in" name="buffs" value="true" />
-                            <span>Buff</span>
-                        </label>
-
-                        <label for="debuffs">
-                            <input type="checkbox" id="debuffs" class="filled-in" name="bebuffs" value="true" />
-                            <span>Debuff</span>
-                        </label>
-                    </p>
+                    <label for="debuffs">
+                        <input type="checkbox" id="debuffs" class="filled-in" name="bebuffs" value="true" />
+                        <span>Debuff</span>
+                    </label>
+                </p>
 
 
 
-                    <button type="submit">Submit</button>
-                </fieldset>
+                <button type="submit">Submit</button>
+            </fieldset>
 
 
 
+        </form>
+        </section>
+
+        <div class="row">
+            <form action="/traits/addTestTrait" method="POST">
+                <h2>Add random trait!</h2>
+                <p>
+                    Add a trait for testing.
+                </p>
+                <button type="submit" id="random-trait-button">Add Trait</button>
             </form>
-            </section>
-
-            <div class="row">
-                <form action="/traits/addTestTrait" method="POST">
-                    <h2>Add random trait!</h2>
-                    <p>
-                        Add a trait for testing.
-                    </p>
-                    <button type="submit" id="random-trait-button">Add Trait</button>
-                </form>
-            </div>
-
-            <div class="row">
-                <h3 class="row">Traits</h3>
-                <!-- <%=// traits %> -->
-                <ul class="row traits">
-                    <% for(var i=0; i < traits.length; i++) {%>
-                        <li class="trait col s12" data-id=<%=traits[i]._id%>>
-                            <button class="delete-button <%= traits[i].abilityName %>">&#128465;</button>
-
-                            <a href="/traits/edit/<%=traits[i]._id%>"><button type="button"
-                                    class="edit-button">&#9998;</button></a>
-
-                            <h4>
-                                <%= traits[i].abilityName %>
-                            </h4>
-                            <p>
-                                <%= traits[i].abilityDescription %>
-                            </p>
-                            <p>
-                                <%= traits[i].damageType %>
-                            </p>
-                            <span id="source">
-                                <%= traits[i].source %>
-                            </span>
-                        </li>
-                        <% } %>
-                </ul>
-            </div>
         </div>
 
-        <script src="js/traits.js"></script>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
+        <div class="row">
+            <h3 class="row">Traits</h3>
+            <!-- <%=// traits %> -->
+            <ul class="row traits">
+                <% for(var i=0; i < traits.length; i++) {%>
+                    <li class="trait col s12" data-id=<%=traits[i]._id%>>
+                        <button class="delete-button <%= traits[i].abilityName %>">&#128465;</button>
 
-</html>
+                        <a href="/traits/edit/<%=traits[i]._id%>"><button type="button"
+                                class="edit-button">&#9998;</button></a>
+
+                        <h4>
+                            <%= traits[i].abilityName %>
+                        </h4>
+                        <p>
+                            <%= traits[i].abilityDescription %>
+                        </p>
+                        <p>
+                            <%= traits[i].damageType %>
+                        </p>
+                        <span id="source">
+                            <%= traits[i].source %>
+                        </span>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/traits.js"></script>
+    <%- include('partials/footer') %>

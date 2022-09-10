@@ -1,15 +1,26 @@
 <%- include('partials/header') %>
 
-    <div class="container">
+    <div class="container teal-text text-accent-4">
         <form action="/traits/addTrait" method="POST" id="newAbility">
 
             <h1>Enter New Trait</h1>
-            <fieldset class="flex-vert-list">
+            <fieldset class="">
                 <legend>Basic Information</legend>
-                <input type="text" placeholder="name" name="abilityName" /> <!-- required> -->
-                <input type="text" placeholder="PHB (151)" name="source" pattern="[a-zA-Z]+ \([0-9]+\)" />
-                <textarea class="textArea" placeholder="description" name="abilityDescription"></textarea>
-                <!-- required> -->
+                <div class="input-field">
+                    <input type="text" name="abilityName" id="abilityName" /> <!-- required> -->
+                    <label for="abilityName">Ability Name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="PHB (151)" name="source" id="source"
+                        pattern="[a-zA-Z]+ \([0-9]+\)" />
+                    <label for="source">Source</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                </div>
+                <div class="input-field">
+                    <textarea class="textArea" placeholder="Description" name="abilityDescription"
+                        id="abilityDescription"></textarea>
+                    <label for="abilityDescription"></label>
+                </div>
                 <!-- required> -->
 
                 <label for="damage-types">Choose a damage type:</label>

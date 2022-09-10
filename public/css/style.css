@@ -37,57 +37,6 @@ body {
 /******************************************
   /* LAYOUT
   /*******************************************/
-.header {
-  background: #222325;
-  padding: 2em 0;
-  text-align: center; }
-
-.footer {
-  flex-shrink: 0;
-  flex-basis: 2rem; }
-
-.flex {
-  display: flex; }
-
-.flexDirectionColumn {
-  flex-direction: column; }
-
-.flexJustifyCenter {
-  justify-content: center; }
-
-.flexAlignItemsCenter {
-  align-items: center; }
-
-.flexSpaceBetween {
-  justify-content: space-between; }
-
-.flexSpaceAround {
-  justify-content: space-around; }
-
-.flexStart {
-  justify-content: start; }
-
-.flexEnd {
-  justify-content: end; }
-
-.flexDirectionRow {
-  flex-direction: row; }
-
-.flexBasis100 {
-  flex-basis: 100%; }
-
-.flexBasis75 {
-  flex-basis: 75%; }
-
-.flexBasis50 {
-  flex-basis: 50%; }
-
-.flexBasis25 {
-  flex-basis: 25%; }
-
-.flexGrow0 {
-  flex-grow: 0; }
-
 .txtSize2 {
   font-size: 2rem; }
 
@@ -98,88 +47,6 @@ body {
 
 .logo {
   z-index: 2; }
-
-.nav {
-  width: 100%;
-  font-size: 2rem; }
-
-.navList {
-  padding: 0;
-  margin: 0; }
-
-.navItem {
-  list-style-type: none;
-  padding: 0.25em; }
-
-.navLink,
-.logOutBtn {
-  text-decoration: none;
-  color: #33a5a5;
-  text-transform: uppercase; }
-
-.navLink:hover,
-.navLink:focus,
-.logOutBtn:hover,
-.logOutBtn:focus {
-  opacity: 0.75; }
-
-.navToggle {
-  cursor: pointer;
-  border: 0;
-  width: 4em;
-  height: 4em;
-  padding: 0em;
-  border-radius: 50%;
-  background: #072a2d;
-  color: white;
-  transition: opacity 250ms ease;
-  position: absolute;
-  left: 0;
-  top: 5px; }
-
-.navToggle:focus,
-.navToggle:hover {
-  opacity: 0.75; }
-
-.hamburger {
-  width: 50%;
-  position: relative; }
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  display: block;
-  margin: 0 auto;
-  height: 3px;
-  background: white; }
-
-.hamburger::before,
-.hamburger::after {
-  content: "";
-  width: 100%; }
-
-.hamburger::before {
-  transform: translateY(-6px); }
-
-.hamburger::after {
-  transform: translateY(3px); }
-
-nav {
-  visibility: hidden;
-  height: 0;
-  position: absolute; }
-
-.navVisible {
-  visibility: visible;
-  height: auto;
-  position: relative;
-  top: 10px; }
-
-.container {
-  width: 80%;
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative; }
 
 .centeredForm {
   text-align: right;
@@ -282,29 +149,11 @@ nav {
   color: #33a5a5; }
 
 .trait {
-  border: thin solid black; }
+  outline: thin solid pink; }
 
 #errorMessage {
   size: 1.5rem;
   color: white; }
-
-@media (min-width: 900px) {
-  .navToggle {
-    display: none; }
-  .nav {
-    visibility: visible;
-    display: flex;
-    height: auto;
-    margin: auto;
-    align-items: center;
-    justify-content: center; }
-  .navList {
-    margin: 0;
-    display: flex; }
-  .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; } }
 
 /******************************************
   /* ADDITIONAL STYLES

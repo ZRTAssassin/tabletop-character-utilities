@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabletop Character Builder</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
-        <link rel="stylesheet" href="/css/normalize.css">
-        <!-- external style sheets -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <!-- font awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- custom -->
-        <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- external style sheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="grey darken-4">
@@ -23,33 +23,40 @@
 
 
     <header class="header black">
+        <nav class="nav black">
+            <div class="nav-wrapper container">
+                <a class="brand-logo center" href="/">
+                    <i class="fa-solid fa-dice-d20" style="float: none"></i>
 
-        <div class="container row">
-            <button class="navToggle" aria-label="open navigation">
-                <span class="hamburger"></span>
-            </button>
-            <a class="logo" href="/">
-                <img class="svg" src="/img/logoedit.svg" alt="tabletop role playing game builder logo">
-            </a>
-            <nav class="nav black col offset-2">
-                <ul class="navList navList--primary">
+                    <!-- <img class="svg" src="/img/logoedit.svg" alt="tabletop role playing game builder logo"> -->
+                </a>
+                <a href="#" class="sidenav-trigger" data-target="slide-out">
+                    <i class="fa-sharp fa-solid fa-bars"></i>
+                </a>
+
+
+                <ul class="left hide-on-med-and-down">
                     <li class="navItem col s12"><a class="navLink" href="/">Home</a></li>
                     <li class="navItem col s12"><a class="navLink" href="/character">Characters</a></li>
                     <li class="navItem col s12"><a class="navLink" href="/traits">Abilities</a></li>
                 </ul>
-
-                <ul class="navList navList--secondary">
+                <ul class="right hide-on-med-and-down">
                     <li class="navItem col s12"><a class="navLink" href="/auth/register">Register</a></li>
                     <li class="navItem col s12"><a class="navLink" href="/auth/login">Login</a></li>
-                    <li class="navItem col s12">
-                        <form action="/logout?_method=DELETE" method="POST">
-                            <button class="accent-button logOutBtn" type="submit">Logout</button>
-                        </form>
+                    <li class="navItem col s12"><a class="navLink" href="/auth/logout">Logout</a></li>
                     </li>
                 </ul>
 
-            </nav>
-        </div>
+                <ul class="sidenav grey darken-3" id="slide-out">
+                    <li class="navItem col s12"><a class="navLink" href="/">Home</a></li>
+                    <li class="navItem col s12"><a class="navLink" href="/character">Characters</a></li>
+                    <li class="navItem col s12"><a class="navLink" href="/traits">Abilities</a></li>
+                    <li class="navItem col s12"><a class="navLink" href="/auth/register">Register</a></li>
+                    <li class="navItem col s12"><a class="navLink" href="/auth/login">Login</a></li>
+                    <li class="navItem col s12"><a class="navLink" href="/auth/logout">Logout</a></li>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <script src="/js/navbar.js" defer></script>
     </header>

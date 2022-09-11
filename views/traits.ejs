@@ -4,70 +4,68 @@
         <form action="/traits/addTrait" method="POST" id="newAbility">
 
             <h1>Enter New Trait</h1>
-            <fieldset class="">
-                <legend>Basic Information</legend>
-                <div class="input-field">
-                    <input type="text" name="abilityName" id="abilityName" /> <!-- required> -->
-                    <label for="abilityName">Ability Name</label>
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="PHB (151)" name="source" id="source"
-                        pattern="[a-zA-Z]+ \([0-9]+\)" />
-                    <label for="source">Source</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                </div>
-                <div class="input-field">
-                    <textarea class="textArea" placeholder="Description" name="abilityDescription"
-                        id="abilityDescription"></textarea>
-                    <label for="abilityDescription"></label>
-                </div>
-                <!-- required> -->
 
-                <div class="input-field col s12">
-                    <select form="newAbility" name="damageType" id="damage-types" required>
-                        <option value="None">None</option>
-                        <option value="Acid">Acid</option>
-                        <option value="Bludgeoning">Bludgeoning</option>
-                        <option value="Cold">Cold</option>
-                        <option value="Fire">Fire</option>
-                        <option value="Force">Force</option>
-                        <option value="Lightning">Lightning</option>
-                        <option value="Necrotic">Necrotic</option>
-                        <option value="Piercing">Piercing</option>
-                        <option value="Poison">Poison</option>
-                        <option value="Psychic">Psychic</option>
-                        <option value="Radiant">Radiant</option>
-                        <option value="Slashing">Slashing</option>
-                        <option value="Thunder">Thunder</option>
-                    </select>
-                    <label for="damage-types">Choose a damage type:</label>
-                </div>
+            <legend>Basic Information</legend>
+            <div class="input-field col s6">
+                <input type="text" name="abilityName" id="abilityName" /> <!-- required> -->
+                <label for="abilityName">Ability Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" placeholder="PHB (151)" name="source" id="source" pattern="[a-zA-Z]+ \([0-9]+\)" />
+                <label for="source">Source</label>
+                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+            </div>
+            <div class="input-field">
+                <textarea class="textArea" placeholder="Description" name="abilityDescription"
+                    id="abilityDescription"></textarea>
+                <label for="abilityDescription"></label>
+            </div>
+            <!-- required> -->
 
+            <div class="input-field col s12">
+                <select form="newAbility" name="damageType" id="damage-types" required>
+                    <option value="None">None</option>
+                    <option value="Acid">Acid</option>
+                    <option value="Bludgeoning">Bludgeoning</option>
+                    <option value="Cold">Cold</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Force">Force</option>
+                    <option value="Lightning">Lightning</option>
+                    <option value="Necrotic">Necrotic</option>
+                    <option value="Piercing">Piercing</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Slashing">Slashing</option>
+                    <option value="Thunder">Thunder</option>
+                </select>
+                <label for="damage-types">Choose a damage type:</label>
+            </div>
 
 
 
-                <legend>Options</legend>
-                <p class="flex flexSpaceAround">
-                    <label for="doesDamage">
-                        <input type="checkbox" id="doesDamage" class="filled-in" name="doesDamage" value="true" />
-                        <span>Damage</span>
-                    </label>
 
-                    <label for="buffs">
-                        <input type="checkbox" id="buffs" class="filled-in" name="buffs" value="true" />
-                        <span>Buff</span>
-                    </label>
+            <legend>Options</legend>
+            <p class="flex flexSpaceAround">
+                <label for="doesDamage">
+                    <input type="checkbox" id="doesDamage" class="filled-in" name="doesDamage" value="true" />
+                    <span>Damage</span>
+                </label>
 
-                    <label for="debuffs">
-                        <input type="checkbox" id="debuffs" class="filled-in" name="bebuffs" value="true" />
-                        <span>Debuff</span>
-                    </label>
-                </p>
+                <label for="buffs">
+                    <input type="checkbox" id="buffs" class="filled-in" name="buffs" value="true" />
+                    <span>Buff</span>
+                </label>
+
+                <label for="debuffs">
+                    <input type="checkbox" id="debuffs" class="filled-in" name="bebuffs" value="true" />
+                    <span>Debuff</span>
+                </label>
+            </p>
 
 
 
-                <button type="submit">Submit</button>
-            </fieldset>
+            <button type="submit">Submit</button>
 
 
 
@@ -84,29 +82,58 @@
             </form>
         </div>
 
-        <div class="row">
-            <h3 class="row">Traits</h3>
-            <!-- <%=// traits %> -->
-            <ul class="row traits">
+        <div class="">
+            <h3 class="">Traits</h3>
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Source Book</th>
+                    </tr>
+                </thead>
                 <% for(var i=0; i < traits.length; i++) {%>
-                    <li class="trait col s12" data-id=<%=traits[i]._id%>>
-                        <button class="delete-button <%= traits[i].abilityName %>">&#128465;</button>
-
-                        <a href="/traits/edit/<%=traits[i]._id%>"><button type="button"
-                                class="edit-button">&#9998;</button></a>
-
-                        <h4>
+                    <tr>
+                        <td>
                             <%= traits[i].abilityName %>
-                        </h4>
+                        </td>
+                        <td>
+                            <%= traits[i].abilityDescription %>
+                        </td>
+                        <td>
+                            <%= traits[i].damageType %>
+                        </td>
+                        <td>
+                            <%= traits[i].source %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+
+            <!-- <%=// traits %> -->
+            <ul class="traits collection">
+                <% for(var i=0; i < traits.length; i++) {%>
+                    <li class="trait collection-item grey darken-3" data-id=<%=traits[i]._id%>>
+                        <button class="delete-button <%= traits[i].abilityName %>"><i
+                                class="fa-solid fa-trash"></i></button>
+
+                        <a href="/traits/edit/<%=traits[i]._id%>"><button type="button" class="edit-button"><i
+                                    class="fa-solid fa-pen-to-square"></i></button></a>
+
+                        <p>
+                            <%= traits[i].abilityName %>
+                        </p>
                         <p>
                             <%= traits[i].abilityDescription %>
+                        </p>
+                        <p id="source">
+                            <%= traits[i].source %>
                         </p>
                         <p>
                             <%= traits[i].damageType %>
                         </p>
-                        <span id="source">
-                            <%= traits[i].source %>
-                        </span>
+
                     </li>
                     <% } %>
             </ul>

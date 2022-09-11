@@ -46,10 +46,6 @@ body {
 .logo {
   z-index: 2; }
 
-.centeredForm {
-  text-align: right;
-  margin: 5% 0; }
-
 .charImgContainer {
   text-align: center; }
 
@@ -151,16 +147,6 @@ body {
   border: thin solid black;
   flex-basis: 15%; }
 
-.trait {
-  max-width: 1100px;
-  list-style-type: none;
-  font-size: 1.5rem;
-  line-height: 2.25rem; }
-
-.traits {
-  padding-left: 0;
-  min-width: 80vw; }
-
 .messageContainer {
   text-align: center;
   line-height: 2.25rem; }
@@ -172,9 +158,6 @@ body {
   background: none;
   outline: none;
   color: #33a5a5; }
-
-.trait {
-  outline: thin solid pink; }
 
 #errorMessage {
   size: 1.5rem;

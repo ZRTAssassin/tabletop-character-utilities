@@ -105,6 +105,9 @@ body {
 .input-field .prefix.active {
   color: $accent-color;
 }
+input{
+  color: $accent-color
+}
 
 .authContainerInput {
   min-width: 100%;
@@ -194,11 +197,3 @@ body {
 /******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
-// input:focus:invalid {
-//   border: red solid 3px;
-// }
-
-#source {
-  font-size: 0.75rem;
-  opacity: 50%;
-}

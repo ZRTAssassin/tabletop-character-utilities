@@ -88,6 +88,9 @@ body {
 .input-field .prefix.active {
   color: white; }
 
+input {
+  color: white; }
+
 .authContainerInput {
   min-width: 100%;
   margin: 1em auto;
@@ -166,6 +169,3 @@ body {
 /******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
-#source {
-  font-size: 0.75rem;
-  opacity: 50%; }

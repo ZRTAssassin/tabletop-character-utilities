@@ -2,11 +2,6 @@
 * {
   box-sizing: border-box; }
 
-html {
-  font-size: 62.5%;
-  margin: 0;
-  padding: 0; }
-
 /* Clear fix hack */
 .clearfix:after {
   content: ".";
@@ -25,37 +20,11 @@ html {
 /******************************************
   /* BASE STYLES
   /*******************************************/
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column; }
-
 /******************************************
   /* LAYOUT
   /*******************************************/
-.txtSize2 {
-  font-size: 2rem; }
-
-.svg {
-  z-index: 0;
-  width: 50px;
-  height: 50px; }
-
-.logo {
-  z-index: 2; }
-
 .charImgContainer {
   text-align: center; }
-
-.authContainer {
-  width: 350px;
-  margin: 5vh auto; }
-
-.authContainerHeading {
-  text-align: center;
-  font-size: 3rem; }
 
 .input-field {
   margin-top: 1.5rem;
@@ -91,6 +60,13 @@ body {
 input {
   color: white; }
 
+.authContainer {
+  width: 350px;
+  margin: 5vh auto; }
+
+.authContainerHeading {
+  text-align: center; }
+
 .authContainerInput {
   min-width: 100%;
   margin: 1em auto;
@@ -99,56 +75,20 @@ input {
 
 .authRibbon {
   line-height: 3rem;
-  font-size: 2rem;
-  text-align: center; }
+  font-size: 2rem; }
 
 .authRedirect {
-  text-align: center;
   display: block;
   font-size: 2rem;
   line-height: 3rem;
   max-width: 25%;
   margin: 0 auto;
   text-decoration: none;
-  color: white;
   border: thin solid #33a5a5;
   background-color: #33a5a5; }
 
 .authRedirect:hover {
-  opacity: 50%; }
-
-.baseBGColor {
-  background-color: #222325; }
-
-.altBGColor {
-  background-color: #333333; }
-
-.altBGColor2 {
-  outline: thin solid black; }
-
-.textArea {
-  width: 100%; }
-
-.content {
-  flex: 1 0 auto; }
-
-.mainOutlineColor {
-  outline: thin solid #33a5a5; }
-
-.borderNone {
-  border: none; }
-
-.abilities {
-  display: flex;
-  list-style: none;
-  justify-content: space-around; }
-
-.abilities li {
-  background-color: #c1c1c1;
-  line-height: 1.5 rem;
-  text-align: center;
-  border: thin solid black;
-  flex-basis: 15%; }
+  opacity: 90%; }
 
 .messageContainer {
   text-align: center;

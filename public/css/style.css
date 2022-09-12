@@ -79,10 +79,8 @@ input {
 
 .authRedirect {
   display: block;
-  font-size: 2rem;
-  line-height: 3rem;
-  max-width: 25%;
-  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.5rem;
   text-decoration: none;
   border: thin solid #33a5a5;
   background-color: #33a5a5; }

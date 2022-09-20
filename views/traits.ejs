@@ -112,41 +112,14 @@
                             <%= traits[i].source %>
                         </td>
                         <td>
-                            <a href="/traits/edit/<%=traits[i]._id%>"><button type="button" class="edit-button"><i
+                            <a href="/traits/edit/<%=traits[i]._id%>"><button type="button" class="edit-button btn"><i
                                         class="fa-solid fa-pen-to-square"></i></button></a>
-                            <button class="delete-button <%= traits[i].abilityName %>"><i
+                            <button class="delete-button btn <%= traits[i].abilityName %>"><i
                                     class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     <% } %>
             </table>
-
-            <!-- <%=// traits %> -->
-            <!-- <ul class="traits collection">
-                <% for(var i=0; i < traits.length; i++) {%>
-                    <li class="trait collection-item grey darken-3" data-id=<%=traits[i]._id%>>
-                        <button class="delete-button <%= traits[i].abilityName %>"><i
-                                class="fa-solid fa-trash"></i></button>
-
-                        <a href="/traits/edit/<%=traits[i]._id%>"><button type="button" class="edit-button"><i
-                                    class="fa-solid fa-pen-to-square"></i></button></a>
-
-                        <p>
-                            <%= traits[i].abilityName %>
-                        </p>
-                        <p>
-                            <%= traits[i].abilityDescription %>
-                        </p>
-                        <p id="source">
-                            <%= traits[i].source %>
-                        </p>
-                        <p>
-                            <%= traits[i].damageType %>
-                        </p>
-
-                    </li>
-                    <% } %>
-            </ul> -->
         </div>
     </div>
 

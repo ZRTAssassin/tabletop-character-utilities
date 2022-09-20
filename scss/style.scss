@@ -112,6 +112,11 @@ input {
   opacity: 90%;
 }
 
+table.highlight>tbody>tr:hover {
+  background-color: $alt-bg-color !important;
+  opacity: 0.75;
+}
+
 .messageContainer {
   text-align: center;
   line-height: 2.25rem;
@@ -123,6 +128,9 @@ input {
   background: none;
   outline: none;
   color: $base-color;
+}
+.btn{
+  cursor: pointer;
 }
 
 #errorMessage {

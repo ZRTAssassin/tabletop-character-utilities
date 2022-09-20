@@ -88,6 +88,10 @@ input {
 .authRedirect:hover {
   opacity: 90%; }
 
+table.highlight > tbody > tr:hover {
+  background-color: #333333 !important;
+  opacity: 0.75; }
+
 .messageContainer {
   text-align: center;
   line-height: 2.25rem; }
@@ -99,6 +103,9 @@ input {
   background: none;
   outline: none;
   color: #33a5a5; }
+
+.btn {
+  cursor: pointer; }
 
 #errorMessage {
   size: 1.5rem;

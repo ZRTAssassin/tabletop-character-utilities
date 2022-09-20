@@ -1,24 +1,20 @@
-    <%- include('partials/header') %>
-        <section class="content altBGColor centeredChildren">
-            <fieldset class="centeredContainer altBGColor2 txtSize2 mainOutlineColor borderNone">
-                <h1>Login</h1>
-                <% if (messages.error) { %>
-                    <%= messages.error %>
-                        <% } %>
-                            <form action="/login" method="POST">
-                                <section class="centeredForm">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" required>
-                                </section>
-                                <section class="centeredForm">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" required>
-                                </section>
-                                <section>
-                                    <button type="submit">Login</button>
-                                </section>
-                            </form>
-            </fieldset>
-        </section>
-        <%- include('partials/footer') %>
+<%- include('partials/header') %>
 
+    <section class="authContainer container row">
+        <% if (messages.error) { %>
+            <%= messages.error %>
+                <% } %>
+                    <form action="/auth/login" method="POST" class="col s12">
+                        <h1 class="white-text authContainerHeading">Login</h1>
+                        <div class="input-field">
+                            <input class="authContainerInput" type="email" name="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input class="authContainerInput" type="password" name="password" id="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                        <button class="authContainerInput btn" type="submit">Login</button>
+                    </form>
+    </section>
+    <%- include('partials/footer') %>

@@ -46,7 +46,7 @@ module.exports = {
     // console.log(request.params.id);
     try {
       const trait = await Trait.findById(request.params.id);
-      response.render("traits/edit", { trait: trait });
+      response.render("traits/edit", { trait: trait, user: request.user });
       // response.json("Successful!");
     } catch (err) {
       console.log(err);

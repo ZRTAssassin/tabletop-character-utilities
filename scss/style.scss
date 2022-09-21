@@ -80,13 +80,20 @@ $accent-color: white;
 .input-field .prefix.active {
   color: $accent-color;
 }
+nav ul a:hover {
+  background-color: rgb(71, 71, 71);
+}
 input {
   color: $accent-color;
 }
-// .authContainer {
-//   width: 350px;
-//   margin: 5vh auto;
-// }
+textarea{
+  color: $accent-color;
+}
+
+.authContainer {
+  width: 350px;
+  margin: 5vh auto;
+}
 .authContainerHeading {
   text-align: center;
 }
@@ -109,7 +116,7 @@ input {
   opacity: 90%;
 }
 
-table.highlight>tbody>tr:hover {
+table.highlight > tbody > tr:hover {
   background-color: $alt-bg-color !important;
   opacity: 0.75;
 }
@@ -126,7 +133,7 @@ table.highlight>tbody>tr:hover {
   outline: none;
   color: $base-color;
 }
-.btn{
+.btn {
   cursor: pointer;
 }
 

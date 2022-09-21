@@ -57,7 +57,13 @@
 .input-field .prefix.active {
   color: white; }
 
+nav ul a:hover {
+  background-color: #474747; }
+
 input {
+  color: white; }
+
+textarea {
   color: white; }
 
 .authContainer {

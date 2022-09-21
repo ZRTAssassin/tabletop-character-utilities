@@ -1,6 +1,6 @@
 <%- include('partials/header') %>
 
-    <div class="container teal-text text-accent-4">
+    <div class="container white-text">
         <form action="/traits/addTrait" method="POST" id="newAbility">
 
             <h1>Enter New Trait</h1>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="white-text input-field col s12">
                     <textarea class="materialize-textarea" name="abilityDescription" id="abilityDescription"></textarea>
                     <label for="abilityDescription">Ability Description</label>
                 </div>
@@ -44,32 +44,31 @@
                     </select>
                     <label for="damage-types">Choose a damage type:</label>
                 </div>
+                <div class="col s6">
+                    <legend>Options</legend>
+                    <p class="">
+                        <label for="doesDamage">
+                            <input type="checkbox" id="doesDamage" class="filled-in" name="doesDamage" value="true" />
+                            <span>Damage</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="buffs">
+                            <input type="checkbox" id="buffs" class="filled-in" name="buffs" value="true" />
+                            <span>Buff</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="debuffs">
+                            <input type="checkbox" id="debuffs" class="filled-in" name="bebuffs" value="true" />
+                            <span>Debuff</span>
+                        </label>
+                    </p>
+                </div>
+                <button class="btn" type="submit"><i class="fa-solid fa-check"></i>Add new trait</button>
             </div>
 
 
-
-
-            <legend>Options</legend>
-            <p class="flex flexSpaceAround">
-                <label for="doesDamage">
-                    <input type="checkbox" id="doesDamage" class="filled-in" name="doesDamage" value="true" />
-                    <span>Damage</span>
-                </label>
-
-                <label for="buffs">
-                    <input type="checkbox" id="buffs" class="filled-in" name="buffs" value="true" />
-                    <span>Buff</span>
-                </label>
-
-                <label for="debuffs">
-                    <input type="checkbox" id="debuffs" class="filled-in" name="bebuffs" value="true" />
-                    <span>Debuff</span>
-                </label>
-            </p>
-
-
-
-            <button type="submit">Submit</button>
 
 
 
@@ -82,7 +81,7 @@
                 <p>
                     Add a trait for testing.
                 </p>
-                <button type="submit" id="random-trait-button">Add Trait</button>
+                <button class="btn" type="submit" id="random-trait-button">Add Trait</button>
             </form>
         </div>
 

@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Your description goes here">
-    <meta name="keywords" content="one, two, three">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Table Top Trait Database</title>
-
-    <!-- external CSS link -->
-    <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css">
-</head>
-
-<body>
-
-    <%- include('../partials/navbar') %>
+    <%- include('../partials/header') %>
 
         <form action="/traits/<%= trait._id %>" method="POST" id="newAbility" class="container">
             <input type="hidden" name="_method" value="PUT">
@@ -72,6 +54,4 @@
 
 
         <script src="../../js/traits.js"></script>
-</body>
-
-</html>
+<%- include('../partials/footer') %>

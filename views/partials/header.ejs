@@ -45,8 +45,10 @@
                 <ul class="right hide-on-med-and-down">
                     <li class="col s12"><a class="teal-text text-accent-4" href="/auth/register">Register</a></li>
                     <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a></li>
-                    </li>
+                    <%if (locals.session) { %>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a></li>
+                        <% } %>
+                            </li>
                 </ul>
 
                 <ul class="sidenav grey darken-3" id="slide-out">
@@ -55,10 +57,12 @@
                     <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Abilities</a></li>
                     <li class="col s12"><a class="teal-text text-accent-4" href="/auth/register">Register</a></li>
                     <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a></li>
+                    <%if (locals.session) { %>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a></li>
+                        <% } %>
                 </ul>
             </div>
         </nav>
-        <script src="/js/navbar.js" defer></script>
+
     </header>
     <main>

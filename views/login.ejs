@@ -1,20 +1,33 @@
 <%- include('partials/header') %>
 
     <section class="authContainer container row">
-        <% if (messages.error) { %>
-            <%= messages.error %>
-                <% } %>
-                    <form action="/auth/login" method="POST" class="col s12">
-                        <h1 class="white-text authContainerHeading">Login</h1>
-                        <div class="input-field">
-                            <input class="authContainerInput" type="email" name="email" id="email" required>
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-field">
-                            <input class="authContainerInput" type="password" name="password" id="password" required>
-                            <label for="password">Password</label>
-                        </div>
-                        <button class="authContainerInput btn" type="submit">Login</button>
-                    </form>
+        <div class="container center-align red-text">
+            <% if (locals.messages.errors) { %>
+                <% messages.errors.forEach( el=> { %>
+                    <div class="alert alert-danger">
+                        <%= el.msg %>
+                    </div>
+                    <% }) %>
+                        <% } %>
+                            <% if (locals.messages.info) { %>
+                                <% messages.info.forEach( el=> { %>
+                                    <div class="alert alert-info">
+                                        <%= el.msg %>
+                                    </div>
+                                    <% }) %>
+                                        <% } %>
+        </div>
+        <form action="/auth/login" method="POST" class="col s12">
+            <h1 class="white-text authContainerHeading">Login</h1>
+            <div class="input-field">
+                <input class="authContainerInput" type="email" name="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+                <input class="authContainerInput" type="password" name="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <button class="authContainerInput btn" type="submit">Login</button>
+        </form>
     </section>
     <%- include('partials/footer') %>

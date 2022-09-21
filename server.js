@@ -12,6 +12,7 @@ const testRoutes = require("./routes/test");
 const traitRoutes = require("./routes/traits");
 const methodOverride = require("method-override");
 
+//use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
 // Passport Config
@@ -50,24 +51,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Use flash messages
 app.use(flash());
 
-// // Method override
-// app.use(
-//   methodOverride(function (request, response) {
-//     if (
-//       request.body &&
-//       typeof request.body == "object" &&
-//       "_method" in request.body
-//     ) {
-//       let method = request.body._method;
-//       delete request.body._method;
-//       return method;
-//     }
-//   })
-// );
 
-// Routes
+
+// currently setup routes
 app.use("/", mainRoutes);
 app.use("/test", testRoutes);
 app.use("/traits", traitRoutes);

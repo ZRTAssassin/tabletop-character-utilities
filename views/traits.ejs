@@ -91,10 +91,14 @@
             <table class="highlight">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                        <th>Source Book</th>
+                        <% if (traits.length !==0) { %>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Source Book</th>
+                            <% } else { %>
+                                <th> Enter a trait to populate table </th>
+                                <% } %>
                     </tr>
                 </thead>
                 <% for(var i=0; i < traits.length; i++) {%>
@@ -112,11 +116,12 @@
                             <%= traits[i].source %>
                         </td>
                         <td>
-                            <a href="/traits/edit/<%=traits[i]._id%>"><button type="button" class="edit-button btn"><i
-                                        class="fa-solid fa-pen-to-square"></i></button></a>
-                            <button class="delete-button btn <%= traits[i].abilityName %>"><i
-                                    class="fa-solid fa-trash"></i></button>
-                        </td>
+                            <form action="/traits/deleteTrait/<%=traits[i]._id%>?_method=DELETE" method="POST" class="">
+                                <a href="/traits/edit/<%=traits[i]._id%>"><button type="button"
+                                        class="edit-button btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+
+                                <button class="btn delete-button"> <i class="fa-solid fa-trash"></i></button>
+                            </form </td>
                     </tr>
                     <% } %>
             </table>

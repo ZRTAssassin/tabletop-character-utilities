@@ -12,6 +12,6 @@ router.post("/addTrait", traitsController.addTrait);
 
 router.post("/addTestTrait", traitsController.addTestTrait);
 
-router.delete("/deleteTrait", traitsController.deleteTrait);
+router.delete("/deleteTrait/:id", traitsController.deleteTrait);
 
 module.exports = router;

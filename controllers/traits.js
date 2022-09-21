@@ -29,13 +29,13 @@ module.exports = {
     }
   },
   //
-  // @route /traits/deleteTrait
+  // @route /traits/deleteTrait/:id
   deleteTrait: async (request, response) => {
-    console.log(request.body.idFromJS);
+    console.log("request: ", request.params.id);
     try {
-      await Trait.findOneAndDelete({ _id: request.body.idFromJS });
-      console.log(`deleted trait ${request.body.idFromJS}!`);
-      response.json("deleted it!");
+      await Trait.remove({ _id: request.params.id });
+      console.log(`deleted trait ${request.params.id}!`);
+      response.redirect("/traits");
     } catch (err) {
       console.log(err);
     }
@@ -46,7 +46,7 @@ module.exports = {
     // console.log(request.params.id);
     try {
       const trait = await Trait.findById(request.params.id);
-      response.render("traits/edit", { trait: trait });
+      response.render("traits/edit", { trait: trait, user: request.user });
       // response.json("Successful!");
     } catch (err) {
       console.log(err);

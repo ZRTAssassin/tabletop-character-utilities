@@ -122,49 +122,6 @@
                 <button class="btn" type="submit" id="random-trait-button">Add Trait</button>
             </form>
         </div>
-
-        <div class="row">
-            <h3 class="">Traits</h3>
-            <table class="highlight responsive-table-y">
-                <thead>
-                    <tr>
-                        <% if (traits.length !==0) { %>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                            <th>Source Book</th>
-                            <% } else { %>
-                                <th> Enter a trait to populate table </th>
-                                <% } %>
-                    </tr>
-                </thead>
-                <% for(var i=0; i < traits.length; i++) {%>
-                    <tr>
-                        <td>
-                            <%= traits[i].abilityName %>
-                        </td>
-                        <!-- <td>
-                            <%= traits[i].abilityDescription %>
-                        </td> -->
-                        <td>
-                            <%= traits[i].damageType %>
-                        </td>
-                        <td>
-                            <%= traits[i].source %>
-                        </td>
-                        <td>
-                            <form action="/traits/deleteTrait/<%=traits[i]._id%>?_method=DELETE" method="POST" class="">
-                                <button class="btn delete-button"><i class="fa-solid fa-trash"></i></button>
-
-                                <a href="/traits/edit/<%=traits[i]._id%>"><button type="button"
-                                        class="edit-button btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
-                            </form>
-                        </td>
-
-                    </tr>
-                    <% } %>
-            </table>
-        </div>
         <div class="row">
             <ul class="collapsible">
                 <li>

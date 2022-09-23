@@ -5,7 +5,7 @@ module.exports = {
   // @route GET /traits/
   getTraits: async (request, response) => {
     try {
-      const traitItems = await Trait.find();
+      const traitItems = await Trait.find().lean();
       response.render("traits.ejs", { traits: traitItems });
     } catch (err) {
       console.error(err);

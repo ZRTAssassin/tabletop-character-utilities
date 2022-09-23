@@ -20,6 +20,7 @@ const TraitSchema = new mongoose.Schema({
   healRange: { type: String, required: true },
   healAreaType: { type: String, required: true },
   sourceCreature: { type: String, required: true },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   useTime: { type: String, required: true },
 });
 

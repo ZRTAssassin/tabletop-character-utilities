@@ -80,6 +80,12 @@ $accent-color: white;
 .input-field .prefix.active {
   color: $accent-color;
 }
+.collapsible-header{
+  background-color: rgb(71, 71, 71);
+}
+.responsive-table-y{
+  overflow-y: auto;
+}
 nav ul a:hover {
   background-color: rgb(71, 71, 71);
 }

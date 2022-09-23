@@ -57,6 +57,12 @@
 .input-field .prefix.active {
   color: white; }
 
+.collapsible-header {
+  background-color: #474747; }
+
+.responsive-table-y {
+  overflow-y: auto; }
+
 nav ul a:hover {
   background-color: #474747; }
 

@@ -5,27 +5,25 @@
 
             <h1>Enter New Trait</h1>
 
-            <legend>Basic Information</legend>
+
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                     <input type="text" name="abilityName" id="abilityName" /> <!-- required> -->
                     <label for="abilityName">Ability Name</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                     <input type="text" name="source" id="source" />
                     <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
                     <label for="source">Source</label>
                 </div>
             </div>
             <div class="row">
-                <div class="white-text input-field col s12">
+                <div class="white-text input-field col s12 m6">
                     <textarea class="materialize-textarea" name="abilityDescription" id="abilityDescription"></textarea>
                     <label for="abilityDescription">Ability Description</label>
                 </div>
-            </div>
-            <!-- required> -->
-            <div class="row">
-                <div class="input-field col s6">
+
+                <div class="input-field col s12 m6">
                     <select form="newAbility" name="damageType" id="damage-types" required>
                         <option value="None">None</option>
                         <option value="Acid">Acid</option>
@@ -39,38 +37,78 @@
                         <option value="Poison">Poison</option>
                         <option value="Psychic">Psychic</option>
                         <option value="Radiant">Radiant</option>
+                        <option value="Same">Same</option>
                         <option value="Slashing">Slashing</option>
                         <option value="Thunder">Thunder</option>
                     </select>
                     <label for="damage-types">Choose a damage type:</label>
                 </div>
-                <div class="col s6">
-                    <legend>Options</legend>
-                    <p class="">
-                        <label for="doesDamage">
-                            <input type="checkbox" id="doesDamage" class="filled-in" name="doesDamage" value="true" />
-                            <span>Damage</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label for="buffs">
-                            <input type="checkbox" id="buffs" class="filled-in" name="buffs" value="true" />
-                            <span>Buff</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label for="debuffs">
-                            <input type="checkbox" id="debuffs" class="filled-in" name="bebuffs" value="true" />
-                            <span>Debuff</span>
-                        </label>
-                    </p>
-                </div>
-                <button class="btn" type="submit"><i class="fa-solid fa-check"></i>Add new trait</button>
             </div>
-
-
-
-
+            <!-- required> -->
+            <div class="row">
+                <div class="col s12 m6">
+                    <fieldset>
+                        <legend>Damage Options</legend>
+                        <p class="">
+                            <label for="damageSingle">
+                                <input type="checkbox" id="damageSingle" class="filled-in" name="damageSingle"
+                                    value="true" />
+                                <span>Damage Single</span>
+                            </label>
+                        </p>
+                        <p class="">
+                            <label for="damageArea">
+                                <input type="checkbox" id="damageArea" class="filled-in" name="damageArea"
+                                    value="true" />
+                                <span>Damage Area</span>
+                            </label>
+                        </p>
+                    </fieldset>
+                </div>
+                <div class="col s12 m6">
+                    <fieldset>
+                        <legend>Buff Options</legend>
+                        <p>
+                            <label for="buffSelf">
+                                <input type="checkbox" id="buffSelf" class="filled-in" name="buffSelf" value="true" />
+                                <span>Buff Self</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="buffAllies">
+                                <input type="checkbox" id="buffAllies" class="filled-in" name="buffAllies"
+                                    value="true" />
+                                <span>Buff Allies</span>
+                            </label>
+                        </p>
+                    </fieldset>
+                </div>
+                <div class="col s12 m6">
+                    <fieldset>
+                        <legend>Debuff Options</legend>
+                        <p>
+                            <label for="debuffSingle">
+                                <input type="checkbox" id="debuffSingle" class="filled-in" name="debuffSingle"
+                                    value="true" />
+                                <span>Debuff Single</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="debuffArea">
+                                <input type="checkbox" id="debuffArea" class="filled-in" name="debuffArea"
+                                    value="true" />
+                                <span>Debuff Area</span>
+                            </label>
+                        </p>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn  waves-effect waves-light" type="submit"><i class="fa-solid fa-check"></i>Add new
+                        trait</button>
+                </div>
+            </div>
 
         </form>
         </section>
@@ -85,9 +123,9 @@
             </form>
         </div>
 
-        <div class="">
+        <div class="row">
             <h3 class="">Traits</h3>
-            <table class="highlight">
+            <table class="highlight responsive-table-y">
                 <thead>
                     <tr>
                         <% if (traits.length !==0) { %>
@@ -105,9 +143,9 @@
                         <td>
                             <%= traits[i].abilityName %>
                         </td>
-                        <td>
+                        <!-- <td>
                             <%= traits[i].abilityDescription %>
-                        </td>
+                        </td> -->
                         <td>
                             <%= traits[i].damageType %>
                         </td>
@@ -116,14 +154,79 @@
                         </td>
                         <td>
                             <form action="/traits/deleteTrait/<%=traits[i]._id%>?_method=DELETE" method="POST" class="">
+                                <button class="btn delete-button"><i class="fa-solid fa-trash"></i></button>
+
                                 <a href="/traits/edit/<%=traits[i]._id%>"><button type="button"
                                         class="edit-button btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                            </form>
+                        </td>
 
-                                <button class="btn delete-button"> <i class="fa-solid fa-trash"></i></button>
-                            </form </td>
                     </tr>
                     <% } %>
             </table>
+        </div>
+        <div class="row">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header row">
+
+                        <div class="col s4">
+                            Trait name appears here.
+                        </div>
+                        <div class="col s4">
+                            Damage type appears here.
+                        </div>
+                        <div class="col s4  right-align">
+                            <form action="/traits" method="POST" class="">
+                                <button class="btn delete-button  tooltipped" data-tooltip="Delete your trait!"">
+                                    <i class=" fa-solid fa-trash">
+                                    </i>
+                                </button>
+                                <a href="/traits">
+                                    <button type="button" class="edit-button btn tooltipped"
+                                        data-tooltip="Edit your trait!"><i class="fa-solid fa-pen-to-square">
+                                        </i>
+                                    </button>
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            Trait description will appear here.
+                        </span>
+                    </div>
+                </li>
+                <% for(var i=0; i < traits.length; i++) {%>
+                    <li>
+                        <div class="collapsible-header row">
+
+                            <div class="col s4">
+                                <%= traits[i].abilityName %>
+                            </div>
+                            <div class="col s4">
+                                <%= traits[i].damageType %>
+                            </div>
+                            <div class="col s4  right-align">
+                                <form action="/traits/deleteTrait/<%=traits[i]._id%>?_method=DELETE" method="POST"
+                                    class="">
+                                    <button class="btn delete-button"><i class="fa-solid fa-trash"></i></button>
+                                    <a href="/traits/edit/<%=traits[i]._id%>"><button type="button"
+                                            class="edit-button btn"><i
+                                                class="fa-solid fa-pen-to-square"></i></button></a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="collapsible-body row">
+                            <div class="col s12">
+                                <p>
+                                    <%= traits[i].abilityDescription %>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <% } %>
+            </ul>
         </div>
     </div>
     <%- include('partials/footer') %>

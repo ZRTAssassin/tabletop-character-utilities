@@ -40,14 +40,14 @@ module.exports = mongoose.model("Trait", TraitSchema);
 // rangeNormal
 // rangeMax
 // rangeUnits
-//
-//
-//
-//
-//
-//
-//
-//
+// durationValue
+// durationUnits
+// limitedUsesValue
+// limitedUsesMax
+// rangeUnits
+// consumeType
+// consumeTarget
+// consumeAmount
 //
 //
 //

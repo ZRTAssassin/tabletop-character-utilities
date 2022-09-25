@@ -152,6 +152,76 @@
                                 <label for="rangeUnits"></label>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="durationValue" id="durationValue" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="durationValue">Duration</label>
+                            </div>
+                            <div class="input-field col s12 m4 offset-m4">
+                                <select form="newAbility" name="durationUnits" id="durationUnits" required>
+                                    <option value="" selected></option>
+                                    <option value="Instantaneous">Instantaneous</option>
+                                    <option value="Rounds">Rounds</option>
+                                    <option value="Minutes">Minutes</option>
+                                    <option value="Hours">Hours</option>
+                                    <option value="Days">Days</option>
+                                    <option value="Months">Months</option>
+                                    <option value="Years">Years</option>
+                                    <option value="Permanent">Permanent</option>
+                                    <option value="Special">Special</option>
+                                </select>
+                                <label for="durationUnits"></label>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="limitedUsesValue" id="limitedUsesValue" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="limitedUsesValue">Limited Uses (Remaining)</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="limitedUsesMax" id="limitedUsesMax" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="limitedUsesMax">Limited Uses (Max)</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <select form="newAbility" name="limitedUsesPer" id="limitedUsesPer" required>
+                                    <option value="" selected></option>
+                                    <option value="Short Rest">Short Rest</option>
+                                    <option value="Long Rest">Long Rest</option>
+                                    <option value="Day">Day</option>
+                                </select>
+                                <label for="rangelimitedUsesPerUnits"></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <select form="newAbility" name="consumeType" id="consumeType" required>
+                                    <option value="" selected></option>
+                                    <option value="Ammunition">Ammunition</option>
+                                    <option value="Attribute">Attribute</option>
+                                    <option value="Hit Dice">Hit Dice</option>
+                                    <option value="Item Uses">Item Uses</option>
+                                    <option value="Material">Material</option>
+                                </select>
+                                <label for="consumeType">Resource Consumption</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="consumeTarget" id="consumeTarget" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="consumeTarget">Type</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="consumeAmount" id="consumeAmount" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="consumeAmount">Quantity</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                        </div>
 
                         <!-- 
                 This is where I left off

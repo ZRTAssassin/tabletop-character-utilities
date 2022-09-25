@@ -1772,8 +1772,8 @@
           "condition": ""
         },
         "duration": {
-          "value": null,
-          "units": ""
+          "value": 1,
+          "units": "turn"
         },
         "target": {
           "value": 60,
@@ -1782,21 +1782,21 @@
           "type": "cone"
         },
         "range": {
-          "value": null,
-          "long": null,
-          "units": ""
+          "value": 1,
+          "long": 2,
+          "units": "ft"
         },
         "uses": {
-          "value": null,
-          "max": "",
-          "per": null
+          "value": 5,
+          "max": "6",
+          "per": ""
         },
         "consume": {
-          "type": "",
-          "target": null,
-          "amount": null
+          "type": "ammo",
+          "target": "ahHkh9V2CyQsGjpk",
+          "amount": 5
         },
-        "ability": null,
+        "ability": "",
         "actionType": "save",
         "attackBonus": 0,
         "chatFlavor": "",
@@ -1836,6 +1836,70 @@
       "flags": {
         "core": {
           "sourceId": "Item.37LmjTb2TrfWJEkR"
+        },
+        "betterRolls5e": {
+          "quickDamage": {
+            "context": {
+              "0": ""
+            },
+            "value": {
+              "0": true
+            },
+            "altValue": {
+              "0": true
+            }
+          },
+          "quickOther": {
+            "context": "",
+            "value": true,
+            "altValue": true
+          },
+          "quickDesc": {
+            "value": true,
+            "altValue": true
+          },
+          "quickSave": {
+            "value": true,
+            "altValue": true
+          },
+          "quickProperties": {
+            "value": true,
+            "altValue": true
+          },
+          "quickTemplate": {
+            "value": true,
+            "altValue": true
+          },
+          "quickFlavor": {
+            "value": true,
+            "altValue": true
+          },
+          "quickCharges": {
+            "value": {
+              "charge": true,
+              "use": true,
+              "resource": true
+            },
+            "altValue": {
+              "charge": true,
+              "use": true,
+              "resource": true
+            }
+          }
+        },
+        "magicitems": {
+          "enabled": false,
+          "equipped": false,
+          "attuned": false,
+          "charges": "0",
+          "chargeType": "c1",
+          "destroy": false,
+          "destroyFlavorText": "MAGICITEMS.MagicItemDestroy",
+          "rechargeable": false,
+          "recharge": "0",
+          "rechargeType": "t1",
+          "rechargeUnit": "r1",
+          "sorting": "l"
         }
       }
     },
@@ -2034,6 +2098,106 @@
           "page": "items.html",
           "source": "DMG",
           "hash": "tiger%20eye_dmg"
+        }
+      }
+    },
+    {
+      "_id": "ahHkh9V2CyQsGjpk",
+      "name": "Crossbow Bolt",
+      "type": "consumable",
+      "img": "icons/weapons/ammunition/arrows-bodkin-yellow-red.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 0.075,
+        "price": 0.05,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": 0,
+          "units": ""
+        },
+        "target": {
+          "value": 0,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": 5,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": "",
+          "autoDestroy": false
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "rwak",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [
+            [
+              "",
+              "piercing"
+            ]
+          ],
+          "versatile": "",
+          "value": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "consumableType": "ammo",
+        "attributes": {
+          "spelldc": 10
+        },
+        "proficient": true,
+        "attuned": false,
+        "armor": {
+          "value": null,
+          "dex": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "crossbow%20bolt_phb"
         }
       }
     }

@@ -126,9 +126,32 @@
                             </div>
                         </div>
                         <div class="row">
-
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="rangeNormal" id="rangeNormal" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="rangeNormal">Range (Normal)</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="rangeMax" id="rangeMax" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="rangeMax">Range (Max)</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <select form="newAbility" name="rangeUnits" id="rangeUnits" required>
+                                    <option value="" selected></option>
+                                    <option value="None">None</option>
+                                    <option value="Self">Self</option>
+                                    <option value="Touch">Touch</option>
+                                    <option value="Special">Special</option>
+                                    <option value="Any">Any</option>
+                                    <option value="Feet">Feet</option>
+                                    <option value="Miles">Miles</option>
+                                    <option value="Meters">Meters</option>
+                                    <option value="Kilometers">Kilometers</option>
+                                </select>
+                                <label for="rangeUnits"></label>
+                            </div>
                         </div>
-
 
                         <!-- 
                 This is where I left off

@@ -37,9 +37,9 @@ module.exports = mongoose.model("Trait", TraitSchema);
 // targetValue
 // targetUnits
 // targetType
-// 
-//
-//
+// rangeNormal
+// rangeMax
+// rangeUnits
 //
 //
 //

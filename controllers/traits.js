@@ -14,6 +14,7 @@ module.exports = {
   //
   // @route /traits/addTrait
   addTrait: async (request, response) => {
+    console.log(request.body)
     try {
       await Trait.create({
         abilityName: request.body.abilityName,

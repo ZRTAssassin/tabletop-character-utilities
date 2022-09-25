@@ -4,9 +4,9 @@ const TraitSchema = new mongoose.Schema({
   buffSelf: { type: Boolean, required: true },
   buffAllies: { type: Boolean, required: true },
   buffRange: { type: String, required: true },
-  damageType: { type: String, required: true }, // done
-  damageSingle: { type: Boolean, required: true }, // done
-  damageArea: { type: Boolean, required: true }, // done
+  damageType: { type: String, required: true },
+  damageSingle: { type: Boolean, required: true },
+  damageArea: { type: Boolean, required: true },
   damageRange: { type: String, required: true },
   damageAreaType: { type: String, required: true },
   debuffSingle: { type: Boolean, required: true },
@@ -17,11 +17,39 @@ const TraitSchema = new mongoose.Schema({
   healTarget: { type: Boolean, required: true },
   healRange: { type: String, required: true },
   healAreaType: { type: String, required: true },
+  recharge: { type: Boolean, required: true },
+  rechargeTime: { type: String, required: true },
+  sourceBook: { type: String, required: true }, // done
   sourceCreature: { type: String, required: true }, // done
-  traitName: { type: String, required: true }, // done
   traitDescription: { type: String, required: true }, //done
+  traitName: { type: String, required: true }, // done
+  traitType: { type: String, required: true }, // done
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   useTime: { type: String, required: true },
+  useActionTime: { type: String, required: true },
 });
 
 module.exports = mongoose.model("Trait", TraitSchema);
+
+// activation
+// activationType
+// activationCondition
+// targetValue
+// targetUnits
+// targetType
+// 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

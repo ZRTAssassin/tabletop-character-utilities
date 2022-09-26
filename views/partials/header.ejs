@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body class="grey darken-3">
+<body class="grey darken-3 white-text">
 
 
 
@@ -40,24 +40,40 @@
                 <ul class="left hide-on-med-and-down">
                     <li class="col s12"><a class="teal-text text-accent-4" href="/">Home</a></li>
                     <!-- <li class="col s12"><a class="teal-text text-accent-4" href="/character">Characters</a></li> -->
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Traits</a></li>
+                    <% if (isLoggedIn) { %>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li>
+                        <% } %>
                 </ul>
                 <ul class="right hide-on-med-and-down">
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/register">Register</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
-                    <% if (isLoggedIn) { %>
-                        <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a></li>
+                    <% if (!isLoggedIn) { %>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/auth/register">Register</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
                         <% } %>
+                            <% if (isLoggedIn) { %>
+                                <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a>
+                                </li>
+                                <% } %>
 
                 </ul>
 
                 <ul class="sidenav grey darken-3" id="slide-out">
                     <li class="col s12"><a class="teal-text text-accent-4" href="/">Home</a></li>
                     <!-- <li class="col s12"><a class="teal-text text-accent-4" href="/character">Characters</a></li> -->
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Traits</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/register">Register</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a></li>
+                    <% if (isLoggedIn) { %>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">Traits</a></li>
+                        <% } %>
+                            <% if (!isLoggedIn) { %>
+                                <li class="col s12"><a class="teal-text text-accent-4"
+                                        href="/auth/register">Register</a></li>
+                                <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
+                                <% } %>
+                                    <% if (isLoggedIn) { %>
+                                        <li class="col s12"><a class="teal-text text-accent-4"
+                                                href="/auth/logout">Logout</a>
+                                        </li>
+                                        <% } %>
                 </ul>
             </div>
         </nav>

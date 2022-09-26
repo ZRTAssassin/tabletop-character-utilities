@@ -48,8 +48,9 @@ module.exports = mongoose.model("Trait", TraitSchema);
 // consumeType
 // consumeTarget
 // consumeAmount
-// 
-// 
-// 
-// 
-// 
+// actionRecharge // not needed. Disabled on the form
+// actionRechargeValue
+// actionRechargeIsCharged
+//
+//
+//

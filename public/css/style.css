@@ -66,6 +66,14 @@ input[type="text"]:not(.browser-default):disabled {
 .collapsible-header {
   background-color: #474747; }
 
+@media (max-width: 600px) {
+  .edit-button {
+    margin-top: 0.5em; } }
+
+@media (min-width: 600px) {
+  .edit-button {
+    margin-left: 0.5em; } }
+
 .responsive-table-y {
   overflow-y: auto; }
 

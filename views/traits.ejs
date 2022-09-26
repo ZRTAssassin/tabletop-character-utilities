@@ -10,19 +10,16 @@
                         <div class="col s4">
                             Damage type appears here.
                         </div>
-                        <div class="col s4  right-align">
-                            <form action="/traits" method="POST" class="">
-                                <button class="btn delete-button  tooltipped" data-tooltip="Delete your trait!"">
-                                        <i class=" fa-solid fa-trash">
-                                    </i>
-                                </button>
-                                <a href="/traits">
-                                    <button type="button" class="edit-button btn tooltipped"
-                                        data-tooltip="Edit your trait!"><i class="fa-solid fa-pen-to-square">
-                                        </i>
-                                    </button>
-                                </a>
-                            </form>
+                        <div class="col s1 offset-s2">
+                            <button class="btn delete-button  tooltipped" data-tooltip="This is the delete button."">
+                                <i class=" fa-solid fa-trash">
+                                </i>
+                        </div>
+                        <div class="col s1">
+                            <button type="button" class="edit-button btn tooltipped"
+                                data-tooltip="This is the edit button."><i class="fa-solid fa-pen-to-square">
+                                </i>
+                            </button>
                         </div>
                     </div>
                     <div class="collapsible-body">
@@ -40,14 +37,23 @@
                             <div class="col s4">
                                 <%= traits[i].traitType %>
                             </div>
-                            <div class="col s4  right-align">
+                            <div class="col s1 offset-s2">
                                 <form action="/traits/deleteTrait/<%=traits[i]._id%>?_method=DELETE" method="POST"
                                     class="">
-                                    <button class="btn delete-button"><i class="fa-solid fa-trash"></i></button>
-                                    <a href="/traits/edit/<%=traits[i]._id%>"><button type="button"
-                                            class="edit-button btn"><i
-                                                class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="delete-button btn tooltipped"
+                                        data-tooltip="Delete  <%= traits[i].traitName %>">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
                                 </form>
+                            </div>
+                            <div class="col s1">
+
+                                <a href="/traits/edit/<%=traits[i]._id%>">
+                                    <button type="button" class="edit-button btn tooltipped"
+                                        data-tooltip="Edit <%= traits[i].traitName %>">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                         <div class="collapsible-body row">

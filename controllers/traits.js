@@ -5,7 +5,9 @@ module.exports = {
   // @route GET /traits/
   getTraits: async (req, res) => {
     try {
-      const traitItems = await Trait.find({ user: req.user.id });
+      const traitItems = await Trait.find({ user: req.user.id }).sort({
+        traitName: 1,
+      });
       res.render("traits.ejs", {
         traits: traitItems,
         user: req.user,
@@ -31,31 +33,33 @@ module.exports = {
         traitType: req.body.traitType,
         sourceCreature: req.body.sourceCreature,
         sourceBook: req.body.sourceBook,
-        traitDescription: req.body.traitDescription,
-        activation: request.body.activation,
-        activationType: request.body.activationType,
-        activationCondition: request.body.activationCondition,
-        targetValue: request.body.targetValue,
-        targetUnits: request.body.targetUnits,
-        targetType: request.body.targetType,
-        rangeNormal: request.body.rangeNormal,
-        rangeMax: request.body.rangeMax,
-        rangeUnits: request.body.rangeUnits,
-        durationValue: request.body.durationValue,
-        durationUnits: request.body.durationUnits,
-        limitedUsesValue: request.body.limitedUsesValue,
-        limitedUsesMax: request.body.limitedUsesMax,
-        consumeType: request.body.consumeType,
-        consumeAmount: request.body.consumeAmount,
-        actionRechargeValue: request.body.actionRechargeValue,
-        actionRechargeIsCharged: request.body.actionRechargeIsCharged,
+        traitDescription:
+          req.body.traitDescription ||
+          "Empty description given. Edit and add one.",
+        activation: req.body.activation,
+        activationType: req.body.activationType,
+        activationCondition: req.body.activationCondition,
+        targetValue: req.body.targetValue,
+        targetUnits: req.body.targetUnits,
+        targetType: req.body.targetType,
+        rangeNormal: req.body.rangeNormal,
+        rangeMax: req.body.rangeMax,
+        rangeUnits: req.body.rangeUnits,
+        durationValue: req.body.durationValue,
+        durationUnits: req.body.durationUnits,
+        limitedUsesValue: req.body.limitedUsesValue,
+        limitedUsesMax: req.body.limitedUsesMax,
+        consumeType: req.body.consumeType,
+        consumeAmount: req.body.consumeAmount,
+        actionRechargeValue: req.body.actionRechargeValue,
+        actionRechargeIsCharged: req.body.actionRechargeIsCharged,
         user: req.user.id,
       });
       console.log(`${req.body.traitName} added!`);
       res.redirect("/traits");
     } catch (err) {
-      // console.log(err);
-      let message = err._message.toLowerCase().split(" ");
+      console.log(err);
+      let message = err._message.split(" ");
       if (message[1] === "validation" && message[2] === "failed") {
         res.redirect("/traits");
       }

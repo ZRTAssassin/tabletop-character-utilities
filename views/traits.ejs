@@ -208,11 +208,10 @@
                                 </select>
                                 <label for="consumeType">Resource Consumption</label>
                             </div>
-                            <div class="input-field col s12 m4">
+                            <!-- <div class="input-field col s12 m4">
                                 <input type="text" name="consumeTarget" id="consumeTarget" />
-                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
                                 <label for="consumeTarget">Type</label>
-                            </div>
+                            </div> -->
                             <div class="input-field col s12 m4">
                                 <input type="text" name="consumeAmount" id="consumeAmount" />
                                 <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
@@ -222,12 +221,10 @@
                         <div class="row">
                             <div class="input-field col s12 m4">
                                 <input type="text" name="actionRecharge" id="actionRecharge" disabled />
-                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
                                 <label for="actionRecharge">Action Recharge</label>
                             </div>
                             <div class="input-field col s12 offset-m2 m2">
                                 <input type="text" name="actionRechargeValue" id="actionRechargeValue" />
-                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
                                 <label for="actionRechargeValue">Recharge On</label>
                             </div>
                             <div class="col s12 offset-m2 m2">
@@ -300,10 +297,10 @@
                         <div class="collapsible-header row">
 
                             <div class="col s4">
-                                <%= traits[i].abilityName %>
+                                <%= traits[i].traitName %>
                             </div>
                             <div class="col s4">
-                                <%= traits[i].damageType %>
+                                <%= traits[i].traitType %>
                             </div>
                             <div class="col s4  right-align">
                                 <form action="/traits/deleteTrait/<%=traits[i]._id%>?_method=DELETE" method="POST"
@@ -318,7 +315,7 @@
                         <div class="collapsible-body row">
                             <div class="col s12">
                                 <p>
-                                    <%= traits[i].abilityDescription %>
+                                    <%= traits[i].traitDescription %>
                                 </p>
                             </div>
                         </div>

@@ -5,9 +5,8 @@ module.exports = {
   // @route GET /traits/
   getTraits: async (req, res) => {
     try {
-      const traitItems = await Trait.find({ user: req.user.id }).sort({
-        traitName: 1,
-      });
+      const traitItems = await Trait.find({ user: req.user.id }).collation({locale: "en" })
+      .sort({traitName: 1});
       res.render("traits.ejs", {
         traits: traitItems,
         user: req.user,
@@ -26,7 +25,7 @@ module.exports = {
   // add a new trait
   // @route /traits/addTrait
   addTrait: async (req, res) => {
-    // console.log(req.body);
+    console.log(req.body);
     try {
       await Trait.create({
         traitName: req.body.traitName,
@@ -34,8 +33,7 @@ module.exports = {
         sourceCreature: req.body.sourceCreature,
         sourceBook: req.body.sourceBook,
         traitDescription:
-          req.body.traitDescription ||
-          "Empty description given. Edit and add one.",
+          req.body.traitDescription,
         activation: req.body.activation,
         activationType: req.body.activationType,
         activationCondition: req.body.activationCondition,
@@ -83,7 +81,11 @@ module.exports = {
     // console.log(request.params.id);
     try {
       const trait = await Trait.findById(req.params.id);
-      res.render("traits/edit", { trait: trait, user: req.user });
+      res.render("traits/edit", {
+        trait: trait,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
       // response.json("Successful!");
     } catch (err) {
       console.log(err);
@@ -93,10 +95,11 @@ module.exports = {
   // @route PUT /trait/:id
   requestEditTrait: async (req, res) => {
     console.log(`RequestEditTrait called. ID: ${req.params.id}`);
+    console.log(req.body);
     let trait = await Trait.findById(req.params.id);
 
     if (!trait) {
-      return res.render("/error/404");
+      return res.redirect("../error/404");
     }
     trait = await Trait.findOneAndUpdate({ _id: req.params.id }, req.body, {
       new: false,

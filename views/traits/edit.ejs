@@ -1,57 +1,294 @@
-    <%- include('../partials/header') %>
-
-        <form action="/traits/<%= trait._id %>" method="POST" id="newAbility" class="container">
-            <input type="hidden" name="_method" value="PUT">
-            <fieldset>
-                <legend>Enter New Trait</legend>
-                <fieldset>
-                    <legend>Basic Information</legend>
-                    <input type="text" placeholder="name" name="abilityName" value="<%= trait.abilityName %>">
-                    <!-- required> -->
-                    <input type="text" placeholder="description" name="abilityDescription"
-                        value="<%= trait.abilityDescription %>"> <!-- required> -->
-                    <input type="text" placeholder="PHB (151)" name="source" pattern="[a-zA-Z]+ \([0-9]+\)"
-                        value="<%= trait.source %>">
-                    <!-- required> -->
-
-                    <label for="damage-types">Choose a damage type:</label>
-                    <select form="newAbility" name="damageType" id="damage-types" required>
-                        <option value="None"  <%=trait.damageType==="None" ? 'selected' : '' %>>None</option>
-                        <option value="Acid" <%=trait.damageType==="Acid" ? 'selected' : '' %>>Acid</option>
-                        <option value="Bludgeoning" <%=trait.damageType==="Bludgeoning" ? 'selected' : '' %>>Bludgeoning</option>
-                        <option value="Cold" <%=trait.damageType==="Cold" ? 'selected' : '' %>>Cold</option>
-                        <option value="Fire" <%=trait.damageType==="Fire" ? 'selected' : '' %>>Fire</option>
-                        <option value="Force" <%=trait.damageType==="Force" ? 'selected' : '' %>>Force</option>
-                        <option value="Lightning" <%=trait.damageType==="Lightning" ? 'selected' : '' %>>Lightning</option>
-                        <option value="Necrotic" <%=trait.damageType==="Necrotic" ? 'selected' : '' %>>Necrotic</option>
-                        <option value="Piercing" <%=trait.damageType==="Piercing" ? 'selected' : '' %>>Piercing</option>
-                        <option value="Poison" <%=trait.damageType==="Poison" ? 'selected' : '' %>>Poison</option>
-                        <option value="Psychic" <%=trait.damageType==="Psychic" ? 'selected' : '' %>>Psychic</option>
-                        <option value="Radiant" <%=trait.damageType==="Radiant" ? 'selected' : '' %>>Radiant</option>
-                        <option value="Slashing" <%=trait.damageType==="Slashing" ? 'selected' : '' %>>Slashing</option>
-                        <option value="Thunder" <%=trait.damageType==="Thunder" ? 'selected' : '' %>>Thunder</option>
-                    </select>
-                    <input type="text" placeholder="damage-type" name="damage-type" value="<%= trait.damageType %>">
-                    <!-- required> -->
-                </fieldset>
-                <fieldset id="flex-vert-list">
-                    <legend>Options</legend>
-                    <input type="checkbox" id="doesDamage" name="doesDamage" value="true">
-                    <label for="doesDamage">This ability does damage</label>
-                    <input type="checkbox" id="buffs" name="buffs" value="true">
-                    <label for="buff">This ability provides a buff</label>
-                    <input type="checkbox" id="debuffs" name="bebuffs" value="true">
-                    <label for="bebuffs">This ability inflicts a debuff</label>
-                </fieldset>
-
-                <button type="submit">Submit</button>
+<%- include('../partials/header') %>
+<!-- 
+                <select form="newAbility" name="damageType" id="damage-types" required>
+                    <option value="None" <%=trait.damageType==="None" ? 'selected' : '' %>>None</option>
+                    <option value="Acid" <%=trait.damageType==="Acid" ? 'selected' : '' %>>Acid</option>
+                    <option value="Bludgeoning" <%=trait.damageType==="Bludgeoning" ? 'selected' : '' %>>Bludgeoning
+                    </option>
+                    <option value="Cold" <%=trait.damageType==="Cold" ? 'selected' : '' %>>Cold</option>
+                    <option value="Fire" <%=trait.damageType==="Fire" ? 'selected' : '' %>>Fire</option>
+                    <option value="Force" <%=trait.damageType==="Force" ? 'selected' : '' %>>Force</option>
+                    <option value="Lightning" <%=trait.damageType==="Lightning" ? 'selected' : '' %>>Lightning</option>
+                    <option value="Necrotic" <%=trait.damageType==="Necrotic" ? 'selected' : '' %>>Necrotic</option>
+                    <option value="Piercing" <%=trait.damageType==="Piercing" ? 'selected' : '' %>>Piercing</option>
+                    <option value="Poison" <%=trait.damageType==="Poison" ? 'selected' : '' %>>Poison</option>
+                    <option value="Psychic" <%=trait.damageType==="Psychic" ? 'selected' : '' %>>Psychic</option>
+                    <option value="Radiant" <%=trait.damageType==="Radiant" ? 'selected' : '' %>>Radiant</option>
+                    <option value="Slashing" <%=trait.damageType==="Slashing" ? 'selected' : '' %>>Slashing</option>
+                    <option value="Thunder" <%=trait.damageType==="Thunder" ? 'selected' : '' %>>Thunder</option> -->
 
 
-            </fieldset>
+
+    <div class="container white-text">
+        <form action="/traits/<%= trait._id %>?_method=PUT" method="POST" id="newAbility" novalidate>
+            <div class="row">
+                <div class="col s12">
+                    <h2>Edit <%= trait.traitName %>
+                    </h2>
+                    <fieldset>
+                        <legend>Description</legend>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input type="text" name="traitName" id="traitName" value="<%= trait.traitName%>" />
+                                <label for="traitName">Trait Name</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <select form="newAbility" name="traitType" id="traitType" required>
+                                    <option value="" selected></option>
+                                    <!-- <option value="Consumable">Consumable</option> -->
+                                    <option value="Equipment">Equipment</option>
+                                    <option value="Feat">Feat</option>
+                                    <!-- <option value="Loot">Loot</option> -->
+                                    <option value="Weapon">Weapon</option>
+                                </select>
+                                <label for="traitType">Trait Type</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input type="text" name="sourceCreature" id="sourceCreature"
+                                    value="<%= trait.sourceCreature%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="sourceCreature">Source Creature</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input type="text" name="sourceBook" id="sourceBook" value="<%= trait.sourceBook%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="sourceBook">Source Book</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 white-text input-field">
+                                <textarea class="materialize-textarea" name="traitDescription" id="traitDescription"
+                                    data-length="120" value="<%= trait.traitDescription%>"></textarea>
+                                <label for="traitDescription">Trait Description</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <fieldset>
+                        <legend>Feature Usage</legend>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="activation" id="activation" value="<%= trait.activation%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="activation">Activation Cost</label>
+                            </div>
+                            <div class="input-field col s12 m6 offset-m2">
+                                <select form="newAbility" name="activationType" id="activationType" required>
+                                    <option value=""  <%=trait.activationType==="" ? 'selected' : '' %>></option>
+                                    <option value="Action" <%=trait.activationType==="Action" ? 'selected' : '' %>>Action</option>
+                                    <option value="Bonus Action">Bonus Action</option>
+                                    <option value="Crew Action">Crew Action</option>
+                                    <option value="Minutes">Minutes</option>
+                                    <option value="Hours">Hours</option>
+                                    <option value="Days">Days</option>
+                                    <option value="Lair Action">Lair Action</option>
+                                    <option value="Legendary Action">Legendary Action</option>
+                                    <option value="Weapon">None</option>
+                                    <option value="Reaction">Reaction</option>
+                                    <option value="Special">Special</option>
+                                </select>
+                                <label for="activationType"></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 white-text input-field">
+                                <textarea class="materialize-textarea" name="activationCondition"
+                                    id="activationCondition" data-length="120"
+                                    value="<%= trait.activationCondition%>"></textarea>
+                                <label for="activationCondition">Activation Condition</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="targetValue" id="targetValue"
+                                    value="<%= trait.targetValue%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="targetValue">Target Value</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <select form="newAbility" name="targetUnits" id="targetUnits" required>
+                                    <option value="" selected></option>
+                                    <option value="None">None</option>
+                                    <option value="Self">Self</option>
+                                    <option value="Touch">Touch</option>
+                                    <option value="Special">Special</option>
+                                    <option value="Any">Any</option>
+                                    <option value="Feet">Feet</option>
+                                    <option value="Miles">Miles</option>
+                                    <option value="Meters">Meters</option>
+                                    <option value="Kilometers">Kilometers</option>
+                                </select>
+                                <label for="targetUnits"></label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <select form="newAbility" name="targetType" id="targetType" required>
+                                    <option value="" selected></option>
+                                    <option value="Ally">Ally</option>
+                                    <option value="Cone">Cone</option>
+                                    <option value="Creature">Creature</option>
+                                    <option value="Cube">Cube</option>
+                                    <option value="Cylinder">Cylinder</option>
+                                    <option value="Enemy">Enemy</option>
+                                    <option value="Line">Line</option>
+                                    <option value="None">None</option>
+                                    <option value="Object">Object</option>
+                                    <option value="Radius">Radius</option>
+                                    <option value="Self">Self</option>
+                                    <option value="Space">Space</option>
+                                    <option value="Sphere">Sphere</option>
+                                    <option value="Square">Square</option>
+                                    <option value="Wall">Wall</option>
+                                </select>
+                                <label for="targetType"></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="rangeNormal" id="rangeNormal"
+                                    value="<%= trait.rangeNormal%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="rangeNormal">Range (Normal)</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="rangeMax" id="rangeMax" value="<%= trait.rangeMax%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="rangeMax">Range (Max)</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <select form="newAbility" name="rangeUnits" id="rangeUnits" required>
+                                    <option value="" selected></option>
+                                    <option value="None">None</option>
+                                    <option value="Self">Self</option>
+                                    <option value="Touch">Touch</option>
+                                    <option value="Special">Special</option>
+                                    <option value="Any">Any</option>
+                                    <option value="Feet">Feet</option>
+                                    <option value="Miles">Miles</option>
+                                    <option value="Meters">Meters</option>
+                                    <option value="Kilometers">Kilometers</option>
+                                </select>
+                                <label for="rangeUnits"></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="durationValue" id="durationValue"
+                                    value="<%= trait.durationValue%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="durationValue">Duration</label>
+                            </div>
+                            <div class="input-field col s12 m4 offset-m4">
+                                <select form="newAbility" name="durationUnits" id="durationUnits" required>
+                                    <option value="" selected></option>
+                                    <option value="Instantaneous">Instantaneous</option>
+                                    <option value="Rounds">Rounds</option>
+                                    <option value="Minutes">Minutes</option>
+                                    <option value="Hours">Hours</option>
+                                    <option value="Days">Days</option>
+                                    <option value="Months">Months</option>
+                                    <option value="Years">Years</option>
+                                    <option value="Permanent">Permanent</option>
+                                    <option value="Special">Special</option>
+                                </select>
+                                <label for="durationUnits"></label>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="limitedUsesValue" id="limitedUsesValue"
+                                    value="<%= trait.limitedUsesValue%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="limitedUsesValue">Limited Uses (Remaining)</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="limitedUsesMax" id="limitedUsesMax"
+                                    value="<%= trait.limitedUsesMax%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="limitedUsesMax">Limited Uses (Max)</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <select form="newAbility" name="limitedUsesPer" id="limitedUsesPer" required>
+                                    <option value="" selected></option>
+                                    <option value="Short Rest">Short Rest</option>
+                                    <option value="Long Rest">Long Rest</option>
+                                    <option value="Day">Day</option>
+                                </select>
+                                <label for="rangelimitedUsesPerUnits"></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <select form="newAbility" name="consumeType" id="consumeType" required>
+                                    <option value="" selected></option>
+                                    <option value="Ammunition">Ammunition</option>
+                                    <option value="Attribute">Attribute</option>
+                                    <option value="Hit Dice">Hit Dice</option>
+                                    <option value="Item Uses">Item Uses</option>
+                                    <option value="Material">Material</option>
+                                </select>
+                                <label for="consumeType">Resource Consumption</label>
+                            </div>
+                            <!-- <div class="input-field col s12 m4">
+                                    <input type="text" name="consumeTarget" id="consumeTarget" />
+                                    <label for="consumeTarget">Type</label>
+                                </div> -->
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="consumeAmount" id="consumeAmount"
+                                    value="<%= trait.consumeAmount%>" />
+                                <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                                <label for="consumeAmount">Quantity</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="actionRecharge" id="actionRecharge" disabled />
+                                <label for="actionRecharge">Action Recharge</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input type="text" name="actionRechargeValue" id="actionRechargeValue"
+                                    value="<%= trait.actionRechargeValue%>" />
+                                <label for="actionRechargeValue">Recharge On</label>
+                            </div>
+                            <div class="input-field col s12 m2">
+                                <p>
+                                    <label for="actionRechargeIsCharged">
+                                        <input type="checkbox" id="actionRechargeIsCharged" class="filled-in"
+                                            name="actionRechargeIsCharged"
+                                            <%=(trait.actionRechargeIsCharged) ? "checked" : "" %> />
+                                        <span>Charged</span>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <button class="btn waves-effect waves-light" type="submit" name="newAbility"><i
+                                        class="fa-solid fa-check"></i>Add new
+                                    trait</button>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
         </form>
+        </section>
 
+        <!-- <div class="row">
+                <form action="/traits/addTestTrait" method="POST">
+                    <h2>Add random trait!</h2>
+                    <p>
+                        Add a trait for testing.
+                    </p>
+                    <button class="btn" type="submit" id="random-trait-button">Add Trait</button>
+                </form>
+            </div> -->
 
-
-
-        <script src="../../js/traits.js"></script>
-<%- include('../partials/footer') %>
+    </div>
+    <%- include('../partials/footer') %>

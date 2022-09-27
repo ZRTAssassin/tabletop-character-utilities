@@ -23,32 +23,8 @@ const TraitSchema = new mongoose.Schema({
   consumeType: { type: String, required: false },
   consumeAmount: { type: Number, required: false },
   actionRechargeValue: { type: String, required: false },
-  actionRechargeIsCharged: { type: Boolean, required: false },
+  actionRechargeIsCharged: { type: Boolean, default: false, required: false },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 
 module.exports = mongoose.model("Trait", TraitSchema);
-
-// activation - done
-// activationType - done
-// activationCondition - done
-// targetValue - done
-// targetUnits - done
-// targetType - done
-// rangeNormal - done
-// rangeMax - done
-// rangeUnits - done
-// durationValue - done
-// durationUnits - done
-// limitedUsesValue - done
-// limitedUsesMax - done
-// limitedUsesPer - done
-// consumeType - done
-// consumeTarget - done
-// consumeAmount - done
-// actionRecharge // not needed. Disabled on the form
-// actionRechargeValue - done
-// actionRechargeIsCharged - done
-//
-//
-//

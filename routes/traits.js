@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const traitsController = require("../controllers/traits");
+const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-router.get("/", traitsController.getTraits);
+router.get("/", ensureAuth, traitsController.getTraits);
+
+router.get("/add", ensureAuth, traitsController.getAddTrait);
 
 router.get("/edit/:id", traitsController.editTrait);
 

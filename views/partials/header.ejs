@@ -9,6 +9,8 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <!-- CSS Normalize -->
     <!-- <link rel="stylesheet" href="/css/normalize.css"> -->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <!-- external style sheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -20,7 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body class="grey darken-3">
+<body class="grey darken-3 white-text">
 
 
 
@@ -39,25 +41,50 @@
 
                 <ul class="left hide-on-med-and-down">
                     <li class="col s12"><a class="teal-text text-accent-4" href="/">Home</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/character">Characters</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Abilities</a></li>
+                    <!-- <li class="col s12"><a class="teal-text text-accent-4" href="/character">Characters</a></li> -->
+                    <% if (isLoggedIn) { %>
+                        <!-- <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li> -->
+                        <li><a class="dropdown-trigger teal-text text-accent-4" href="#!" data-target="dropdown1">Traits<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <% } %>
                 </ul>
+
+                <!-- Dropdown Structure -->
+                <ul id="dropdown1" class="dropdown-content">
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                    <li class="divider"></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li>
+                </ul>
+
                 <ul class="right hide-on-med-and-down">
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/register">Register</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
-                    <!-- <% // if (locals.session) { %> -->
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a></li>
-                    <% // } %>
+                    <% if (!isLoggedIn) { %>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/auth/register">Register</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
+                        <% } %>
+                            <% if (isLoggedIn) { %>
+                                <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a>
+                                </li>
+                                <% } %>
 
                 </ul>
 
                 <ul class="sidenav grey darken-3" id="slide-out">
                     <li class="col s12"><a class="teal-text text-accent-4" href="/">Home</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/character">Characters</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Abilities</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/register">Register</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/auth/logout">Logout</a></li>
+                    <!-- <li class="col s12"><a class="teal-text text-accent-4" href="/character">Characters</a></li> -->
+                    <% if (isLoggedIn) { %>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li>
+                        <% } %>
+                            <% if (!isLoggedIn) { %>
+                                <li class="col s12"><a class="teal-text text-accent-4"
+                                        href="/auth/register">Register</a></li>
+                                <li class="col s12"><a class="teal-text text-accent-4" href="/auth/login">Login</a></li>
+                                <% } %>
+                                    <% if (isLoggedIn) { %>
+                                        <li class="col s12"><a class="teal-text text-accent-4"
+                                                href="/auth/logout">Logout</a>
+                                        </li>
+                                        <% } %>
                 </ul>
             </div>
         </nav>

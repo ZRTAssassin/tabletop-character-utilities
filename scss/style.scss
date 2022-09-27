@@ -76,9 +76,31 @@ $accent-color: white;
   border-bottom: 1px solid $accent-color;
   box-shadow: 0 1px 0 0 $accent-color;
 }
+input[type="text"]:not(.browser-default):disabled + label {
+  color: white;
+}
+input[type="text"]:not(.browser-default):disabled {
+  border-bottom: 1px solid #9e9e9e;
+}
 /* icon prefix focus color */
 .input-field .prefix.active {
   color: $accent-color;
+}
+.collapsible-header {
+  background-color: rgb(71, 71, 71);
+}
+@media (max-width: 600px) {
+  .edit-button {
+    margin-top: 0.5em;
+  }
+}
+@media (min-width: 600px) {
+  .edit-button {
+    margin-left: 0.5em;
+  }
+}
+.responsive-table-y {
+  overflow-y: auto;
 }
 nav ul a:hover {
   background-color: rgb(71, 71, 71);
@@ -86,7 +108,7 @@ nav ul a:hover {
 input {
   color: $accent-color;
 }
-textarea{
+textarea {
   color: $accent-color;
 }
 
@@ -119,7 +141,6 @@ textarea{
 table.highlight > tbody > tr:hover {
   background-color: $alt-bg-color !important;
   opacity: 0.75;
-
 }
 
 .messageContainer {

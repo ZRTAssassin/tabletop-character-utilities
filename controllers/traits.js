@@ -3,50 +3,89 @@ const Trait = require("../models/Trait");
 module.exports = {
   // render list of traits
   // @route GET /traits/
-  getTraits: async (request, response) => {
+  getTraits: async (req, res) => {
     try {
-      const traitItems = await Trait.find();
-      response.render("traits.ejs", { traits: traitItems });
+      const traitItems = await Trait.find({ user: req.user.id }).collation({locale: "en" })
+      .sort({traitName: 1});
+      res.render("traits.ejs", {
+        traits: traitItems,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
     } catch (err) {
       console.error(err);
     }
   },
-  //
+  getAddTrait: async (req, res) => {
+    res.render("addTrait.ejs", {
+      user: req.user,
+      isLoggedIn: req.isAuthenticated(),
+    });
+  },
+  // add a new trait
   // @route /traits/addTrait
-  addTrait: async (request, response) => {
+  addTrait: async (req, res) => {
+    console.log(req.body);
     try {
       await Trait.create({
-        abilityName: request.body.abilityName,
-        abilityDescription: request.body.abilityDescription,
-        source: request.body.source,
-        doesDamage: request.body.doesDamage || false,
-        damageType: request.body.damageType,
+        traitName: req.body.traitName,
+        traitType: req.body.traitType,
+        sourceCreature: req.body.sourceCreature,
+        sourceBook: req.body.sourceBook,
+        traitDescription:
+          req.body.traitDescription,
+        activation: req.body.activation,
+        activationType: req.body.activationType,
+        activationCondition: req.body.activationCondition,
+        targetValue: req.body.targetValue,
+        targetUnits: req.body.targetUnits,
+        targetType: req.body.targetType,
+        rangeNormal: req.body.rangeNormal,
+        rangeMax: req.body.rangeMax,
+        rangeUnits: req.body.rangeUnits,
+        durationValue: req.body.durationValue,
+        durationUnits: req.body.durationUnits,
+        limitedUsesValue: req.body.limitedUsesValue,
+        limitedUsesMax: req.body.limitedUsesMax,
+        consumeType: req.body.consumeType,
+        consumeAmount: req.body.consumeAmount,
+        actionRechargeValue: req.body.actionRechargeValue,
+        actionRechargeIsCharged: req.body.actionRechargeIsCharged,
+        user: req.user.id,
       });
-      console.log(`${request.body.abilityName} added!`);
-      response.redirect("/traits");
+      console.log(`${req.body.traitName} added!`);
+      res.redirect("/traits");
     } catch (err) {
       console.log(err);
+      let message = err._message.split(" ");
+      if (message[1] === "validation" && message[2] === "failed") {
+        res.redirect("/traits");
+      }
     }
   },
   //
   // @route /traits/deleteTrait/:id
-  deleteTrait: async (request, response) => {
-    console.log("request: ", request.params.id);
+  deleteTrait: async (req, res) => {
+    console.log("request: ", req.params.id);
     try {
-      await Trait.remove({ _id: request.params.id });
-      console.log(`deleted trait ${request.params.id}!`);
-      response.redirect("/traits");
+      await Trait.remove({ _id: req.params.id });
+      console.log(`deleted trait ${req.params.id}!`);
+      res.redirect("/traits");
     } catch (err) {
       console.log(err);
     }
   },
   //
   // @route GET /traits/edit/:id
-  editTrait: async (request, response) => {
+  editTrait: async (req, res) => {
     // console.log(request.params.id);
     try {
-      const trait = await Trait.findById(request.params.id);
-      response.render("traits/edit", { trait: trait, user: request.user });
+      const trait = await Trait.findById(req.params.id);
+      res.render("traits/edit", {
+        trait: trait,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
       // response.json("Successful!");
     } catch (err) {
       console.log(err);
@@ -54,32 +93,29 @@ module.exports = {
   },
   // @description Update trait
   // @route PUT /trait/:id
-  requestEditTrait: async (request, response) => {
-    console.log(`RequestEditTrait called. ID: ${request.params.id}`);
-    let trait = await Trait.findById(request.params.id);
+  requestEditTrait: async (req, res) => {
+    console.log(`RequestEditTrait called. ID: ${req.params.id}`);
+    console.log(req.body);
+    let trait = await Trait.findById(req.params.id);
 
     if (!trait) {
-      return response.render("/error/404");
+      return res.redirect("../error/404");
     }
-    trait = await Trait.findOneAndUpdate(
-      { _id: request.params.id },
-      request.body,
-      {
-        new: false,
-        runValidators: true,
-      }
-    );
+    trait = await Trait.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: false,
+      runValidators: true,
+    });
 
-    response.redirect("/traits");
+    res.redirect("/traits");
   },
-  addTestTrait: async (request, response) => {
+  addTestTrait: async (req, res) => {
     console.log("Random trait requested!");
     let date = new Date();
     let time = date.toLocaleTimeString();
     let description = "";
 
     let chars = "ABCDEFGHIJLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
-    for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < 50; index++) {
       description += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     const fakeSource = "PHB (100)";
@@ -93,7 +129,7 @@ module.exports = {
         damageType: "None",
       });
       console.log(`${time} added!`);
-      response.redirect("/traits");
+      res.redirect("/traits");
     } catch (err) {
       console.log(err);
     }

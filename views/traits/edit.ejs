@@ -20,7 +20,7 @@
 
 
     <div class="container white-text">
-        <form action="/traits/<%= trait._id %>?_method=PUT" method="POST" id="newAbility" novalidate>
+        <form action="/traits/<%= trait._id %>?_method=PUT" method="POST" id="newAbility" >
             <div class="row">
                 <div class="col s12">
                     <h2>Edit <%= trait.traitName %>
@@ -34,12 +34,12 @@
                             </div>
                             <div class="input-field col s12 m6">
                                 <select form="newAbility" name="traitType" id="traitType" required>
-                                    <option value="" selected></option>
+                                    <option value="" <%=trait.traitType==="" ? 'selected' : '' %>></option>
                                     <!-- <option value="Consumable">Consumable</option> -->
-                                    <option value="Equipment">Equipment</option>
-                                    <option value="Feat">Feat</option>
+                                    <option value="Equipment" <%=trait.traitType==="Equipment" ? 'selected' : '' %>>Equipment</option>
+                                    <option value="Feat" <%=trait.traitType==="Feat" ? 'selected' : '' %>>Feat</option>
                                     <!-- <option value="Loot">Loot</option> -->
-                                    <option value="Weapon">Weapon</option>
+                                    <option value="Weapon" <%=trait.traitType==="Weapon" ? 'selected' : '' %>>Weapon</option>
                                 </select>
                                 <label for="traitType">Trait Type</label>
                             </div>

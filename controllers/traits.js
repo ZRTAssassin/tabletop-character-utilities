@@ -26,7 +26,7 @@ module.exports = {
   // add a new trait
   // @route /traits/addTrait
   addTrait: async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     try {
       await Trait.create({
         traitName: req.body.traitName,

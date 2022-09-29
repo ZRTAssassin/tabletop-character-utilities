@@ -5,8 +5,9 @@ module.exports = {
   // @route GET /traits/
   getTraits: async (req, res) => {
     try {
-      const traitItems = await Trait.find({ user: req.user.id }).collation({locale: "en" })
-      .sort({traitName: 1});
+      const traitItems = await Trait.find({ user: req.user.id })
+        .collation({ locale: "en" })
+        .sort({ traitName: 1 });
       res.render("traits.ejs", {
         traits: traitItems,
         user: req.user,
@@ -32,8 +33,7 @@ module.exports = {
         traitType: req.body.traitType,
         sourceCreature: req.body.sourceCreature,
         sourceBook: req.body.sourceBook,
-        traitDescription:
-          req.body.traitDescription,
+        traitDescription: req.body.traitDescription,
         activation: req.body.activation,
         activationType: req.body.activationType,
         activationCondition: req.body.activationCondition,
@@ -101,6 +101,7 @@ module.exports = {
     if (!trait) {
       return res.redirect("../error/404");
     }
+    // console.log(req.body);
     trait = await Trait.findOneAndUpdate({ _id: req.params.id }, req.body, {
       new: false,
       runValidators: true,

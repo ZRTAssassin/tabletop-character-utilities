@@ -9,11 +9,11 @@
                         <legend>Description</legend>
                         <div class="row">
                             <div class="input-field col s12 m6">
-                                <input type="text" name="traitName" id="traitName" value="<%= trait.traitName%>" />
+                                <input type="text" name="traitName" id="traitName" class="validate" value="<%= trait.traitName%>" />
                                 <label for="traitName">Trait Name</label>
                             </div>
                             <div class="input-field col s12 m6">
-                                <select form="newAbility" name="traitType" id="traitType" required>
+                                <select form="newAbility" name="traitType" id="traitType">
                                     <option value="" <%=trait.traitType==="" ? 'selected' : '' %>></option>
                                     <!-- <option value="Consumable">Consumable</option> -->
                                     <option value="Equipment" <%=trait.traitType==="Equipment" ? 'selected' : '' %>>Equipment</option>
@@ -38,7 +38,7 @@
                         <div class="row">
                             <div class="col s12 white-text input-field">
                                 <textarea class="materialize-textarea" name="traitDescription" id="traitDescription"
-                                    data-length="120" value="<%= trait.traitDescription%>"></textarea>
+                                    data-length="120"><%= trait.traitDescription%></textarea>
                                 <label for="traitDescription">Trait Description</label>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                                 <label for="activation">Activation Cost</label>
                             </div>
                             <div class="input-field col s12 m6 offset-m2">
-                                <select form="newAbility" name="activationType" id="activationType" required>
+                                <select form="newAbility" name="activationType" id="activationType">
                                     <option value=""  <%=trait.activationType==="" ? 'selected' : '' %>></option>
                                     <option value="Action" <%=trait.activationType==="Action" ? 'selected' : '' %>>Action</option>
                                     <option value="Bonus Action" <%=trait.activationType==="Bonus Action" ? 'selected' : '' %>>Bonus Action</option>
@@ -87,7 +87,7 @@
                                 <label for="targetValue">Target Value</label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="targetUnits" id="targetUnits" required>
+                                <select form="newAbility" name="targetUnits" id="targetUnits">
                                     <option value="" <%=trait.targetUnits==="" ? 'selected' : '' %>></option>
                                     <option value="None" <%=trait.targetUnits==="None" ? 'selected' : '' %>>None</option>
                                     <option value="Self" <%=trait.targetUnits==="Self" ? 'selected' : '' %>>Self</option>
@@ -102,7 +102,7 @@
                                 <label for="targetUnits"></label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="targetType" id="targetType" required>
+                                <select form="newAbility" name="targetType" id="targetType">
                                     <option value="" <%=trait.targetType==="" ? 'selected' : '' %>></option>
                                     <option value="Ally" <%=trait.targetType==="Ally" ? 'selected' : '' %>>Ally</option>
                                     <option value="Cone" <%=trait.targetType==="Cone" ? 'selected' : '' %>>Cone</option>
@@ -134,7 +134,7 @@
                                 <label for="rangeMax">Range (Max)</label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="rangeUnits" id="rangeUnits" required>
+                                <select form="newAbility" name="rangeUnits" id="rangeUnits">
                                     <option value="" <%=trait.rangeUnits==="" ? 'selected' : '' %>></option>
                                     <option value="None" <%=trait.rangeUnits==="" ? 'selected' : '' %>>None</option>
                                     <option value="Self" <%=trait.rangeUnits==="Self" ? 'selected' : '' %>>Self</option>
@@ -156,7 +156,7 @@
                                 <label for="durationValue">Duration</label>
                             </div>
                             <div class="input-field col s12 m4 offset-m4">
-                                <select form="newAbility" name="durationUnits" id="durationUnits" required>
+                                <select form="newAbility" name="durationUnits" id="durationUnits">
                                     <option value="" <%=trait.durationUnits==="" ? 'selected' : '' %>></option>
                                     <option value="Instantaneous" <%=trait.durationUnits==="Instantaneous" ? 'selected' : '' %>>Instantaneous</option>
                                     <option value="Rounds" <%=trait.durationUnits==="Rounds" ? 'selected' : '' %>>Rounds</option>
@@ -184,7 +184,7 @@
                                 <label for="limitedUsesMax">Limited Uses (Max)</label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="limitedUsesPer" id="limitedUsesPer" required>
+                                <select form="newAbility" name="limitedUsesPer" id="limitedUsesPer">
                                     <option value="" <%=trait.limitedUsesPer==="" ? 'selected' : '' %>></option>
                                     <option value="Short Rest" <%=trait.limitedUsesPer==="Short Rest" ? 'selected' : '' %>>Short Rest</option>
                                     <option value="Long Rest" <%=trait.limitedUsesPer==="Long Rest" ? 'selected' : '' %>>Long Rest</option>
@@ -195,7 +195,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="consumeType" id="consumeType" required>
+                                <select form="newAbility" name="consumeType" id="consumeType">
                                     <option value=""  <%=trait.consumeType==="" ? 'selected' : '' %>></option>
                                     <option value="Ammunition"  <%=trait.consumeType==="Ammunition" ? 'selected' : '' %>>Ammunition</option>
                                     <option value="Attribute"  <%=trait.consumeType==="Attribute" ? 'selected' : '' %>>Attribute</option>

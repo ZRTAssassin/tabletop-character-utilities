@@ -28,3 +28,18 @@ const TraitSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Trait", TraitSchema);
+
+/*
+actionTypeLabel
+actionType
+abilityModifierLabel
+abilityModifier
+damageTypeLabel
+damageType
+versatileDamageLabel
+versatileDamage
+saveLabel
+saveAbility
+saveDC
+saveScaling
+*/

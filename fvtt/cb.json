@@ -1,0 +1,156 @@
+{
+    "_id": "QK0zzu16pSlLrOkR",
+    "name": "Cold Breath",
+    "type": "feat",
+    "img": "icons/creatures/abilities/dragon-ice-breath-blue.webp",
+    "data": {
+      "description": {
+        "value": "<div class=\"rd__b  rd__b--3\"><p>The dragon exhales an icy blast in a 60-foot cone. Each creature in that area must make a DC <span class=\"rd__dc\">19</span> Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.</p><div class=\"rd__spc-inline-post\"></div></div>",
+        "chat": "",
+        "unidentified": ""
+      },
+      "source": "MM",
+      "activation": {
+        "type": "action",
+        "cost": 1,
+        "condition": ""
+      },
+      "duration": {
+        "value": 1,
+        "units": "turn"
+      },
+      "target": {
+        "value": 60,
+        "width": null,
+        "units": "ft",
+        "type": "cone"
+      },
+      "range": {
+        "value": 1,
+        "long": 2,
+        "units": "ft"
+      },
+      "uses": {
+        "value": 5,
+        "max": "6",
+        "per": ""
+      },
+      "consume": {
+        "type": "ammo",
+        "target": "ahHkh9V2CyQsGjpk",
+        "amount": 5
+      },
+      "ability": "",
+      "actionType": "save",
+      "attackBonus": 0,
+      "chatFlavor": "chat message",
+      "critical": {
+        "threshold": null,
+        "damage": ""
+      },
+      "damage": {
+        "parts": [
+          [
+            "12d8",
+            "cold"
+          ],
+          [
+            "1d4",
+            "slashing"
+          ]
+        ],
+        "versatile": "10d4"
+      },
+      "formula": "1d8",
+      "save": {
+        "ability": "con",
+        "dc": 19,
+        "scaling": "flat"
+      },
+      "requirements": "",
+      "recharge": {
+        "value": 5,
+        "charged": true
+      },
+      "attunement": null
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 0,
+    "permission": {
+      "default": 0,
+      "IX3pCwW2Ehae5kKO": 3
+    },
+    "flags": {
+      "core": {
+        "sourceId": "Item.37LmjTb2TrfWJEkR"
+      },
+      "betterRolls5e": {
+        "quickDamage": {
+          "context": {
+            "0": "test",
+            "1": "test 2"
+          },
+          "value": {
+            "0": true,
+            "1": true
+          },
+          "altValue": {
+            "0": true,
+            "1": true
+          }
+        },
+        "quickOther": {
+          "context": "context",
+          "value": true,
+          "altValue": true
+        },
+        "quickDesc": {
+          "value": true,
+          "altValue": true
+        },
+        "quickSave": {
+          "value": true,
+          "altValue": true
+        },
+        "quickProperties": {
+          "value": true,
+          "altValue": true
+        },
+        "quickTemplate": {
+          "value": true,
+          "altValue": true
+        },
+        "quickFlavor": {
+          "value": true,
+          "altValue": true
+        },
+        "quickCharges": {
+          "value": {
+            "charge": true,
+            "use": true,
+            "resource": true
+          },
+          "altValue": {
+            "charge": true,
+            "use": true,
+            "resource": true
+          }
+        }
+      },
+      "magicitems": {
+        "enabled": false,
+        "equipped": false,
+        "attuned": false,
+        "charges": "0",
+        "chargeType": "c1",
+        "destroy": false,
+        "destroyFlavorText": "MAGICITEMS.MagicItemDestroy",
+        "rechargeable": false,
+        "recharge": "0",
+        "rechargeType": "t1",
+        "rechargeUnit": "r1",
+        "sorting": "l"
+      }
+    }
+  }

@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
     <div class="container white-text">
-        <form action="/traits/addTrait" method="POST" id="newAbility" novalidate>
+        <form action="/traits/addTrait" method="POST" id="newAbility">
 
             <div class="row">
                 <div class="col s12">
@@ -14,7 +14,7 @@
                                 <label for="traitName">Trait Name</label>
                             </div>
                             <div class="input-field col s12 m6">
-                                <select form="newAbility" name="traitType" id="traitType" required>
+                                <select form="newAbility" name="traitType" id="traitType">
                                     <option value="" selected></option>
                                     <!-- <option value="Consumable">Consumable</option> -->
                                     <option value="Equipment">Equipment</option>
@@ -22,7 +22,7 @@
                                     <!-- <option value="Loot">Loot</option> -->
                                     <option value="Weapon">Weapon</option>
                                 </select>
-                                <label for="traitType">Trait Type</label>
+                                <label for="traitType">Trait Type (Required)</label>
                             </div>
                         </div>
                         <div class="row">
@@ -58,7 +58,7 @@
                                 <label for="activation">Activation Cost</label>
                             </div>
                             <div class="input-field col s12 m6 offset-m2">
-                                <select form="newAbility" name="activationType" id="activationType" required>
+                                <select form="newAbility" name="activationType" id="activationType">
                                     <option value="" selected></option>
                                     <option value="Action">Action</option>
                                     <option value="Bonus Action">Bonus Action</option>
@@ -89,7 +89,7 @@
                                 <label for="targetValue">Target Value</label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="targetUnits" id="targetUnits" required>
+                                <select form="newAbility" name="targetUnits" id="targetUnits">
                                     <option value="" selected></option>
                                     <option value="None">None</option>
                                     <option value="Self">Self</option>
@@ -104,7 +104,7 @@
                                 <label for="targetUnits"></label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="targetType" id="targetType" required>
+                                <select form="newAbility" name="targetType" id="targetType">
                                     <option value="" selected></option>
                                     <option value="Ally">Ally</option>
                                     <option value="Cone">Cone</option>
@@ -137,7 +137,7 @@
                                 <label for="rangeMax">Range (Max)</label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="rangeUnits" id="rangeUnits" required>
+                                <select form="newAbility" name="rangeUnits" id="rangeUnits">
                                     <option value="" selected></option>
                                     <option value="None">None</option>
                                     <option value="Self">Self</option>
@@ -159,7 +159,7 @@
                                 <label for="durationValue">Duration</label>
                             </div>
                             <div class="input-field col s12 m4 offset-m4">
-                                <select form="newAbility" name="durationUnits" id="durationUnits" required>
+                                <select form="newAbility" name="durationUnits" id="durationUnits">
                                     <option value="" selected></option>
                                     <option value="Instantaneous">Instantaneous</option>
                                     <option value="Rounds">Rounds</option>
@@ -187,7 +187,7 @@
                                 <label for="limitedUsesMax">Limited Uses (Max)</label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="limitedUsesPer" id="limitedUsesPer" required>
+                                <select form="newAbility" name="limitedUsesPer" id="limitedUsesPer">
                                     <option value="" selected></option>
                                     <option value="Short Rest">Short Rest</option>
                                     <option value="Long Rest">Long Rest</option>
@@ -198,7 +198,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12 m4">
-                                <select form="newAbility" name="consumeType" id="consumeType" required>
+                                <select form="newAbility" name="consumeType" id="consumeType">
                                     <option value="" selected></option>
                                     <option value="Ammunition">Ammunition</option>
                                     <option value="Attribute">Attribute</option>
@@ -252,7 +252,7 @@
                                 <label for="actionTypeLabel">Action Type</label>
                             </div>
                             <div class="input-field col s12 m6 offset-m2">
-                                <select form="newAbility" name="actionType" id="actionType" required>
+                                <select form="newAbility" name="actionType" id="actionType">
                                     <option value="" selected></option>
                                     <option value="Melee Weapon Attack">Melee Weapon Attack</option>
                                     <option value="Ranged Weapon Attack">Ranged Weapon Attack</option>
@@ -273,7 +273,7 @@
                                 <label for="abilityModifierLabel">Ability Modifer</label>
                             </div>
                             <div class="input-field col s12 m6 offset-m2">
-                                <select form="newAbility" name="abilityModifier" id="abilityModifier" required>
+                                <select form="newAbility" name="abilityModifier" id="abilityModifier">
                                     <option value="Default" selected>Default</option>
                                     <option value="Strength">Strength</option>
                                     <option value="Dexterity">Dexterity</option>
@@ -292,7 +292,7 @@
                                 <label for="damageTypeLabel">Damage Formula</label>
                             </div>
                             <div class="input-field col s12 m6">
-                                <select form="newAbility" name="damageType" id="damageType" required>
+                                <select form="newAbility" name="damageType" id="damageType">
                                     <option value="None">None</option>
                                     <option value="Acid">Acid</option>
                                     <option value="Bludgeoning">Bludgeoning</option>
@@ -328,7 +328,7 @@
                                 <label for="saveLabel">Saving Throw</label>
                             </div>
                             <div class="input-field col s12 m3">
-                                <select form="newAbility" name="saveAbility" id="saveAbility" required>
+                                <select form="newAbility" name="saveAbility" id="saveAbility">
                                     <option value="" selected></option>
                                     <option value="Strength">Strength</option>
                                     <option value="Dexterity">Dexterity</option>
@@ -344,7 +344,7 @@
                                 <label for="saveDC">vs DC</label>
                             </div>
                             <div class="input-field col s12 m3">
-                                <select form="newAbility" name="saveScaling" id="saveScaling" required>
+                                <select form="newAbility" name="saveScaling" id="saveScaling">
                                     <option value="Spellcasting" selected>Spellcasting</option>
                                     <option value="Strength">Strength</option>
                                     <option value="Dexterity">Dexterity</option>
@@ -355,14 +355,6 @@
                                     <option value="Flat">Flat</option>
                                 </select>
                                 <label for="saveScaling"></label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col s12">
-                                <button class="btn waves-effect waves-light" type="submit" name="newAbility"><i
-                                        class="fa-solid fa-check"></i>Add new
-                                    trait</button>
                             </div>
                         </div>
                     </fieldset>
@@ -412,6 +404,13 @@
                                         <span>Condition</span>
                                     </label for="tagConditions">
                                 </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <button class="btn waves-effect waves-light" type="submit" name="newAbility"><i
+                                        class="fa-solid fa-check"></i>Add new
+                                    trait</button>
                             </div>
                         </div>
                     </fieldset>

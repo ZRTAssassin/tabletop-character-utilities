@@ -26,7 +26,8 @@ module.exports = {
   // add a new trait
   // @route /traits/addTrait
   addTrait: async (req, res) => {
-    // console.log(req.body);
+    console.log(req.body);
+
     try {
       await Trait.create({
         traitName: req.body.traitName,
@@ -51,6 +52,20 @@ module.exports = {
         consumeAmount: req.body.consumeAmount,
         actionRechargeValue: req.body.actionRechargeValue,
         actionRechargeIsCharged: req.body.actionRechargeIsCharged,
+        actionType: req.body.actionType,
+        abilityModifer: req.body.abilityModifer,
+        damageTypeFormula: req.body.damageTypeFormula,
+        damageType: req.body.damageType,
+        versatileDamage: req.body.versatileDamage,
+        saveAbility: req.body.saveAbility,
+        saveDC: req.body.saveDC,
+        saveScaling: req.body.saveScaling,
+        tagDamage: req.body.tagDamage,
+        tagBuff: req.body.tagBuff,
+        tagDebuff: req.body.tagDebuff,
+        tagMovement: req.body.tagMovement,
+        tagConditions: req.body.tagConditions,
+        tagUtility: req.body.tagUtility,
         user: req.user.id,
       });
       console.log(`${req.body.traitName} added!`);

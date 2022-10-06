@@ -11,7 +11,7 @@
                     </p>
                     <fieldset>
                         <legend>Description</legend>
-                        
+
                         <div class="row">
                             <div class="input-field col s12 m6">
                                 <input type="text" name="traitName" id="traitName" required />
@@ -258,15 +258,15 @@
                             <div class="input-field col s12 m6 offset-m2">
                                 <select form="newAbility" name="actionType" id="actionType">
                                     <option value="" selected></option>
-                                    <option value="Melee Weapon Attack">Melee Weapon Attack</option>
-                                    <option value="Ranged Weapon Attack">Ranged Weapon Attack</option>
-                                    <option value="Melee Spell Attack">Melee Spell Attack</option>
-                                    <option value="Ranged Spell Attack">Ranged Spell Attack</option>
-                                    <option value="Saving Throw">Saving Throw</option>
-                                    <option value="Healing">Healing</option>
-                                    <option value="Ability Check">Ability Check</option>
-                                    <option value="Other">Other</option>
-                                    <option value="Legendary Action">Other</option>
+                                    <option value="mwak">Melee Weapon Attack</option>
+                                    <option value="rwak">Ranged Weapon Attack</option>
+                                    <option value="msak">Melee Spell Attack</option>
+                                    <option value="rsak">Ranged Spell Attack</option>
+                                    <option value="save">Saving Throw</option>
+                                    <option value="heal">Healing</option>
+                                    <option value="abil">Ability Check</option>
+                                    <option value="util">Utility</option>
+                                    <option value="other">Other</option>
                                 </select>
                                 <label for="actionType"></label>
                             </div>
@@ -279,12 +279,12 @@
                             <div class="input-field col s12 m6 offset-m2">
                                 <select form="newAbility" name="abilityModifier" id="abilityModifier">
                                     <option value="Default" selected>Default</option>
-                                    <option value="Strength">Strength</option>
-                                    <option value="Dexterity">Dexterity</option>
-                                    <option value="Constitution">Constitution</option>
-                                    <option value="Intelligence">Intelligence</option>
-                                    <option value="Wisdom">Wisdom</option>
-                                    <option value="Charisma">Charisma</option>
+                                    <option value="str">Strength</option>
+                                    <option value="dex">Dexterity</option>
+                                    <option value="con">Constitution</option>
+                                    <option value="int">Intelligence</option>
+                                    <option value="wis">Wisdom</option>
+                                    <option value="cha">Charisma</option>
                                 </select>
                                 <label for="abilityModifier"></label>
                             </div>
@@ -292,25 +292,25 @@
 
                         <div class="row">
                             <div class="input-field col s12 m6">
-                                <input type="text" name="damageTypeLabel" id="damageTypeLabel" />
-                                <label for="damageTypeLabel">Damage Formula</label>
+                                <input type="text" name="damageTypeFormula" id="damageTypeFormula" />
+                                <label for="damageTypeFormula">Damage Formula</label>
                             </div>
                             <div class="input-field col s12 m6">
                                 <select form="newAbility" name="damageType" id="damageType">
-                                    <option value="None">None</option>
-                                    <option value="Acid">Acid</option>
-                                    <option value="Bludgeoning">Bludgeoning</option>
-                                    <option value="Cold">Cold</option>
-                                    <option value="Fire">Fire</option>
-                                    <option value="Force">Force</option>
-                                    <option value="Lightning">Lightning</option>
-                                    <option value="Necrotic">Necrotic</option>
-                                    <option value="Piercing">Piercing</option>
-                                    <option value="Poison">Poison</option>
-                                    <option value="Psychic">Psychic</option>
-                                    <option value="Radiant">Radiant</option>
-                                    <option value="Slashing">Slashing</option>
-                                    <option value="Thunder">Thunder</option>
+                                    <option value="">None</option>
+                                    <option value="acid">Acid</option>
+                                    <option value="bludgeoning">Bludgeoning</option>
+                                    <option value="cold">Cold</option>
+                                    <option value="fire">Fire</option>
+                                    <option value="force">Force</option>
+                                    <option value="lightning">Lightning</option>
+                                    <option value="necrotic">Necrotic</option>
+                                    <option value="piercing">Piercing</option>
+                                    <option value="poison">Poison</option>
+                                    <option value="psychic">Psychic</option>
+                                    <option value="radiant">Radiant</option>
+                                    <option value="slashing">Slashing</option>
+                                    <option value="thunder">Thunder</option>
                                 </select>
                                 <label for="damageType">Choose a damage type:</label>
                             </div>
@@ -334,12 +334,12 @@
                             <div class="input-field col s12 m3">
                                 <select form="newAbility" name="saveAbility" id="saveAbility">
                                     <option value="" selected></option>
-                                    <option value="Strength">Strength</option>
-                                    <option value="Dexterity">Dexterity</option>
-                                    <option value="Constitution">Constitution</option>
-                                    <option value="Intelligence">Intelligence</option>
-                                    <option value="Wisdom">Wisdom</option>
-                                    <option value="Charisma">Charisma</option>
+                                    <option value="str">Strength</option>
+                                    <option value="dex">Dexterity</option>
+                                    <option value="con">Constitution</option>
+                                    <option value="int">Intelligence</option>
+                                    <option value="wis">Wisdom</option>
+                                    <option value="cha">Charisma</option>
                                 </select>
                                 <label for="saveAbility"></label>
                             </div>
@@ -349,14 +349,14 @@
                             </div>
                             <div class="input-field col s12 m3">
                                 <select form="newAbility" name="saveScaling" id="saveScaling">
-                                    <option value="Spellcasting" selected>Spellcasting</option>
-                                    <option value="Strength">Strength</option>
-                                    <option value="Dexterity">Dexterity</option>
-                                    <option value="Constitution">Constitution</option>
-                                    <option value="Intelligence">Intelligence</option>
-                                    <option value="Wisdom">Wisdom</option>
-                                    <option value="Charisma">Charisma</option>
-                                    <option value="Flat">Flat</option>
+                                    <option value="spell" selected>Spellcasting</option>
+                                    <option value="str">Strength</option>
+                                    <option value="dex">Dexterity</option>
+                                    <option value="con">Constitution</option>
+                                    <option value="int">Intelligence</option>
+                                    <option value="wis">Wisdom</option>
+                                    <option value="cha">Charisma</option>
+                                    <option value="flat">Flat</option>
                                 </select>
                                 <label for="saveScaling"></label>
                             </div>
@@ -372,7 +372,8 @@
                             <div class="col s12 m3">
                                 <p>
                                     <label>
-                                        <input type="checkbox" class="filled-in" id="tagDamage" />
+                                        <input type="checkbox" class="filled-in" id="tagDamage" name="tagDamage"
+                                            value="true" />
                                         <span>Damage</span>
                                     </label for="tagDamage">
                                 </p>
@@ -380,7 +381,8 @@
                             <div class="col s12 m3">
                                 <p>
                                     <label>
-                                        <input type="checkbox" class="filled-in" id="tagBuff" />
+                                        <input type="checkbox" class="filled-in" id="tagBuff" name="tagBuff"
+                                            value="true" />
                                         <span>Buff</span>
                                     </label for="tagDamage">
                                 </p>
@@ -388,7 +390,8 @@
                             <div class="col s12 m3">
                                 <p>
                                     <label>
-                                        <input type="checkbox" class="filled-in" id="tagDebuff" />
+                                        <input type="checkbox" class="filled-in" id="tagDebuff" name="tagDebuff"
+                                            value="true" />
                                         <span>Debuff</span>
                                     </label for="tagDebuff">
                                 </p>
@@ -396,7 +399,8 @@
                             <div class="col s12 m3">
                                 <p>
                                     <label>
-                                        <input type="checkbox" class="filled-in" id="tagMovement" />
+                                        <input type="checkbox" class="filled-in" id="tagMovement" name="tagMovement"
+                                            value="true" />
                                         <span>Movement</span>
                                     </label for="tagMovement">
                                 </p>
@@ -404,9 +408,19 @@
                             <div class="col s12 m3">
                                 <p>
                                     <label>
-                                        <input type="checkbox" class="filled-in" id="tagConditions" />
+                                        <input type="checkbox" class="filled-in" id="tagConditions" name="tagConditions"
+                                            value="true" />
                                         <span>Condition</span>
                                     </label for="tagConditions">
+                                </p>
+                            </div>
+                            <div class="col s12 m3">
+                                <p>
+                                    <label>
+                                        <input type="checkbox" class="filled-in" id="tagUtility" name="tagUtility"
+                                            value="true" />
+                                        <span>Utility</span>
+                                    </label for="tagUtility">
                                 </p>
                             </div>
                         </div>

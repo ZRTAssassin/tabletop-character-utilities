@@ -6,44 +6,19 @@
                 <div class="col s12 m3">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="tagDamage" name="tagDamage"
-                                value="true" />
-                            <span>Damage</span>
-                        </label for="tagDamage">
-                    </p>
-                </div>
-                <div class="col s12 m3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="tagBuff" name="tagBuff"
-                                value="true" />
+                            <input type="hidden" class="filled-in" id="tagBuffHidden" name="tagBuff" value="false" />
+                            <input type="checkbox" class="filled-in" id="tagBuff" name="tagBuff" value="true" />
                             <span>Buff</span>
-                        </label for="tagDamage">
+                        </label for="tagBuff">
                     </p>
                 </div>
                 <div class="col s12 m3">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="tagDebuff" name="tagDebuff"
+                            <input type="hidden" class="filled-in" id="tagConditionsHidden" name="tagConditions"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="tagConditions" name="tagConditions"
                                 value="true" />
-                            <span>Debuff</span>
-                        </label for="tagDebuff">
-                    </p>
-                </div>
-                <div class="col s12 m3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="tagMovement"
-                                name="tagMovement" value="true" />
-                            <span>Movement</span>
-                        </label for="tagMovement">
-                    </p>
-                </div>
-                <div class="col s12 m3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="tagConditions"
-                                name="tagConditions" value="true" />
                             <span>Condition</span>
                         </label for="tagConditions">
                     </p>
@@ -51,8 +26,39 @@
                 <div class="col s12 m3">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="tagUtility"
-                                name="tagUtility" value="true" />
+                            <input type="hidden" class="filled-in" id="tagDamageHidden" name="tagDamage"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="tagDamage" name="tagDamage" value="true" />
+                            <span>Damage</span>
+                        </label for="tagDamage">
+                    </p>
+                </div>
+                <div class="col s12 m3">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="tagDebuffHidden" name="tagDebuff"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="tagDebuff" name="tagDebuff" value="true" />
+                            <span>Debuff</span>
+                        </label for="tagDebuff">
+                    </p>
+                </div>
+                <div class="col s12 m3">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="tagMovementHidden" name="tagMovement"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="tagMovement" name="tagMovement" value="true" />
+                            <span>Movement</span>
+                        </label for="tagMovement">
+                    </p>
+                </div>
+                <div class="col s12 m3">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="tagUtilityHidden" name="tagUtility"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="tagUtility" name="tagUtility" value="true" />
                             <span>Utility</span>
                         </label for="tagUtility">
                     </p>

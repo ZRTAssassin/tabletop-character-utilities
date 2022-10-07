@@ -26,6 +26,27 @@ module.exports = {
   // add a new trait
   // @route /traits/addTrait
   addTrait: async (req, res) => {
+    if (typeof req.body.tagBuff === "object") {
+      req.body.tagBuff = true;
+    }
+    if (typeof req.body.tagConditions === "object") {
+      req.body.tagConditions = true;
+    }
+    if (typeof req.body.tagDamage === "object") {
+      req.body.tagDamage = true;
+    }
+    if (typeof req.body.tagDebuff === "object") {
+      req.body.tagDebuff = true;
+    }
+    if (typeof req.body.tagMovement === "object") {
+      req.body.tagMovement = true;
+    }
+    if (typeof req.body.tagUtility === "object") {
+      req.body.tagUtility = true;
+    }
+    if (typeof req.body.actionRechargeIsCharged === "object") {
+      req.body.actionRechargeIsCharged = true;
+    }
     console.log(req.body);
 
     try {

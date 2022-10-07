@@ -1,0 +1,245 @@
+<div class="row">
+    <div class="col s12">
+        <fieldset>
+            <legend>Feature Usage</legend>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="activation" id="activation" value="<%= trait.activation%>" />
+                    <label for="activation">Activation Cost</label>
+                </div>
+                <div class="input-field col s12 m6 offset-m2">
+                    <select form="newAbility" name="activationType" id="activationType">
+                        <option value="" <%=trait.activationType==="" ? 'selected' : '' %>></option>
+                        <option value="Action" <%=trait.activationType==="Action" ? 'selected' : '' %>
+                            >Action</option>
+                        <option value="Bonus Action" <%=trait.activationType==="Bonus Action" ? 'selected'
+                            : '' %>>Bonus Action</option>
+                        <option value="Crew Action" <%=trait.activationType==="Crew Action" ? 'selected'
+                            : '' %>>Crew Action</option>
+                        <option value="Minutes" <%=trait.activationType==="Minutes" ? 'selected' : '' %>
+                            >Minutes</option>
+                        <option value="Hours" <%=trait.activationType==="Hours" ? 'selected' : '' %>>Hours
+                        </option>
+                        <option value="Days" <%=trait.activationType==="Days" ? 'selected' : '' %>>Days
+                        </option>
+                        <option value="Lair Action" <%=trait.activationType==="Lair Action" ? 'selected'
+                            : '' %>>Lair Action</option>
+                        <option value="Legendary Action" <%=trait.activationType==="Legendary Action"
+                            ? 'selected' : '' %>>Legendary Action</option>
+                        <option value="Weapon" <%=trait.activationType==="Weapon" ? 'selected' : '' %>>None
+                        </option>
+                        <option value="Reaction" <%=trait.activationType==="Reaction" ? 'selected' : '' %>
+                            >Reaction</option>
+                        <option value="Special" <%=trait.activationType==="Special" ? 'selected' : '' %>
+                            >Special</option>
+                    </select>
+                    <label for="activationType"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 white-text input-field">
+                    <textarea class="materialize-textarea" name="activationCondition"
+                        id="activationCondition" data-length="120"
+                        value="<%= trait.activationCondition%>"></textarea>
+                    <label for="activationCondition">Activation Condition</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="targetValue" id="targetValue"
+                        value="<%= trait.targetValue%>" />
+                    <label for="targetValue">Target Value</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <select form="newAbility" name="targetUnits" id="targetUnits">
+                        <option value="" <%=trait.targetUnits==="" ? 'selected' : '' %>></option>
+                        <option value="None" <%=trait.targetUnits==="None" ? 'selected' : '' %>>None
+                        </option>
+                        <option value="Self" <%=trait.targetUnits==="Self" ? 'selected' : '' %>>Self
+                        </option>
+                        <option value="Touch" <%=trait.targetUnits==="Touch" ? 'selected' : '' %>>Touch
+                        </option>
+                        <option value="Special" <%=trait.targetUnits==="Special" ? 'selected' : '' %>
+                            >Special</option>
+                        <option value="Any" <%=trait.targetUnits==="Any" ? 'selected' : '' %>>Any</option>
+                        <option value="Feet" <%=trait.targetUnits==="Feet" ? 'selected' : '' %>>Feet
+                        </option>
+                        <option value="Miles" <%=trait.targetUnits==="Miles" ? 'selected' : '' %>>Miles
+                        </option>
+                        <option value="Meters" <%=trait.targetUnits==="Meters" ? 'selected' : '' %>>Meters
+                        </option>
+                        <option value="Kilometers" <%=trait.targetUnits==="Kilometers" ? 'selected' : '' %>
+                            >Kilometers</option>
+                    </select>
+                    <label for="targetUnits"></label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <select form="newAbility" name="targetType" id="targetType">
+                        <option value="" <%=trait.targetType==="" ? 'selected' : '' %>></option>
+                        <option value="Ally" <%=trait.targetType==="Ally" ? 'selected' : '' %>>Ally</option>
+                        <option value="Cone" <%=trait.targetType==="Cone" ? 'selected' : '' %>>Cone</option>
+                        <option value="Creature" <%=trait.targetType==="Creature" ? 'selected' : '' %>
+                            >Creature</option>
+                        <option value="Cube" <%=trait.targetType==="Cube" ? 'selected' : '' %>>Cube</option>
+                        <option value="Cylinder" <%=trait.targetType==="Cylinder" ? 'selected' : '' %>
+                            >Cylinder</option>
+                        <option value="Enemy" <%=trait.targetType==="Enemy" ? 'selected' : '' %>>Enemy
+                        </option>
+                        <option value="Line" <%=trait.targetType==="Ally" ? 'selected' : '' %>>Line</option>
+                        <option value="None" <%=trait.targetType==="None" ? 'selected' : '' %>>None</option>
+                        <option value="Object" <%=trait.targetType==="Object" ? 'selected' : '' %>>Object
+                        </option>
+                        <option value="Radius" <%=trait.targetType==="Radius" ? 'selected' : '' %>>Radius
+                        </option>
+                        <option value="Self" <%=trait.targetType==="Self" ? 'selected' : '' %>>Self</option>
+                        <option value="Space" <%=trait.targetType==="Space" ? 'selected' : '' %>>Space
+                        </option>
+                        <option value="Sphere" <%=trait.targetType==="Sphere" ? 'selected' : '' %>>Sphere
+                        </option>
+                        <option value="Square" <%=trait.targetType==="Square" ? 'selected' : '' %>>Square
+                        </option>
+                        <option value="Wall" <%=trait.targetType==="Wall" ? 'selected' : '' %>>Wall</option>
+                    </select>
+                    <label for="targetType"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="rangeNormal" id="rangeNormal"
+                        value="<%= trait.rangeNormal%>" />
+                    <label for="rangeNormal">Range (Normal)</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input type="text" name="rangeMax" id="rangeMax" value="<%= trait.rangeMax%>" />
+                    <label for="rangeMax">Range (Max)</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <select form="newAbility" name="rangeUnits" id="rangeUnits">
+                        <option value="" <%=trait.rangeUnits==="" ? 'selected' : '' %>></option>
+                        <option value="None" <%=trait.rangeUnits==="" ? 'selected' : '' %>>None</option>
+                        <option value="Self" <%=trait.rangeUnits==="Self" ? 'selected' : '' %>>Self</option>
+                        <option value="Touch" <%=trait.rangeUnits==="Touch" ? 'selected' : '' %>>Touch
+                        </option>
+                        <option value="Special" <%=trait.rangeUnits==="Special" ? 'selected' : '' %>>Special
+                        </option>
+                        <option value="Any" <%=trait.rangeUnits==="Any" ? 'selected' : '' %>>Any</option>
+                        <option value="Feet" <%=trait.rangeUnits==="Feet" ? 'selected' : '' %>>Feet</option>
+                        <option value="Miles" <%=trait.rangeUnits==="Miles" ? 'selected' : '' %>>Miles
+                        </option>
+                        <option value="Meters" <%=trait.rangeUnits==="Meters" ? 'selected' : '' %>>Meters
+                        </option>
+                        <option value="Kilometers" <%=trait.rangeUnits==="Kilometers" ? 'selected' : '' %>
+                            >Kilometers</option>
+                    </select>
+                    <label for="rangeUnits"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="durationValue" id="durationValue"
+                        value="<%= trait.durationValue%>" />
+                    <label for="durationValue">Duration</label>
+                </div>
+                <div class="input-field col s12 m4 offset-m4">
+                    <select form="newAbility" name="durationUnits" id="durationUnits">
+                        <option value="" <%=trait.durationUnits==="" ? 'selected' : '' %>></option>
+                        <option value="Instantaneous" <%=trait.durationUnits==="Instantaneous" ? 'selected'
+                            : '' %>>Instantaneous</option>
+                        <option value="Rounds" <%=trait.durationUnits==="Rounds" ? 'selected' : '' %>>Rounds
+                        </option>
+                        <option value="Minutes" <%=trait.durationUnits==="Minutes" ? 'selected' : '' %>
+                            >Minutes</option>
+                        <option value="Hours" <%=trait.durationUnits==="Hours" ? 'selected' : '' %>>Hours
+                        </option>
+                        <option value="Days" <%=trait.durationUnits==="Days" ? 'selected' : '' %>>Days
+                        </option>
+                        <option value="Months" <%=trait.durationUnits==="Months" ? 'selected' : '' %>>Months
+                        </option>
+                        <option value="Years" <%=trait.durationUnits==="Years" ? 'selected' : '' %>>Years
+                        </option>
+                        <option value="Permanent" <%=trait.durationUnits==="Permanent" ? 'selected' : '' %>
+                            >Permanent</option>
+                        <option value="Special" <%=trait.durationUnits==="Special" ? 'selected' : '' %>
+                            >Special</option>
+                    </select>
+                    <label for="durationUnits"></label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="limitedUsesValue" id="limitedUsesValue"
+                        value="<%= trait.limitedUsesValue%>" />
+                    <label for="limitedUsesValue">Limited Uses (Remaining)</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input type="text" name="limitedUsesMax" id="limitedUsesMax"
+                        value="<%= trait.limitedUsesMax%>" />
+                    <label for="limitedUsesMax">Limited Uses (Max)</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <select form="newAbility" name="limitedUsesPer" id="limitedUsesPer">
+                        <option value="" <%=trait.limitedUsesPer==="" ? 'selected' : '' %>></option>
+                        <option value="Short Rest" <%=trait.limitedUsesPer==="Short Rest" ? 'selected' : ''
+                            %>>Short Rest</option>
+                        <option value="Long Rest" <%=trait.limitedUsesPer==="Long Rest" ? 'selected' : '' %>
+                            >Long Rest</option>
+                        <option value="Day" <%=trait.limitedUsesPer==="Day" ? 'selected' : '' %>>Day
+                        </option>
+                    </select>
+                    <label for="rangelimitedUsesPerUnits"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <select form="newAbility" name="consumeType" id="consumeType">
+                        <option value="" <%=trait.consumeType==="" ? 'selected' : '' %>></option>
+                        <option value="Ammunition" <%=trait.consumeType==="Ammunition" ? 'selected' : '' %>
+                            >Ammunition</option>
+                        <option value="Attribute" <%=trait.consumeType==="Attribute" ? 'selected' : '' %>
+                            >Attribute</option>
+                        <option value="Hit Dice" <%=trait.consumeType==="Hit Dice" ? 'selected' : '' %>>Hit
+                            Dice</option>
+                        <option value="Item Uses" <%=trait.consumeType==="Item Uses" ? 'selected' : '' %>
+                            >Item Uses</option>
+                        <option value="Material" <%=trait.consumeType==="Material" ? 'selected' : '' %>
+                            >Material</option>
+                    </select>
+                    <label for="consumeType">Resource Consumption</label>
+                </div>
+                <!-- <div class="input-field col s12 m4">
+                        <input type="text" name="consumeTarget" id="consumeTarget" />
+                        <label for="consumeTarget">Type</label>
+                    </div> -->
+                <div class="input-field col s12 m4">
+                    <input type="text" name="consumeAmount" id="consumeAmount"
+                        value="<%= trait.consumeAmount%>" />
+                    <label for="consumeAmount">Quantity</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="actionRecharge" id="actionRecharge" disabled />
+                    <label for="actionRecharge">Action Recharge</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input type="text" name="actionRechargeValue" id="actionRechargeValue"
+                        value="<%= trait.actionRechargeValue%>" />
+                    <label for="actionRechargeValue">Recharge On</label>
+                </div>
+                <div class="input-field col s12 m2">
+                    <p>
+                        <label for="actionRechargeIsCharged">
+                            <input type="checkbox" id="actionRechargeIsCharged" class="filled-in"
+                                name="actionRechargeIsCharged" <%=(trait.actionRechargeIsCharged)
+                                ? "checked" : "" %> value="true" />
+                            <span>Charged</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+
+    </div>
+    </fieldset>
+
+</div>

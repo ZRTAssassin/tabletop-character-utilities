@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="col s12">
+        <fieldset>
+            <legend>Feature Attack</legend>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="actionTypeLabel" id="actionTypeLabel" disabled />
+                    <label for="actionTypeLabel">Action Type</label>
+                </div>
+                <div class="input-field col s12 m6 offset-m2">
+                    <select form="newAbility" name="actionType" id="actionType">
+                        <option value="" selected></option>
+                        <!-- <%=//trait.consumeType==="Ammunition" ? 'selected' : '' %> -->
+                        <option value="mwak" <%=trait.actionType==="mwak" ? 'selected' : '' %>>Melee Weapon Attack
+                        </option>
+                        <option value="rwak" <%=trait.actionType==="rwak" ? 'selected' : '' %>>Ranged Weapon Attack
+                        </option>
+                        <option value="msak" <%=trait.actionType==="msak" ? 'selected' : '' %>>Melee Spell Attack
+                        </option>
+                        <option value="rsak" <%=trait.actionType==="rsak" ? 'selected' : '' %>>Ranged Spell Attack
+                        </option>
+                        <option value="save" <%=trait.actionType==="save" ? 'selected' : '' %>>Saving Throw</option>
+                        <option value="heal" <%=trait.actionType==="heal" ? 'selected' : '' %>>Healing</option>
+                        <option value="abil" <%=trait.actionType==="abil" ? 'selected' : '' %>>Ability Check</option>
+                        <option value="util" <%=trait.actionType==="util" ? 'selected' : '' %>>Utility</option>
+                        <option value="other <%= trait.actionType===" other" ? 'selected' : '' %>">Other</option>
+                    </select>
+                    <label for="actionType"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="abilityModifierLabel" id="abilityModifierLabel" disabled />
+                    <label for="abilityModifierLabel">Ability Modifer</label>
+                </div>
+                <div class="input-field col s12 m6 offset-m2">
+                    <select form="newAbility" name="abilityModifier" id="abilityModifier">
+                        <option value="Default" selected>Default</option>
+                        <option value="str">Strength</option>
+                        <option value="dex">Dexterity</option>
+                        <option value="con">Constitution</option>
+                        <option value="int">Intelligence</option>
+                        <option value="wis">Wisdom</option>
+                        <option value="cha">Charisma</option>
+                    </select>
+                    <label for="abilityModifier"></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="damageTypeFormula" id="damageTypeFormula" />
+                    <label for="damageTypeFormula">Damage Formula</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="damageType" id="damageType">
+                        <option value="">None</option>
+                        <option value="acid">Acid</option>
+                        <option value="bludgeoning">Bludgeoning</option>
+                        <option value="cold">Cold</option>
+                        <option value="fire">Fire</option>
+                        <option value="force">Force</option>
+                        <option value="lightning">Lightning</option>
+                        <option value="necrotic">Necrotic</option>
+                        <option value="piercing">Piercing</option>
+                        <option value="poison">Poison</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="radiant">Radiant</option>
+                        <option value="slashing">Slashing</option>
+                        <option value="thunder">Thunder</option>
+                    </select>
+                    <label for="damageType">Choose a damage type:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="versatileDamageLabel" id="versatileDamageLabel" disabled />
+                    <label for="versatileDamageLabel">Versatile Damage</label>
+                </div>
+                <div class="input-field col s12 offset-m2 m6">
+                    <input type="text" name="versatileDamage" id="versatileDamage" />
+                    <label for="versatileDamage">Versatile Damage</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 m3">
+                    <input type="text" name="saveLabel" id="saveLabel" disabled />
+                    <label for="saveLabel">Saving Throw</label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <select form="newAbility" name="saveAbility" id="saveAbility">
+                        <option value="" selected></option>
+                        <option value="str">Strength</option>
+                        <option value="dex">Dexterity</option>
+                        <option value="con">Constitution</option>
+                        <option value="int">Intelligence</option>
+                        <option value="wis">Wisdom</option>
+                        <option value="cha">Charisma</option>
+                    </select>
+                    <label for="saveAbility"></label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <input type="text" name="saveDC" id="saveDC" />
+                    <label for="saveDC">vs DC</label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <select form="newAbility" name="saveScaling" id="saveScaling">
+                        <option value="spell" selected>Spellcasting</option>
+                        <option value="str">Strength</option>
+                        <option value="dex">Dexterity</option>
+                        <option value="con">Constitution</option>
+                        <option value="int">Intelligence</option>
+                        <option value="wis">Wisdom</option>
+                        <option value="cha">Charisma</option>
+                        <option value="flat">Flat</option>
+                    </select>
+                    <label for="saveScaling"></label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

@@ -22,10 +22,7 @@ exports.postLogin = (req, res, next) => {
 
   if (validationErrors.length) {
     req.flash("errors", validationErrors);
-    return res.redirect("/auth/login", {
-      user: req.user,
-      isLoggedIn: req.isAuthenticated(),
-    });
+    return res.redirect("/auth/login");
   }
   req.body.email = validator.normalizeEmail(req.body.email, {
     gmail_remove_dots: false,
@@ -85,10 +82,7 @@ exports.postSignup = (req, res, next) => {
 
   if (validationErrors.length) {
     req.flash("errors", validationErrors);
-    return res.redirect("/auth/register", {
-      user: req.user,
-      isLoggedIn: req.isAuthenticated(),
-    });
+    return res.redirect("/auth/register");
   }
   req.body.email = validator.normalizeEmail(req.body.email, {
     gmail_remove_dots: false,
@@ -110,10 +104,7 @@ exports.postSignup = (req, res, next) => {
         req.flash("errors", {
           msg: "Account with that email address or username already exists.",
         });
-        return res.redirect("/auth/register", {
-          user: req.user,
-          isLoggedIn: req.isAuthenticated(),
-        });
+        return res.redirect("/auth/register");
       }
       user.save((err) => {
         if (err) {
@@ -123,10 +114,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/", {
-            user: req.user,
-            isLoggedIn: req.isAuthenticated(),
-          });
+          res.redirect("/");
         });
       });
     }

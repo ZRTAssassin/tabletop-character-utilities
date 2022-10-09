@@ -2,7 +2,7 @@
     <div class="container row">
         <div class="">
             <ul class="collapsible">
-                <li>
+                <li class="active">
                     <div class="collapsible-header row">
                         <div class="col s12 m4">
                             Trait name appears here.
@@ -22,10 +22,12 @@
                     </div>
                     <div class="collapsible-body">
                         <span>
-                            Trait description will appear here.
+                            Trait description will appear here. Click the header to open/close.
                         </span>
                     </div>
                 </li>
+            </ul>
+            <ul class="collapsible">
                 <% for(var i=0; i < traits.length; i++) {%>
                     <li>
                         <div class="collapsible-header">

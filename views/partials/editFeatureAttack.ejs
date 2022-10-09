@@ -1,0 +1,124 @@
+<div class="row">
+    <div class="col s12">
+        <fieldset>
+            <legend>Feature Attack</legend>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="actionTypeLabel" id="actionTypeLabel" disabled />
+                    <label for="actionTypeLabel">Action Type</label>
+                </div>
+                <div class="input-field col s12 m6 offset-m2">
+                    <select form="newAbility" name="actionType" id="actionType">
+                        <option value="" selected></option>
+                        <option value="mwak" <%=trait.actionType==="mwak" ? 'selected' : '' %>>Melee Weapon Attack
+                        </option>
+                        <option value="rwak" <%=trait.actionType==="rwak" ? 'selected' : '' %>>Ranged Weapon Attack
+                        </option>
+                        <option value="msak" <%=trait.actionType==="msak" ? 'selected' : '' %>>Melee Spell Attack
+                        </option>
+                        <option value="rsak" <%=trait.actionType==="rsak" ? 'selected' : '' %>>Ranged Spell Attack
+                        </option>
+                        <option value="save" <%=trait.actionType==="save" ? 'selected' : '' %>>Saving Throw</option>
+                        <option value="heal" <%=trait.actionType==="heal" ? 'selected' : '' %>>Healing</option>
+                        <option value="abil" <%=trait.actionType==="abil" ? 'selected' : '' %>>Ability Check</option>
+                        <option value="util" <%=trait.actionType==="util" ? 'selected' : '' %>>Utility</option>
+                        <option value="other <%= trait.actionType===" other" ? 'selected' : '' %>">Other</option>
+                    </select>
+                    <label for="actionType"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="abilityModifierLabel" id="abilityModifierLabel" disabled />
+                    <label for="abilityModifierLabel">Ability Modifer</label>
+                </div>
+                <div class="input-field col s12 m6 offset-m2">
+                    <select form="newAbility" name="abilityModifier" id="abilityModifier">
+                        <option value="" <%=trait.abilityModifier==="" ? 'selected' : '' %>>Default</option>
+                        <option value="str" <%=trait.abilityModifier==="str" ? 'selected' : '' %>>Strength</option>
+                        <option value="dex" <%=trait.abilityModifier==="dex" ? 'selected' : '' %>>Dexterity</option>
+                        <option value="con" <%=trait.abilityModifier==="con" ? 'selected' : '' %>>Constitution</option>
+                        <option value="int" <%=trait.abilityModifier==="int" ? 'selected' : '' %>>Intelligence</option>
+                        <option value="wis" <%=trait.abilityModifier==="wis" ? 'selected' : '' %>>Wisdom</option>
+                        <option value="cha" <%=trait.abilityModifier==="cha" ? 'selected' : '' %>>Charisma</option>
+                    </select>
+                    <label for="abilityModifier"></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="damageTypeFormula" id="damageTypeFormula" />
+                    <label for="damageTypeFormula">Damage Formula</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="damageType" id="damageType">
+                        <option value="" <%=trait.damageType==="" ? 'selected' : '' %>>None</option>
+                        <option value="acid" <%=trait.damageType==="acid" ? 'selected' : '' %>>Acid</option>
+                        <option value="bludgeoning" <%=trait.damageType==="bludgeoning" ? 'selected' : '' %>>Bludgeoning
+                        </option>
+                        <option value="cold" <%=trait.damageType==="cold" ? 'selected' : '' %>>Cold</option>
+                        <option value="fire" <%=trait.damageType==="fire" ? 'selected' : '' %>>Fire</option>
+                        <option value="force" <%=trait.damageType==="force" ? 'selected' : '' %>>Force</option>
+                        <option value="lightning" <%=trait.damageType==="lightning" ? 'selected' : '' %>>Lightning
+                        </option>
+                        <option value="necrotic" <%=trait.damageType==="necrotic" ? 'selected' : '' %>>Necrotic</option>
+                        <option value="piercing" <%=trait.damageType==="piercing" ? 'selected' : '' %>>Piercing</option>
+                        <option value="poison" <%=trait.damageType==="poison" ? 'selected' : '' %>>Poison</option>
+                        <option value="psychic" <%=trait.damageType==="psychic" ? 'selected' : '' %>>Psychic</option>
+                        <option value="radiant" <%=trait.damageType==="radiant" ? 'selected' : '' %>>Radiant</option>
+                        <option value="slashing" <%=trait.damageType==="slashing" ? 'selected' : '' %>>Slashing</option>
+                        <option value="thunder" <%=trait.damageType==="thunder" ? 'selected' : '' %>>Thunder</option>
+                    </select>
+                    <label for="damageType">Choose a damage type:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="versatileDamageLabel" id="versatileDamageLabel" disabled />
+                    <label for="versatileDamageLabel">Versatile Damage</label>
+                </div>
+                <div class="input-field col s12 offset-m2 m6">
+                    <input type="text" name="versatileDamage" id="versatileDamage" />
+                    <label for="versatileDamage">Versatile Damage</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 m3">
+                    <input type="text" name="saveLabel" id="saveLabel" disabled />
+                    <label for="saveLabel">Saving Throw</label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <select form="newAbility" name="saveAbility" id="saveAbility">
+                        <option value="" <%=trait.saveAbility==="" ? 'selected' : '' %>></option>
+                        <option value="str" <%=trait.saveAbility==="str" ? 'selected' : '' %>>Strength</option>
+                        <option value="dex" <%=trait.saveAbility==="dex" ? 'selected' : '' %>>Dexterity</option>
+                        <option value="con" <%=trait.saveAbility==="con" ? 'selected' : '' %>>Constitution</option>
+                        <option value="int" <%=trait.saveAbility==="int" ? 'selected' : '' %>>Intelligence</option>
+                        <option value="wis" <%=trait.saveAbility==="wis" ? 'selected' : '' %>>Wisdom</option>
+                        <option value="cha" <%=trait.saveAbility==="cha" ? 'selected' : '' %>>Charisma</option>
+                    </select>
+                    <label for="saveAbility"></label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <input type="text" name="saveDC" id="saveDC" />
+                    <label for="saveDC">vs DC</label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <select form="newAbility" name="saveScaling" id="saveScaling">
+                        <option value="spell" <%=trait.saveScaling==="spell" ? "selected" : '' %>>Spellcasting</option>
+                        <option value="str" <%=trait.saveScaling==="str" ? "selected" : '' %>>Strength</option>
+                        <option value="dex" <%=trait.saveScaling==="dex" ? "selected" : '' %>>Dexterity</option>
+                        <option value="con" <%=trait.saveScaling==="con" ? "selected" : '' %>>Constitution</option>
+                        <option value="int" <%=trait.saveScaling==="int" ? "selected" : '' %>>Intelligence</option>
+                        <option value="wis" <%=trait.saveScaling==="wis" ? "selected" : '' %>>Wisdom</option>
+                        <option value="cha" <%=trait.saveScaling==="cha" ? "selected" : '' %>>Charisma</option>
+                        <option value="flat" <%=trait.saveScaling==="flat" ? "selected" : '' %>>Flat</option>
+                    </select>
+                    <label for="saveScaling"></label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

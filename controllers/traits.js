@@ -26,7 +26,28 @@ module.exports = {
   // add a new trait
   // @route /traits/addTrait
   addTrait: async (req, res) => {
-    // console.log(req.body);
+    if (typeof req.body.tagBuff === "object") {
+      req.body.tagBuff = true;
+    }
+    if (typeof req.body.tagConditions === "object") {
+      req.body.tagConditions = true;
+    }
+    if (typeof req.body.tagDamage === "object") {
+      req.body.tagDamage = true;
+    }
+    if (typeof req.body.tagDebuff === "object") {
+      req.body.tagDebuff = true;
+    }
+    if (typeof req.body.tagMovement === "object") {
+      req.body.tagMovement = true;
+    }
+    if (typeof req.body.tagUtility === "object") {
+      req.body.tagUtility = true;
+    }
+    if (typeof req.body.actionRechargeIsCharged === "object") {
+      req.body.actionRechargeIsCharged = true;
+    }
+    console.log(req.body);
     try {
       await Trait.create({
         traitName: req.body.traitName,
@@ -51,6 +72,20 @@ module.exports = {
         consumeAmount: req.body.consumeAmount,
         actionRechargeValue: req.body.actionRechargeValue,
         actionRechargeIsCharged: req.body.actionRechargeIsCharged,
+        actionType: req.body.actionType,
+        abilityModifer: req.body.abilityModifer,
+        damageTypeFormula: req.body.damageTypeFormula,
+        damageType: req.body.damageType,
+        versatileDamage: req.body.versatileDamage,
+        saveAbility: req.body.saveAbility,
+        saveDC: req.body.saveDC,
+        saveScaling: req.body.saveScaling,
+        tagDamage: req.body.tagDamage,
+        tagBuff: req.body.tagBuff,
+        tagDebuff: req.body.tagDebuff,
+        tagMovement: req.body.tagMovement,
+        tagConditions: req.body.tagConditions,
+        tagUtility: req.body.tagUtility,
         user: req.user.id,
       });
       console.log(`${req.body.traitName} added!`);

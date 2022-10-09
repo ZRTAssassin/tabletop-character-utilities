@@ -1,0 +1,69 @@
+<%- include('../partials/header') %>
+    <div class="container row">
+        <div class="">
+            <ul class="collapsible">
+                <li class="active">
+                    <div class="collapsible-header row">
+                        <div class="col s12 m4">
+                            THIS IS THE CATEGORY PAGE
+                        </div>
+                        <div class="col s12 m4">
+                            Category appears here.
+                        </div>
+                        <div class="col s12 m4">
+                            <button class="btn delete-button  tooltipped" data-tooltip="This is the delete button."">
+                                <i class=" fa-solid fa-trash">
+                                </i>
+                                <button type="button" class="edit-button btn tooltipped"
+                                    data-tooltip="This is the edit button."><i class="fa-solid fa-pen-to-square">
+                                    </i>
+                                </button>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            Trait description will appear here. Click the header to open/close.
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="collapsible">
+                <% for(var i=0; i < traits.length; i++) {%>
+                    <li>
+                        <div class="collapsible-header">
+                            <div class="col s12 m4">
+                                <%= traits[i].traitName %>
+                            </div>
+                            <div class="col s12 m4">
+                                <%= traits[i].traitType %>
+                            </div>
+                            <div class="col s12 m4">
+                                <form action="/traits/deleteTrait/<%=traits[i]._id%>?_method=DELETE" method="POST"
+                                    class="">
+                                    <button type="submit" class="delete-button btn-small tooltipped"
+                                        data-tooltip="Delete  <%= traits[i].traitName %>">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                    <a href="/traits/edit/<%=traits[i]._id%>">
+                                        <button type="button" class="edit-button btn-small tooltipped"
+                                            data-tooltip="Edit <%= traits[i].traitName %>">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </button>
+                                    </a>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="collapsible-body row">
+                            <div class="col s12">
+                                <p>
+                                    <%= traits[i].traitDescription %>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>

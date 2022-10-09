@@ -32,12 +32,12 @@ const TraitSchema = new mongoose.Schema({
   saveAbility: { type: String, default: "", required: false },
   saveDC: { type: Number, default: 0, required: false },
   saveScaling: { type: String, default: "", required: false },
-  tagDamage: { type: Boolean, default: false, required: false },
-  tagBuff: { type: Boolean, default: false, required: false },
-  tagDebuff: { type: Boolean, default: false, required: false },
-  tagMovement: { type: Boolean, default: false, required: false },
-  tagConditions: { type: Boolean, default: false, required: false },
-  tagUtility: { type: Boolean, default: false, required: false },
+  buff: { type: Boolean, default: false, required: false },
+  conditions: { type: Boolean, default: false, required: false },
+  damage: { type: Boolean, default: false, required: false },
+  debuff: { type: Boolean, default: false, required: false },
+  movement: { type: Boolean, default: false, required: false },
+  utility: { type: Boolean, default: false, required: false },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 

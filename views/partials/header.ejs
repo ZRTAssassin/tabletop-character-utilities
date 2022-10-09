@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <!-- Compiled and minified CSS Materialize -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0/dist/css/materialize.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0/dist/css/materialize.min.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -45,15 +46,27 @@
                     <% if (isLoggedIn) { %>
                         <!-- <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
                         <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li> -->
-                        <li><a class="dropdown-trigger teal-text text-accent-4" href="#!" data-target="dropdown1">Traits<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a class="dropdown-trigger teal-text text-accent-4" href="#!"
+                                data-target="dropdown1">Traits<i class="material-icons right">arrow_drop_down</i></a>
+                        </li>
                         <% } %>
                 </ul>
 
                 <!-- Dropdown Structure -->
                 <ul id="dropdown1" class="dropdown-content">
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
-                    <li class="divider"></li>
                     <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li>
+                    <li class="divider"></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits/category/buff">Buffs</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4"
+                            href="/traits/category/conditions">Conditions</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits/category/damage">Damage</a>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits/category/debuffs">Debuffs</a>
+                    </li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits/category/movement">Movement</a>
+                    </li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits/category/utility">Utility</a>
+                    </li>
                 </ul>
 
                 <ul class="right hide-on-med-and-down">
@@ -72,8 +85,25 @@
                     <li class="col s12"><a class="teal-text text-accent-4" href="/">Home</a></li>
                     <!-- <li class="col s12"><a class="teal-text text-accent-4" href="/character">Characters</a></li> -->
                     <% if (isLoggedIn) { %>
-                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                        <li class="divider"></li>
+                        <li><a class="subheader white-text">Traits</a></li>
                         <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits/category/buff">Buffs</a>
+                        </li>
+                        <li class="col s12"><a class="teal-text text-accent-4"
+                                href="/traits/category/conditions">Conditions</a></li>
+                        <li class="col s12"><a class="teal-text text-accent-4" href="/traits/category/damage">Damage</a>
+                        <li class="col s12"><a class="teal-text text-accent-4"
+                                href="/traits/category/Debuffs">Debuffs</a>
+                        </li>
+                        <li class="col s12"><a class="teal-text text-accent-4"
+                                href="/traits/category/movement">Movement</a>
+                        </li>
+                        <li class="col s12"><a class="teal-text text-accent-4"
+                                href="/traits/category/utility">Utility</a>
+                        </li>
+                        <li class="divider"></li>
                         <% } %>
                             <% if (!isLoggedIn) { %>
                                 <li class="col s12"><a class="teal-text text-accent-4"

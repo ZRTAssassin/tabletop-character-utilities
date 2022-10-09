@@ -3,60 +3,67 @@
         <fieldset>
             <legend>Category</legend>
             <div class="row">
-                <div class="col s12 m3">
+                <div class="col s12 m3 input-field">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="tagDamage" name="tagDamage"
-                                <%=(trait.tagDamage) ? "checked" : "" %>
-                            value="true" />
-                            <span>Damage</span>
-                        </label for="tagDamage">
-                    </p>
-                </div>
-                <div class="col s12 m3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="tagBuff" name="tagBuff" <%=(trait.tagBuff)
-                                ? "checked" : "" %> value="true" />
+                            <input type="hidden" class="filled-in" id="buffHidden" name="buff" value="false" />
+                            <input type="checkbox" class="filled-in" id="buff" name="buff" <%=(trait.buff) ? "checked"
+                                : "" %> value="true" />
                             <span>Buff</span>
-                        </label for="tagDamage">
+                        </label for="buff">
                     </p>
                 </div>
-                <div class="col s12 m3">
+                <div class="col s12 m3 input-field">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="tagDebuff" name="tagDebuff"
-                                <%=(trait.tagDebuff) ? "checked" : "" %> value="true" />
-                            <span>Debuff</span>
-                        </label for="tagDebuff">
-                    </p>
-                </div>
-                <div class="col s12 m3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="tagMovement" name="tagMovement"
-                                <%=(trait.tagMovement) ? "checked" : "" %> value="true" />
-                            <span>Movement</span>
-                        </label for="tagMovement">
-                    </p>
-                </div>
-                <div class="col s12 m3">
-                    <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="tagConditions" name="tagConditions"
-                                <%=(trait.tagConditions) ? "checked" : "" %>
+                            <input type="hidden" class="filled-in" id="conditionsHidden" name="conditions"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="conditions" name="conditions"
+                                <%=(trait.conditions) ? "checked" : "" %>
                             value="true" />
                             <span>Condition</span>
-                        </label for="tagConditions">
+                        </label for="conditions">
                     </p>
                 </div>
-                <div class="col s12 m3">
+                <div class="col s12 m3 input-field">
                     <p>
                         <label>
-                            <input type="checkbox" class="filled-in" id="tagUtility" name="tagUtility"
-                                <%=(trait.tagUtility) ? "checked" : "" %> value="true" />
+                            <input type="hidden" class="filled-in" id="damageHidden" name="damage" value="false" />
+                            <input type="checkbox" class="filled-in" id="damage" name="damage" <%=(trait.damage)
+                                ? "checked" : "" %>
+                            value="true" />
+                            <span>Damage</span>
+                        </label for="damage">
+                    </p>
+                </div>
+                <div class="col s12 m3 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="debuffHidden" name="debuff" value="false" />
+                            <input type="checkbox" class="filled-in" id="debuff" name="debuff" <%=(trait.debuff)
+                                ? "checked" : "" %> value="true" />
+                            <span>Debuff</span>
+                        </label for="debuff">
+                    </p>
+                </div>
+                <div class="col s12 m3 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="movementHidden" name="movement" value="false" />
+                            <input type="checkbox" class="filled-in" id="movement" name="movement" <%=(trait.movement)
+                                ? "checked" : "" %> value="true" />
+                            <span>Movement</span>
+                        </label for="movement">
+                    </p>
+                </div>
+                <div class="col s12 m3 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="utilityHidden" name="utility" value="false" />
+                            <input type="checkbox" class="filled-in" id="utility" name="utility" <%=(trait.utility)
+                                ? "checked" : "" %> value="true" />
                             <span>Utility</span>
-                        </label for="tagUtility">
+                        </label for="utility">
                     </p>
                 </div>
             </div>

@@ -17,37 +17,153 @@ module.exports = {
       console.error(err);
     }
   },
+  // new the page to add traits
+  // @route /traits/addTrait
   getAddTrait: async (req, res) => {
     res.render("addTrait.ejs", {
       user: req.user,
       isLoggedIn: req.isAuthenticated(),
     });
   },
+  // get buffs
+  // @route /traits/category/buff
+  getBuffTraits: async (req, res) => {
+    try {
+      const traitItems = await Trait.find({
+        user: req.user.id,
+        buff: true,
+      })
+        .collation({ locale: "en" })
+        .sort({ traitName: 1 });
+      res.render("traits/traitCategory.ejs", {
+        traits: traitItems,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  },
+  // get conditions
+  // @route /traits/category/conditions
+  getConditionTraits: async (req, res) => {
+    try {
+      const traitItems = await Trait.find({
+        user: req.user.id,
+        conditions: true,
+      })
+        .collation({ locale: "en" })
+        .sort({ traitName: 1 });
+      res.render("traits/traitCategory.ejs", {
+        traits: traitItems,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  },
+  // get damage
+  // @route /traits/category/damage
+  getDamageTraits: async (req, res) => {
+    try {
+      const traitItems = await Trait.find({
+        user: req.user.id,
+        damage: true,
+      })
+        .collation({ locale: "en" })
+        .sort({ traitName: 1 });
+      res.render("traits/traitCategory.ejs", {
+        traits: traitItems,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  },
+  // get debuff
+  // @route /traits/category/debuff
+  getDebuffTraits: async (req, res) => {
+    try {
+      const traitItems = await Trait.find({
+        user: req.user.id,
+        debuff: true,
+      })
+        .collation({ locale: "en" })
+        .sort({ traitName: 1 });
+      res.render("traits/traitCategory.ejs", {
+        traits: traitItems,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  },
+  // get movement
+  // @route /traits/category/movement
+  getMovementTraits: async (req, res) => {
+    try {
+      const traitItems = await Trait.find({
+        user: req.user.id,
+        movement: true,
+      })
+        .collation({ locale: "en" })
+        .sort({ traitName: 1 });
+      res.render("traits/traitCategory.ejs", {
+        traits: traitItems,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  },
+  // get utility
+  // @route /traits/category/utility
+  getUtilityTraits: async (req, res) => {
+    try {
+      const traitItems = await Trait.find({
+        user: req.user.id,
+        utility: true,
+      })
+        .collation({ locale: "en" })
+        .sort({ traitName: 1 });
+      res.render("traits/traitCategory.ejs", {
+        traits: traitItems,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  },
   // add a new trait
   // @route /traits/addTrait
   addTrait: async (req, res) => {
-    if (typeof req.body.tagBuff === "object") {
-      req.body.tagBuff = true;
+    if (typeof req.body.buff === "object") {
+      req.body.buff = true;
     }
-    if (typeof req.body.tagConditions === "object") {
-      req.body.tagConditions = true;
+    if (typeof req.body.conditions === "object") {
+      req.body.conditions = true;
     }
-    if (typeof req.body.tagDamage === "object") {
-      req.body.tagDamage = true;
+    if (typeof req.body.damage === "object") {
+      req.body.damage = true;
     }
-    if (typeof req.body.tagDebuff === "object") {
-      req.body.tagDebuff = true;
+    if (typeof req.body.debuff === "object") {
+      req.body.debuff = true;
     }
-    if (typeof req.body.tagMovement === "object") {
-      req.body.tagMovement = true;
+    if (typeof req.body.movement === "object") {
+      req.body.movement = true;
     }
-    if (typeof req.body.tagUtility === "object") {
-      req.body.tagUtility = true;
+    if (typeof req.body.utility === "object") {
+      req.body.utility = true;
     }
     if (typeof req.body.actionRechargeIsCharged === "object") {
       req.body.actionRechargeIsCharged = true;
     }
-    console.log(req.body);
+    console.log(req.body.conditions, typeof req.body.conditions);
     try {
       await Trait.create({
         traitName: req.body.traitName,
@@ -80,12 +196,12 @@ module.exports = {
         saveAbility: req.body.saveAbility,
         saveDC: req.body.saveDC,
         saveScaling: req.body.saveScaling,
-        tagDamage: req.body.tagDamage,
-        tagBuff: req.body.tagBuff,
-        tagDebuff: req.body.tagDebuff,
-        tagMovement: req.body.tagMovement,
-        tagConditions: req.body.tagConditions,
-        tagUtility: req.body.tagUtility,
+        buff: req.body.buff,
+        conditions: req.body.conditions,
+        damage: req.body.damage,
+        debuff: req.body.debuff,
+        movement: req.body.movement,
+        utility: req.body.utility,
         user: req.user.id,
       });
       console.log(`${req.body.traitName} added!`);
@@ -130,6 +246,27 @@ module.exports = {
   // @route PUT /trait/:id
   requestEditTrait: async (req, res) => {
     console.log(`RequestEditTrait called. ID: ${req.params.id}`);
+    if (typeof req.body.buff === "object") {
+      req.body.buff = true;
+    }
+    if (typeof req.body.conditions === "object") {
+      req.body.conditions = true;
+    }
+    if (typeof req.body.damage === "object") {
+      req.body.damage = true;
+    }
+    if (typeof req.body.debuff === "object") {
+      req.body.debuff = true;
+    }
+    if (typeof req.body.movement === "object") {
+      req.body.movement = true;
+    }
+    if (typeof req.body.utility === "object") {
+      req.body.utility = true;
+    }
+    if (typeof req.body.actionRechargeIsCharged === "object") {
+      req.body.actionRechargeIsCharged = true;
+    }
     console.log(req.body);
     let trait = await Trait.findById(req.params.id);
 

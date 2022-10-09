@@ -48,7 +48,6 @@ module.exports = {
       req.body.actionRechargeIsCharged = true;
     }
     console.log(req.body);
-
     try {
       await Trait.create({
         traitName: req.body.traitName,

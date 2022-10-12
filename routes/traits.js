@@ -7,12 +7,7 @@ router.get("/", ensureAuth, traitsController.getTraits);
 
 router.get("/add", ensureAuth, traitsController.getAddTrait);
 
-router.get("/category/buff", traitsController.getBuffTraits);
-router.get("/category/conditions", traitsController.getConditionTraits);
-router.get("/category/damage", traitsController.getDamageTraits);
-router.get("/category/debuff", traitsController.getDebuffTraits);
-router.get("/category/movement", traitsController.getMovementTraits);
-router.get("/category/utility", traitsController.getUtilityTraits);
+router.get("/category/:category", traitsController.getCategoryTraits);
 
 router.get("/edit/:id", traitsController.editTrait);
 

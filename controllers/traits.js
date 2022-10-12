@@ -25,109 +25,17 @@ module.exports = {
       isLoggedIn: req.isAuthenticated(),
     });
   },
-  // get buffs
-  // @route /traits/category/buff
-  getBuffTraits: async (req, res) => {
+  // get category traits
+  // @route /traits/category/:category
+  getCategoryTraits: async (req, res) => {
+    let category = req.params.category;
+    console.log(category);
     try {
       const traitItems = await Trait.find({
         user: req.user.id,
-        buff: true,
       })
-        .collation({ locale: "en" })
-        .sort({ traitName: 1 });
-      res.render("traits/traitCategory.ejs", {
-        traits: traitItems,
-        user: req.user,
-        isLoggedIn: req.isAuthenticated(),
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  },
-  // get conditions
-  // @route /traits/category/conditions
-  getConditionTraits: async (req, res) => {
-    try {
-      const traitItems = await Trait.find({
-        user: req.user.id,
-        conditions: true,
-      })
-        .collation({ locale: "en" })
-        .sort({ traitName: 1 });
-      res.render("traits/traitCategory.ejs", {
-        traits: traitItems,
-        user: req.user,
-        isLoggedIn: req.isAuthenticated(),
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  },
-  // get damage
-  // @route /traits/category/damage
-  getDamageTraits: async (req, res) => {
-    try {
-      const traitItems = await Trait.find({
-        user: req.user.id,
-        damage: true,
-      })
-        .collation({ locale: "en" })
-        .sort({ traitName: 1 });
-      res.render("traits/traitCategory.ejs", {
-        traits: traitItems,
-        user: req.user,
-        isLoggedIn: req.isAuthenticated(),
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  },
-  // get debuff
-  // @route /traits/category/debuff
-  getDebuffTraits: async (req, res) => {
-    try {
-      const traitItems = await Trait.find({
-        user: req.user.id,
-        debuff: true,
-      })
-        .collation({ locale: "en" })
-        .sort({ traitName: 1 });
-      res.render("traits/traitCategory.ejs", {
-        traits: traitItems,
-        user: req.user,
-        isLoggedIn: req.isAuthenticated(),
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  },
-  // get movement
-  // @route /traits/category/movement
-  getMovementTraits: async (req, res) => {
-    try {
-      const traitItems = await Trait.find({
-        user: req.user.id,
-        movement: true,
-      })
-        .collation({ locale: "en" })
-        .sort({ traitName: 1 });
-      res.render("traits/traitCategory.ejs", {
-        traits: traitItems,
-        user: req.user,
-        isLoggedIn: req.isAuthenticated(),
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  },
-  // get utility
-  // @route /traits/category/utility
-  getUtilityTraits: async (req, res) => {
-    try {
-      const traitItems = await Trait.find({
-        user: req.user.id,
-        utility: true,
-      })
+        .where(`${category}`)
+        .equals(true)
         .collation({ locale: "en" })
         .sort({ traitName: 1 });
       res.render("traits/traitCategory.ejs", {

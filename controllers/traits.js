@@ -22,13 +22,13 @@ module.exports = {
   getAddTrait: (req, res) => {
     console.log("getAddTrait called");
     const traitType = req.params.traitType;
-    console.log(`add${traitType}`);
+    console.log(`traits/add${traitType}`);
     res.render(
-      `add${traitType.charAt(0).toUpperCase() + traitType.substring(1)}.ejs`,
+      `traits/add${traitType.charAt(0).toUpperCase() + traitType.substring(1)}.ejs`,
       {
         user: req.user,
         isLoggedIn: req.isAuthenticated(),
-        trait: traitType,
+        traitType: traitType,
       }
     );
     // res.render("addTrait.ejs", {
@@ -151,7 +151,7 @@ module.exports = {
     // console.log(request.params.id);
     try {
       const trait = await Trait.findById(req.params.id);
-      res.render("traits/edit", {
+      res.render("traits/edit.ejs", {
         trait: trait,
         user: req.user,
         isLoggedIn: req.isAuthenticated(),

@@ -13,21 +13,7 @@
                     <label for="traitName">Trait Name</label>
                 </div>
                 <div class="input-field col s12 m6">
-                    <select form="newAbility" name="traitType" id="traitType" required>
-                        <option value="" selected></option>
-                        <!-- <option value="consumable">Consumable</option> -->
-                        <option value="fquipment">Equipment</option>
-                        <option value="feat">Feat</option>
-                        <!-- <option value="loot">Loot</option> -->
-                        <option value="weapon">Weapon</option>
-                        <!-- <option value="spell">Spell</option> -->
-                        <!-- consumable
-						feat
-						loot
-						weapon
-						equipment
-						spell -->
-                    </select>
+                    <input type="text" name="traitType" id="traitType" value="<%=traitType%>" disabled required />
                     <label for="traitType">Trait Type</label>
                 </div>
             </div>

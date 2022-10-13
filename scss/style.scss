@@ -61,6 +61,10 @@ $accent-color: white;
 .input-field input[type="text"]:focus + label {
   color: $accent-color;
 }
+input[type="text"]:not(.browser-default):disabled {
+  text-transform: capitalize;
+  color: $accent-color;
+}
 /* label underline focus color */
 .input-field input[type="text"]:focus {
   border-bottom: 1px solid $accent-color;

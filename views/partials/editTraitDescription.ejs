@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col s12">
+        <h2>Edit <%= trait.traitName %>
+        </h2>
+        <fieldset>
+            <legend>Description</legend>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="traitName" id="traitName" class="validate"
+                        value="<%= trait.traitName%>" />
+
+                    <label for="traitName">Trait Name</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="traitType" id="traitType">
+                        <option value="" <%=trait.traitType==="" ? 'selected' : '' %>></option>
+                        <!-- <option value="Consumable">Consumable</option> -->
+                        <option value="Equipment" <%=trait.traitType==="Equipment" ? 'selected' : '' %>
+                            >Equipment</option>
+                        <option value="Feat" <%=trait.traitType==="Feat" ? 'selected' : '' %>>Feat</option>
+                        <!-- <option value="Loot">Loot</option> -->
+                        <option value="Weapon" <%=trait.traitType==="Weapon" ? 'selected' : '' %>>Weapon
+                        </option>
+                    </select>
+                    <label for="traitType">Trait Type</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="sourceCreature" id="sourceCreature"
+                        value="<%= trait.sourceCreature%>" />
+                    <label for="sourceCreature">Source Creature</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input type="text" name="sourceBook" id="sourceBook" value="<%= trait.sourceBook%>" />
+                    <label for="sourceBook">Source Book</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 white-text input-field">
+                    <textarea class="materialize-textarea" name="traitDescription" id="traitDescription"
+                        data-length="120"><%= trait.traitDescription%></textarea>
+                    <label for="traitDescription">Trait Description</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

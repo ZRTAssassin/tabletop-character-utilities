@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col s12">
+        <h2>Enter New Trait</h2>
+        <p>
+            All that's needed to submit a trait for later is a name and type.
+        </p>
+        <fieldset>
+            <legend>Description</legend>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="traitName" id="traitName" required />
+                    <label for="traitName">Trait Name</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="traitType" id="traitType" required>
+                        <option value="" selected></option>
+                        <!-- <option value="Consumable">Consumable</option> -->
+                        <option value="Equipment">Equipment</option>
+                        <option value="Feat">Feat</option>
+                        <!-- <option value="Loot">Loot</option> -->
+                        <option value="Weapon">Weapon</option>
+                    </select>
+                    <label for="traitType">Trait Type</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="sourceCreature" id="sourceCreature" />
+                    <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                    <label for="sourceCreature">Source Creature</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input type="text" name="sourceBook" id="sourceBook" />
+                    <!-- pattern="[a-zA-Z]+ \([0-9]+\)" /> -->
+                    <label for="sourceBook">Source Book</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 white-text input-field">
+                    <textarea class="materialize-textarea" name="traitDescription" id="traitDescription"
+                        data-length="120"></textarea>
+                    <label for="traitDescription">Trait Description</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

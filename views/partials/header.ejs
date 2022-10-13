@@ -47,10 +47,10 @@
                         <!-- <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
                         <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li> -->
                         <li><a class="dropdown-trigger teal-text text-accent-4" href="#!"
-                                data-target="dropdown1">Traits<i class="material-icons right">arrow_drop_down</i></a>
+                                data-target="dropdown1" data-constrainWidth="false">Add Traits<i class="material-icons right">arrow_drop_down</i></a>
                         </li>
                         <li><a class="dropdown-trigger teal-text text-accent-4" href="#!"
-                            data-target="dropdown2">Category<i class="material-icons right">arrow_drop_down</i></a>
+                            data-target="dropdown2">View Traits<i class="material-icons right">arrow_drop_down</i></a>
                     </li>
                         <% } %>
                 </ul>
@@ -59,9 +59,21 @@
                 <ul id="dropdown1" class="dropdown-content">
                     <li class="col s12"><a class="teal-text text-accent-4" href="/traits/add">New Trait</a></li>
                     <li class="divider"></li>
-                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Consumables</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Equipments</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Feats</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Loots</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Weapons</a></li>
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">Spells</a></li>
+                                            <!-- <option value="consumable">Consumable</option>
+                                            <option value="fquipment">Equipment</option>
+                                            <option value="feat">Feat</option>
+                                            <option value="loot">Loot</option>
+                                            <option value="weapon">Weapon</option>
+                                            <option value="spell">Spell</option> -->
                 </ul>
                 <ul id="dropdown2" class="dropdown-content">
+                    <li class="col s12"><a class="teal-text text-accent-4" href="/traits">All Traits</a></li>
                     <li class="col s12"><a class="teal-text text-accent-4" href="/traits/category/buff">Buffs</a></li>
                     <li class="col s12"><a class="teal-text text-accent-4"
                             href="/traits/category/conditions">Conditions</a></li>

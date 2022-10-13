@@ -25,8 +25,8 @@
         </div>
     </div> -->
 </footer>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0/dist/js/materialize.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0/dist/js/materialize.min.js"></script>
 <script>
     M.Sidenav.init(document.querySelector(".sidenav"));
     document.addEventListener('DOMContentLoaded', function () {
@@ -44,6 +44,8 @@
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
         var instances = M.Dropdown.init(elems, {
+            constrainWidth: false,
+            alignment: 'right',
             // specify options here
         });
     });

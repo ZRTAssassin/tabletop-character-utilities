@@ -20,9 +20,9 @@ module.exports = {
   // new the page to add traits
   // @route /traits/addTrait
   getAddTrait: (req, res) => {
-    console.log("getAddTrait called");
+    // console.log("getAddTrait called");
     const traitType = req.params.traitType;
-    console.log(`traits/add${traitType}`);
+    // console.log(`traits/add${traitType}`);
     res.render(
       `traits/add${traitType.charAt(0).toUpperCase() + traitType.substring(1)}.ejs`,
       {

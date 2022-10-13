@@ -5,7 +5,9 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/", ensureAuth, traitsController.getTraits);
 
-router.get("/add", ensureAuth, traitsController.getAddTrait);
+router.get("/new/:traitType", traitsController.getAddTrait);
+
+// router.get("/add", ensureAuth, traitsController.getAddTrait);
 
 router.get("/category/:category", traitsController.getCategoryTraits);
 

@@ -19,11 +19,22 @@ module.exports = {
   },
   // new the page to add traits
   // @route /traits/addTrait
-  getAddTrait: async (req, res) => {
-    res.render("addTrait.ejs", {
-      user: req.user,
-      isLoggedIn: req.isAuthenticated(),
-    });
+  getAddTrait: (req, res) => {
+    console.log("getAddTrait called");
+    const traitType = req.params.traitType;
+    console.log(`add${traitType}`);
+    res.render(
+      `add${traitType.charAt(0).toUpperCase() + traitType.substring(1)}.ejs`,
+      {
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+        trait: traitType,
+      }
+    );
+    // res.render("addTrait.ejs", {
+    //   user: req.user,
+    //   isLoggedIn: req.isAuthenticated(),
+    // });
   },
   // get category traits
   // @route /traits/category/:category

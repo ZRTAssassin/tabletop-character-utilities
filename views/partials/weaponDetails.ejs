@@ -1,0 +1,320 @@
+<div class="row">
+    <div class="col s12">
+        <fieldset>
+            <legend>Weapon Details</legend>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="weaponTypeLabel" id="weaponTypeLabel" disabled />
+                    <label for="weaponTypeLabel">Weapon Type</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="weaponType" id="weaponType">
+                        <option value="simpleM" selected>Simple Melee</option>
+                        <option value="simpleR">Simple Ranged</option>
+                        <option value="martialM">Martial Melee</option>
+                        <option value="martialR">Martial Ranged</option>
+                        <option value="natural">Natural</option>
+                        <option value="improv">Improvised</option>
+                        <option value="siege">Siege Weapon</option>
+                    </select>
+                </div>
+                <label for="weaponType"></label>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="baseWeaponLabel" id="baseWeaponLabel" disabled />
+                    <label for="baseWeaponLabel">Base Weapon</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="baseWeapon" id="baseWeapon">
+                        <option value="" selected></option>
+                        <option value="battleaxe">Battleaxe</option>
+                        <option value="blowgun">Blowgun</option>
+                        <option value="club">Club</option>
+                        <option value="dagger">Dagger</option>
+                        <option value="dart">Dart</option>
+                        <option value="null">Double-Bladed Scimitar</option>
+                        <option value="flail">Flail</option>
+                        <option value="glaive">Glaive</option>
+                        <option value="greataxe">Greataxe</option>
+                        <option value="greatclub">Greatclub</option>
+                        <option value="greatsword">Greatsword</option>
+                        <option value="halberd">Halberd</option>
+                        <option value="handcrossbow">Hand Crossbow</option>
+                        <option value="handaxe">Handaxe</option>
+                        <option value="heavycrossbow">Heavy Crossbow</option>
+                        <option value="javelin">Javelin</option>
+                        <option value="lance">Lance</option>
+                        <option value="lightcrossbow">Light Crossbow</option>
+                        <option value="lighthammer">Light Hammer</option>
+                        <option value="longbow">Longbow</option>
+                        <option value="longsword">Longsword</option>
+                        <option value="mace">Mace</option>
+                        <option value="maul">Maul</option>
+                        <option value="morningstar">Morningstar</option>
+                        <option value="net">Net</option>
+                        <option value="pike">Pike</option>
+                        <option value="quarterstaff">Quarterstaff</option>
+                        <option value="rapier">Rapier</option>
+                        <option value="scimitar">Scimitar</option>
+                        <option value="shortbow">Shortbow</option>
+                        <option value="shortsword">Shortsword</option>
+                        <option value="sickle">Sickle</option>
+                        <option value="sling">Sling</option>
+                        <option value="spear">Spear</option>
+                        <option value="staff">Staff</option>
+                        <option value="trident">Trident</option>
+                        <option value="war Pick">War Pick</option>
+                        <option value="warhammer">Warhammer</option>
+                        <option value="whip">Whip</option>
+
+                    </select>
+                </div>
+                <label for="baseWeapon"></label>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="attunementLabel" id="attunementLabel" disabled />
+                    <label for="attunementLabel">Attunement</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="attunement" id="attunement">
+                        <option value="0" selected>Attunement Not Required</option>
+                        <option value="1">Simple Ranged</option>
+                        <option value="2">Martial Melee</option>
+                    </select>
+                </div>
+                <label for="attunement"></label>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="weaponStatus" id="weaponStatus" disabled />
+                    <label for="weaponStatus">Weapon Status</label>
+                </div>
+                <div class="col s6 m3 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="proficientHidden" name="proficient"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="proficient" name="proficient" value="true" />
+                            <span>Proficient</span>
+                        </label for="proficient">
+                    </p>
+                </div>
+                <div class="col s6 m3 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="equippedHidden" name="equipped" value="false" />
+                            <input type="checkbox" class="filled-in" id="equipped" name="equipped" value="true" />
+                            <span>Equipped</span>
+                        </label for="equipped">
+                    </p>
+                </div>
+                <div class="col s6 m3 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="damageHidden" name="damage" value="false" />
+                            <input type="checkbox" class="filled-in" id="damage" name="damage" value="true" />
+                            <span>Damage</span>
+                        </label for="damage">
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="weaponPropertiesLabel" id="weaponPropertiesLabel" disabled />
+                    <label for="weaponPropertiesLabel">Weapon Properties</label>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesAdamantineHidden"
+                                name="weaponPropertiesAdamantine" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesAdamantine"
+                                name="weaponPropertiesAdamantine" value="true" />
+                            <span>Adamantine</span>
+                        </label for="weaponPropertiesAdamantine">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="equippedHidden" name="weaponPropertiesAmmunition"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesAmmunition"
+                                name="weaponPropertiesAmmunition" value="true" />
+                            <span>Ammunition</span>
+                        </label for="weaponPropertiesAmmunition">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesFinesseHidden"
+                                name="weaponPropertiesFinesse" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesFinesse"
+                                name="weaponPropertiesFinesse" value="true" />
+                            <span>Finesse</span>
+                        </label for="weaponPropertiesFinesse">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesFirearmHidden"
+                                name="weaponPropertiesFirearm" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesFirearm"
+                                name="weaponPropertiesFirearm" value="true" />
+                            <span>Firearm</span>
+                        </label for="weaponPropertiesFirearm">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesFocusHidden"
+                                name="weaponPropertiesFocus" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesFocus"
+                                name="weaponPropertiesFocus" value="true" />
+                            <span>Focus</span>
+                        </label for="weaponPropertiesFocus">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesHeavyHidden"
+                                name="weaponPropertiesHeavy" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesHeavy"
+                                name="weaponPropertiesHeavy" value="true" />
+                            <span>Heavy</span>
+                        </label for="weaponPropertiesHeavy">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesLightHidden"
+                                name="weaponPropertiesLight" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesLight"
+                                name="weaponPropertiesLight" value="true" />
+                            <span>Light</span>
+                        </label for="weaponPropertiesLight">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesLoadingHidden"
+                                name="weaponPropertiesLoading" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesLoading"
+                                name="weaponPropertiesLoading" value="true" />
+                            <span>Loading</span>
+                        </label for="weaponPropertiesLoading">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesMagicalHidden"
+                                name="weaponPropertiesMagical" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesMagical"
+                                name="weaponPropertiesMagical" value="true" />
+                            <span>Magical</span>
+                        </label for="weaponPropertiesMagical">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesReachHidden"
+                                name="weaponPropertiesReach" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesReach"
+                                name="weaponPropertiesReach" value="true" />
+                            <span>Reach</span>
+                        </label for="weaponPropertiesReach">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesReloadHidden"
+                                name="weaponPropertiesReload" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesReload"
+                                name="weaponPropertiesReload" value="true" />
+                            <span>Reload</span>
+                        </label for="weaponPropertiesReload">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesReturningHidden"
+                                name="weaponPropertiesReturning" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesReturning"
+                                name="weaponPropertiesReturning" value="true" />
+                            <span>Returning</span>
+                        </label for="weaponPropertiesReturning">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesSilveredHidden"
+                                name="weaponPropertiesSilvered" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesSilvered"
+                                name="weaponPropertiesSilvered" value="true" />
+                            <span>Silvered</span>
+                        </label for="weaponPropertiesSilvered">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesSpecialHidden"
+                                name="weaponPropertiesSpecial" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesSpecial"
+                                name="weaponPropertiesSpecial" value="true" />
+                            <span>Special</span>
+                        </label for="weaponPropertiesSpecial">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesThrownHidden"
+                                name="weaponPropertiesThrown" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesThrown"
+                                name="weaponPropertiesThrown" value="true" />
+                            <span>Thrown</span>
+                        </label for="weaponPropertiesThrown">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesTwo-HandedHidden"
+                                name="weaponPropertiesTwo-Handed" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesTwo-Handed"
+                                name="weaponPropertiesTwo-Handed" value="true" />
+                            <span>Two-Handed</span>
+                        </label for="weaponPropertiesTwo-Handed">
+                    </p>
+                </div>
+                <div class="col s6 m2 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="weaponPropertiesVersatileHidden"
+                                name="weaponPropertiesVersatile" value="false" />
+                            <input type="checkbox" class="filled-in" id="weaponPropertiesVersatile"
+                                name="weaponPropertiesVersatile" value="true" />
+                            <span>Versatile</span>
+                        </label for="weaponPropertiesVersatile">
+                    </p>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

@@ -1519,6 +1519,46 @@
             "itemType": "Item",
             "isLocked": false
           }
+        },
+        "magicitems": {
+          "enabled": false,
+          "equipped": false,
+          "attuned": false,
+          "charges": "0",
+          "chargeType": "c1",
+          "destroy": false,
+          "destroyFlavorText": "MAGICITEMS.MagicItemDestroy",
+          "rechargeable": false,
+          "recharge": "0",
+          "rechargeType": "t1",
+          "rechargeUnit": "r1",
+          "sorting": "l"
+        },
+        "betterRolls5e": {
+          "quickDesc": {
+            "value": true,
+            "altValue": true
+          },
+          "quickProperties": {
+            "value": true,
+            "altValue": true
+          },
+          "quickOther": {
+            "value": true,
+            "altValue": true
+          },
+          "quickFlavor": {
+            "value": true,
+            "altValue": true
+          },
+          "quickCharges": {
+            "value": {
+              "quantity": false
+            },
+            "altValue": {
+              "quantity": false
+            }
+          }
         }
       },
       "img": "icons/equipment/chest/breastplate-layered-steel.webp",
@@ -1849,15 +1889,18 @@
           "quickDamage": {
             "context": {
               "0": "test",
-              "1": "test 2"
+              "1": "test 2",
+              "2": ""
             },
             "value": {
               "0": true,
-              "1": true
+              "1": true,
+              "2": true
             },
             "altValue": {
               "0": true,
-              "1": true
+              "1": true,
+              "2": true
             }
           },
           "quickOther": {
@@ -1953,8 +1996,8 @@
           "type": "creature"
         },
         "range": {
-          "value": 0,
-          "long": 0,
+          "value": null,
+          "long": null,
           "units": "touch"
         },
         "uses": {
@@ -2035,6 +2078,60 @@
           "page": "items.html",
           "source": "DMG",
           "hash": "potion%20of%20healing_dmg"
+        },
+        "betterRolls5e": {
+          "quickDamage": {
+            "context": {
+              "0": ""
+            },
+            "value": {
+              "0": true
+            },
+            "altValue": {
+              "0": true
+            }
+          },
+          "quickOther": {
+            "context": "",
+            "value": true,
+            "altValue": true
+          },
+          "quickDesc": {
+            "value": true,
+            "altValue": true
+          },
+          "quickProperties": {
+            "value": true,
+            "altValue": true
+          },
+          "quickFlavor": {
+            "value": true,
+            "altValue": true
+          },
+          "quickCharges": {
+            "value": {
+              "quantity": false,
+              "use": true
+            },
+            "altValue": {
+              "quantity": false,
+              "use": true
+            }
+          }
+        },
+        "magicitems": {
+          "enabled": false,
+          "equipped": false,
+          "attuned": false,
+          "charges": "0",
+          "chargeType": "c1",
+          "destroy": false,
+          "destroyFlavorText": "MAGICITEMS.MagicItemDestroy",
+          "rechargeable": false,
+          "recharge": "0",
+          "rechargeType": "t1",
+          "rechargeUnit": "r1",
+          "sorting": "l"
         }
       }
     },
@@ -2166,9 +2263,9 @@
           "target": "",
           "amount": null
         },
-        "ability": null,
+        "ability": "",
         "actionType": "rwak",
-        "attackBonus": 0,
+        "attackBonus": "0",
         "chatFlavor": "",
         "critical": {
           "threshold": null,
@@ -2213,6 +2310,62 @@
           "page": "items.html",
           "source": "PHB",
           "hash": "crossbow%20bolt_phb"
+        },
+        "betterRolls5e": {
+          "quickDamage": {
+            "context": {
+              "0": ""
+            },
+            "value": {
+              "0": true
+            },
+            "altValue": {
+              "0": true
+            }
+          },
+          "quickOther": {
+            "context": "",
+            "value": true,
+            "altValue": true
+          },
+          "quickDesc": {
+            "value": true,
+            "altValue": true
+          },
+          "quickAttack": {
+            "value": true,
+            "altValue": true
+          },
+          "quickProperties": {
+            "value": true,
+            "altValue": true
+          },
+          "quickFlavor": {
+            "value": true,
+            "altValue": true
+          },
+          "quickCharges": {
+            "value": {
+              "quantity": false
+            },
+            "altValue": {
+              "quantity": false
+            }
+          }
+        },
+        "magicitems": {
+          "enabled": false,
+          "equipped": false,
+          "attuned": false,
+          "charges": "0",
+          "chargeType": "c1",
+          "destroy": false,
+          "destroyFlavorText": "MAGICITEMS.MagicItemDestroy",
+          "rechargeable": false,
+          "recharge": "0",
+          "rechargeType": "t1",
+          "rechargeUnit": "r1",
+          "sorting": "l"
         }
       }
     },
@@ -8629,6 +8782,1306 @@
           "page": "items.html",
           "source": "PHB",
           "hash": "whip_phb"
+        }
+      }
+    },
+    {
+      "_id": "QdFQqJjQVOGKej38",
+      "name": "Acid (vial)",
+      "type": "consumable",
+      "img": "icons/consumables/potions/bottle-round-corked-green.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 2d6 acid damage.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 1,
+        "price": 25,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": 0,
+          "units": ""
+        },
+        "target": {
+          "value": 1,
+          "width": null,
+          "units": "",
+          "type": "creature"
+        },
+        "range": {
+          "value": 20,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": "",
+          "autoDestroy": true,
+          "autoUse": true
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": "dex",
+        "actionType": "rwak",
+        "attackBonus": "0",
+        "chatFlavor": "improvised weapon",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [
+            [
+              "2d6+@mod",
+              "acid"
+            ]
+          ],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "consumableType": "potion",
+        "attributes": {
+          "spelldc": 10
+        },
+        "proficient": true,
+        "attuned": false,
+        "armor": {
+          "value": null,
+          "dex": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "acid%20(vial)_phb"
+        },
+        "betterRolls5e": {
+          "quickDamage": {
+            "context": {
+              "0": ""
+            },
+            "value": {
+              "0": true
+            },
+            "altValue": {
+              "0": true
+            }
+          },
+          "quickOther": {
+            "context": "",
+            "value": true,
+            "altValue": true
+          },
+          "quickDesc": {
+            "value": true,
+            "altValue": true
+          },
+          "quickAttack": {
+            "value": true,
+            "altValue": true
+          },
+          "quickProperties": {
+            "value": true,
+            "altValue": true
+          },
+          "quickFlavor": {
+            "value": true,
+            "altValue": true
+          },
+          "quickCharges": {
+            "value": {
+              "quantity": false
+            },
+            "altValue": {
+              "quantity": false
+            }
+          }
+        },
+        "magicitems": {
+          "enabled": false,
+          "equipped": false,
+          "attuned": false,
+          "charges": "0",
+          "chargeType": "c1",
+          "destroy": false,
+          "destroyFlavorText": "MAGICITEMS.MagicItemDestroy",
+          "rechargeable": false,
+          "recharge": "0",
+          "rechargeType": "t1",
+          "rechargeUnit": "r1",
+          "sorting": "l"
+        }
+      }
+    },
+    {
+      "_id": "01obnre1axOMMTh6",
+      "name": "Basic Poison (vial)",
+      "type": "consumable",
+      "img": "icons/consumables/potions/potion-bottle-skull-label-poison-teal.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>You can use the poison in this vial to coat one slashing or piercing weapon or up to three pieces of ammunition. Applying the poison takes an action. A creature hit by the @condition[poisoned] weapon or ammunition must make a DC 10 Constitution saving throw or take 1d4 poison damage. Once applied, the poison retains potency for 1 minute before drying.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 0,
+        "price": 100,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": "one slashing or piercing weapon, or up to three pieces of ammunition"
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute"
+        },
+        "target": {
+          "value": 0,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": 0,
+          "long": 0,
+          "units": "touch"
+        },
+        "uses": {
+          "value": 3,
+          "max": 3,
+          "per": "charges",
+          "autoDestroy": true,
+          "autoUse": true
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": "",
+        "actionType": "save",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [
+            [
+              "1d4",
+              "poison"
+            ]
+          ],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "con",
+          "dc": 10,
+          "scaling": "flat"
+        },
+        "consumableType": "potion",
+        "proficient": true,
+        "attuned": false,
+        "armor": {
+          "value": null,
+          "dex": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "basic%20poison%20(vial)_phb"
+        }
+      }
+    },
+    {
+      "_id": "hD8vjzVVHeuZ44SL",
+      "name": "Drow Poison",
+      "type": "consumable",
+      "img": "modules/plutonium/media/icon/backpack.svg",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>This poison is typically made only by the @creature[drow], and only in a place far removed from sunlight. A creature subjected to this poison must succeed on a DC 13 Constitution saving throw or be @condition[poisoned] for 1 hour. If the saving throw fails by 5 or more, the creature is also @condition[unconscious] while @condition[poisoned] in this way. The creature wakes up if it takes damage or if another creature takes an action to shake it awake.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "DMG",
+        "quantity": 1,
+        "weight": 0,
+        "price": 200,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": null,
+          "max": null,
+          "per": null,
+          "autoDestroy": false,
+          "autoUse": true
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null
+        },
+        "ability": "",
+        "actionType": null,
+        "attackBonus": null,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "consumableType": "poison",
+        "attuned": false,
+        "hp": {
+          "value": 0,
+          "max": 0,
+          "dt": null,
+          "conditions": ""
+        },
+        "speed": {
+          "value": null,
+          "conditions": ""
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "DMG",
+          "hash": "drow%20poison_dmg"
+        }
+      }
+    },
+    {
+      "_id": "HHvYTHOBurcEzziH",
+      "name": "Icewind Dale Trinket",
+      "type": "loot",
+      "img": "https://5etools-mirror-1.github.io/img/items/IDRotF/Icewind%20Dale%20Trinket.png",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><table class=\"w-100 rd__table  stripe-odd-table\"><caption>Icewind Dale Trinkets</caption><thead><tr><th class=\"col-2 text-center\" data-rd-isroller=\"true\">d100</th><th class=\"col-10\" data-rd-isroller=\"false\">Trinket</th></tr></thead><tbody><tr><td class=\"col-2 text-center\" data-roll-min=\"1\" data-roll-max=\"4\">01-04</td><td class=\"col-10\">A small wooden figurine of a yawning walrus, painted in red and black</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"5\" data-roll-max=\"8\">05-08</td><td class=\"col-10\">A pair of scrimshaw cufflinks with an image of a fisherman on a boat engraved on them</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"9\" data-roll-max=\"12\">09-12</td><td class=\"col-10\">A small iron key with a frayed blue and gold cord tied to it</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"13\" data-roll-max=\"16\">13-16</td><td class=\"col-10\">A small illustrated book of Northlander myths that has pages missing</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"17\" data-roll-max=\"20\">17-20</td><td class=\"col-10\">A damaged scrimshaw cameo depicting a merfolk</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"21\" data-roll-max=\"24\">21-24</td><td class=\"col-10\">A stone from a burial cairn with a tiny Dwarvish rune carved into it</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"25\" data-roll-max=\"28\">25-28</td><td class=\"col-10\">A ripped cloth sail with a symbol you don't recognize</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"29\" data-roll-max=\"32\">29-32</td><td class=\"col-10\">An Ulu knife with a scrimshaw handle</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"33\" data-roll-max=\"36\">33-36</td><td class=\"col-10\">A jar containing an unidentifiable, sweet, sticky substance</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"37\" data-roll-max=\"40\">37-40</td><td class=\"col-10\">A delicate glass ball painted with snowflakes, capped by a metal loop with a tiny hook attached to it</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"41\" data-roll-max=\"44\">41-44</td><td class=\"col-10\">An expedition log with missing pages and a pressed flower used as a bookmark</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"45\" data-roll-max=\"48\">45-48</td><td class=\"col-10\">An owl figurine carved from whalebone</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"49\" data-roll-max=\"52\">49-52</td><td class=\"col-10\">A sewing box that smells of old wood and has three spools of blue thread inside</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"53\" data-roll-max=\"56\">53-56</td><td class=\"col-10\">A scrimshaw-handled ink pen with black runic designs along its length</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"57\" data-roll-max=\"60\">57-60</td><td class=\"col-10\">A brooch made from a small insect encased in amber</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"61\" data-roll-max=\"64\">61-64</td><td class=\"col-10\">A scrimshaw pepper shaker etched with the letter W</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"65\" data-roll-max=\"68\">65-68</td><td class=\"col-10\">An old, wooden-handled ice pick stained with blood that won't wash off</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"69\" data-roll-max=\"72\">69-72</td><td class=\"col-10\">A fabric doll bearing an angry expression</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"73\" data-roll-max=\"76\">73-76</td><td class=\"col-10\">A set of wind chimes made from seashells</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"77\" data-roll-max=\"80\">77-80</td><td class=\"col-10\">A beautiful silver tin that, when opened, emits the smell of rotting fish</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"81\" data-roll-max=\"84\">81-84</td><td class=\"col-10\">A bloodstained dreamcatcher made from fishing line, gold wire, and snowy owlbear feathers</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"85\" data-roll-max=\"88\">85-88</td><td class=\"col-10\">A figurine of a polar bear made of ice that never melts</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"89\" data-roll-max=\"92\">89-92</td><td class=\"col-10\">A snow globe that doesn't need to be shaken</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"93\" data-roll-max=\"96\">93-96</td><td class=\"col-10\">A piece of sea glass shaped like a unicorn's horn</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"97\" data-roll-max=\"100\">97-00</td><td class=\"col-10\">A dark blue scarf that gets lighter in shade the higher the altitude of the wearer</td></tr></tbody></table></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "IDRotF",
+        "quantity": 1,
+        "weight": 0,
+        "price": null,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "attuned": false,
+        "damage": {
+          "parts": []
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "IDRotF",
+          "hash": "icewind%20dale%20trinket_idrotf"
+        }
+      }
+    },
+    {
+      "_id": "Lo5mqUGgdTtiUcQr",
+      "name": "Rations (1 day)",
+      "type": "consumable",
+      "img": "icons/consumables/meat/hock-leg-pink-brown.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 2,
+        "price": 0.5,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": 0,
+          "units": ""
+        },
+        "target": {
+          "value": 1,
+          "width": null,
+          "units": "",
+          "type": "creature"
+        },
+        "range": {
+          "value": 0,
+          "long": 0,
+          "units": "touch"
+        },
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "per": "charges",
+          "autoDestroy": true,
+          "autoUse": true
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": "",
+        "actionType": "util",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "consumableType": "food",
+        "proficient": true,
+        "attuned": false,
+        "armor": {
+          "value": null,
+          "dex": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "rations%20(1%20day)_phb"
+        }
+      }
+    },
+    {
+      "_id": "4Zl8lPu6JHdP0bnb",
+      "name": "Spell Scroll (1st Level)",
+      "type": "consumable",
+      "img": "icons/sundries/scrolls/scroll-bound-orange-tan.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>A <i>spell scroll</i> bears the words of a single spell, written as a mystical cipher. If the spell is on your class's spell list, you can read the scroll and cast its spell without providing any material components. Otherwise, the scroll is unintelligible. Casting the spell by reading the scroll requires the spell's normal casting time. Once the spell is cast, the words on the scroll fade, and it crumbles to dust. If the casting is interrupted, the scroll is not lost.</p><p>If the spell is on your class's spell list but of a higher level than you can normally cast, you must make an ability check using your spellcasting ability to determine whether you cast it successfully. The DC is 11. On a failed check, the spell disappears from the scroll with no other effect.</p><p>Once the spell is cast, the words on the scroll fade, and the scroll itself crumbles to dust.</p><p>A spell cast from this scroll has a save DC of 13 and an attack bonus of +5.</p><p>A wizard spell on a <i>spell scroll</i> can be copied just as spells in spellbooks can be copied. When a spell is copied from a <i>spell scroll</i>, the copier must succeed on a DC 11 Intelligence (@skill[Arcana]) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the <i>spell scroll</i> is destroyed.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "DMG",
+        "quantity": 1,
+        "weight": 0,
+        "price": null,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "common",
+        "identified": true,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": "Spell must be on the caster's spell list."
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": 0,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "per": "charges",
+          "autoDestroy": true,
+          "autoUse": true
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": "",
+        "actionType": "msak",
+        "attackBonus": 5,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "flat"
+        },
+        "consumableType": "scroll",
+        "attributes": {
+          "spelldc": 10
+        },
+        "proficient": true,
+        "attuned": false,
+        "armor": {
+          "value": null,
+          "dex": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "DMG",
+          "hash": "spell%20scroll%20(1st%20level)_dmg"
+        }
+      }
+    },
+    {
+      "_id": "wPyHY2GF9VeLDNs2",
+      "name": "Trinket",
+      "type": "loot",
+      "img": "icons/commodities/materials/hair-tuft-white.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>Worried that you're going to pull out your dead sprite inside a clear glass bottle at a company function only to discover that three other people in the franchise have one as well? Then consider rolling on the Acquisitions Incorporated Trinkets table instead of the @item[Trinket|phb|table in chapter 5 of the Player's Handbook], to gain a unique trinket at character creation with a bit of Acq Inc flair.</p><table class=\"w-100 rd__table  stripe-odd-table\"><caption>Acquisitions Incorporated Trinkets</caption><thead><tr><th class=\"col-2 text-center\" data-rd-isroller=\"true\">d100</th><th class=\"col-10\" data-rd-isroller=\"false\">Trinket</th></tr></thead><tbody><tr><td class=\"col-2 text-center\" data-roll-min=\"1\" data-roll-max=\"1\">1</td><td class=\"col-10\">A perfect skipping stone</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"2\" data-roll-max=\"2\">2</td><td class=\"col-10\">Three weighted dice that always roll low</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"3\" data-roll-max=\"3\">3</td><td class=\"col-10\">A locket with a picture of Jim Darkmagic</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"4\" data-roll-max=\"4\">4</td><td class=\"col-10\">A tiny anvil and smith's hammer</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"5\" data-roll-max=\"5\">5</td><td class=\"col-10\">A nonfunctional immovable rod</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"6\" data-roll-max=\"6\">6</td><td class=\"col-10\">A DIY acupuncture kit</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"7\" data-roll-max=\"7\">7</td><td class=\"col-10\">A stuffed owlbear toy</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"8\" data-roll-max=\"8\">8</td><td class=\"col-10\">A diagram for a new war lute</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"9\" data-roll-max=\"9\">9</td><td class=\"col-10\">A declaration of war against a nation no one has ever heard of</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"10\" data-roll-max=\"10\">10</td><td class=\"col-10\">A pipe that emits green smoke</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"11\" data-roll-max=\"11\">11</td><td class=\"col-10\">A glass eye</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"12\" data-roll-max=\"12\">12</td><td class=\"col-10\">The centerpiece of a priceless chandelier</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"13\" data-roll-max=\"13\">13</td><td class=\"col-10\">A fine cane with a secret compartment</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"14\" data-roll-max=\"14\">14</td><td class=\"col-10\">A letter written by Rosie Beestinger</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"15\" data-roll-max=\"15\">15</td><td class=\"col-10\">A coin that always lands on its edge</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"16\" data-roll-max=\"16\">16</td><td class=\"col-10\">The deed and title to an abandoned windmill and three acres of tillable land that you've never been able to find</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"17\" data-roll-max=\"17\">17</td><td class=\"col-10\">A menu from Big Daddy Donaar's Yum Yum Hut</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"18\" data-roll-max=\"18\">18</td><td class=\"col-10\">A small purse that screams loudly when opened</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"19\" data-roll-max=\"19\">19</td><td class=\"col-10\">A deep-crow-feather quill</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"20\" data-roll-max=\"20\">20</td><td class=\"col-10\">A pair of breeches that always smells faintly of honey</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"21\" data-roll-max=\"21\">21</td><td class=\"col-10\">A one-armed Viari doll (Apocalypse Dagger accessory missing)</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"22\" data-roll-max=\"22\">22</td><td class=\"col-10\">A leather pouch filled with various finger bones of unknown provenance</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"23\" data-roll-max=\"23\">23</td><td class=\"col-10\">The collar of your childhood pet, Nutmeg</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"24\" data-roll-max=\"24\">24</td><td class=\"col-10\">A seashell that, when pressed to the ear, speaks in flowing rhymes</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"25\" data-roll-max=\"25\">25</td><td class=\"col-10\">A recipe book for cooking with mushrooms</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"26\" data-roll-max=\"26\">26</td><td class=\"col-10\">One expired coupon for \"A Free Cornerstone\"</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"27\" data-roll-max=\"27\">27</td><td class=\"col-10\">A portable beehive</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"28\" data-roll-max=\"28\">28</td><td class=\"col-10\">Goggles that literally tint everything rose colored</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"29\" data-roll-max=\"29\">29</td><td class=\"col-10\">A wand of wonder that allows you to cast only mending</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"30\" data-roll-max=\"30\">30</td><td class=\"col-10\">A bracelet woven from mistletoe</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"31\" data-roll-max=\"31\">31</td><td class=\"col-10\">A curved claw from an unknown beast that small children are always frightened of</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"32\" data-roll-max=\"32\">32</td><td class=\"col-10\">A longsword that can be folded down in 1 minute and hidden in your pocket</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"33\" data-roll-max=\"33\">33</td><td class=\"col-10\">A living graft of what you believe to be the World Tree</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"34\" data-roll-max=\"34\">34</td><td class=\"col-10\">A tattered scarf with the Acquisitions Incorporated logo</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"35\" data-roll-max=\"35\">35</td><td class=\"col-10\">A box containing a torn-up letter</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"36\" data-roll-max=\"36\">36</td><td class=\"col-10\">An old contract marked \"Void\"</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"37\" data-roll-max=\"37\">37</td><td class=\"col-10\">A small pigeon in a cage</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"38\" data-roll-max=\"38\">38</td><td class=\"col-10\">An Acquisitions Incorporated \"Green Flame\" foam finger</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"39\" data-roll-max=\"39\">39</td><td class=\"col-10\">A \"C\" Team lunchbox</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"40\" data-roll-max=\"40\">40</td><td class=\"col-10\">A potted plant that grows different fruit on every branch</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"41\" data-roll-max=\"41\">41</td><td class=\"col-10\">A book of adventures for children</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"42\" data-roll-max=\"42\">42</td><td class=\"col-10\">An Omin action figure with detachable maul and holy symbol</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"43\" data-roll-max=\"43\">43</td><td class=\"col-10\">A pint glass engraved with a picture of a keg robot</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"44\" data-roll-max=\"44\">44</td><td class=\"col-10\">A giant hockey puck</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"45\" data-roll-max=\"45\">45</td><td class=\"col-10\">A miniature cannon that actually fires</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"46\" data-roll-max=\"46\">46</td><td class=\"col-10\">A very fancy red scarf and matching handkerchief</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"47\" data-roll-max=\"47\">47</td><td class=\"col-10\">An arrow once shot by Môrgæn</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"48\" data-roll-max=\"48\">48</td><td class=\"col-10\">A purple worm toy</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"49\" data-roll-max=\"49\">49</td><td class=\"col-10\">A burned doll whose eyes follow you around the room</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"50\" data-roll-max=\"50\">50</td><td class=\"col-10\">An infinite inkwell</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"51\" data-roll-max=\"51\">51</td><td class=\"col-10\">A band embroidered with the symbol of the Six</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"52\" data-roll-max=\"52\">52</td><td class=\"col-10\">A squishy cactus</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"53\" data-roll-max=\"53\">53</td><td class=\"col-10\">A velvet blindfold</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"54\" data-roll-max=\"54\">54</td><td class=\"col-10\">A dirty figurine of a triceratops that can't be cleaned</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"55\" data-roll-max=\"55\">55</td><td class=\"col-10\">A used (and thus nonmagical) noble knife from the Noble Knife</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"56\" data-roll-max=\"56\">56</td><td class=\"col-10\">A quill that rotates through all the colors of the rainbow</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"57\" data-roll-max=\"57\">57</td><td class=\"col-10\">A twenty-sided die that only rolls the number 4</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"58\" data-roll-max=\"58\">58</td><td class=\"col-10\">A pointed hat that glows in the dark</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"59\" data-roll-max=\"59\">59</td><td class=\"col-10\">A cup that hums when filled with water</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"60\" data-roll-max=\"60\">60</td><td class=\"col-10\">A mug fashioned from the skull of someone else's enemy</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"61\" data-roll-max=\"61\">61</td><td class=\"col-10\">A small glass jar containing an immortal firefly</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"62\" data-roll-max=\"62\">62</td><td class=\"col-10\">A fake mustache made from gnome facial hair</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"63\" data-roll-max=\"63\">63</td><td class=\"col-10\">A petrified troll finger</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"64\" data-roll-max=\"64\">64</td><td class=\"col-10\">Half of a map</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"65\" data-roll-max=\"65\">65</td><td class=\"col-10\">The other half of a map</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"66\" data-roll-max=\"66\">66</td><td class=\"col-10\">An unreasonable amount of pocket lint</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"67\" data-roll-max=\"67\">67</td><td class=\"col-10\">A dozen flyers for a local gnome food place</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"68\" data-roll-max=\"68\">68</td><td class=\"col-10\">Omin Dran's business card</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"69\" data-roll-max=\"69\">69</td><td class=\"col-10\">A lock of hair from a changeling</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"70\" data-roll-max=\"70\">70</td><td class=\"col-10\">A marble that rolls uphill</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"71\" data-roll-max=\"71\">71</td><td class=\"col-10\">A piece of parchment listing a command word for a powerful magic item</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"72\" data-roll-max=\"72\">72</td><td class=\"col-10\">A book titled Conversational Giant</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"73\" data-roll-max=\"73\">73</td><td class=\"col-10\">A user's manual for an apparatus of Kwalish</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"74\" data-roll-max=\"74\">74</td><td class=\"col-10\">A signed headshot of famous bard Spice Caraway</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"75\" data-roll-max=\"75\">75</td><td class=\"col-10\">The eye of a basilisk in a crystal box</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"76\" data-roll-max=\"76\">76</td><td class=\"col-10\">A postcard from Ravnica</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"77\" data-roll-max=\"77\">77</td><td class=\"col-10\">A stamp collection</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"78\" data-roll-max=\"78\">78</td><td class=\"col-10\">A small piece of solidified smoke</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"79\" data-roll-max=\"79\">79</td><td class=\"col-10\">A six-sided die that sometimes rolls a seven</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"80\" data-roll-max=\"80\">80</td><td class=\"col-10\">A left-hand gauntlet</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"81\" data-roll-max=\"81\">81</td><td class=\"col-10\">A music box that plays nursery rhymes</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"82\" data-roll-max=\"82\">82</td><td class=\"col-10\">A locket that's bigger on the outside than the inside</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"83\" data-roll-max=\"83\">83</td><td class=\"col-10\">A potted plant that grows hair instead of leaves</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"84\" data-roll-max=\"84\">84</td><td class=\"col-10\">A collection of teeth</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"85\" data-roll-max=\"85\">85</td><td class=\"col-10\">A coin whose minting date always shows three years in the future</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"86\" data-roll-max=\"86\">86</td><td class=\"col-10\">A green drinking horn taken from a very large bull</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"87\" data-roll-max=\"87\">87</td><td class=\"col-10\">A small book containing pressed and dried botanical samples</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"88\" data-roll-max=\"88\">88</td><td class=\"col-10\">A hatched chimera egg</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"89\" data-roll-max=\"89\">89</td><td class=\"col-10\">A slightly used red bandit mask</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"90\" data-roll-max=\"90\">90</td><td class=\"col-10\">A tiny stirge encased in amber</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"91\" data-roll-max=\"91\">91</td><td class=\"col-10\">A large bottle of Red Larch Ale that can't be opened</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"92\" data-roll-max=\"92\">92</td><td class=\"col-10\">A cane topped with a stylized golden bulldog</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"93\" data-roll-max=\"93\">93</td><td class=\"col-10\">A note in your own hand that you don't remember writing</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"94\" data-roll-max=\"94\">94</td><td class=\"col-10\">A sprig of herbs from your family's garden</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"95\" data-roll-max=\"95\">95</td><td class=\"col-10\">A tankard stolen from the Dran &amp; Courtier</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"96\" data-roll-max=\"96\">96</td><td class=\"col-10\">A small, severed tentacle preserved in alcohol</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"97\" data-roll-max=\"97\">97</td><td class=\"col-10\">A walnut with a face drawn on it</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"98\" data-roll-max=\"98\">98</td><td class=\"col-10\">A small flask of liquid from the Lake of Radiant Mists</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"99\" data-roll-max=\"99\">99</td><td class=\"col-10\">An ice cube that never melts</td></tr><tr><td class=\"col-2 text-center\" data-roll-min=\"100\" data-roll-max=\"100\">00</td><td class=\"col-10\">An expertly carved sword hilt with the blade snapped cleanly off</td></tr></tbody></table></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "AI",
+        "quantity": 1,
+        "weight": 0,
+        "price": null,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "attuned": false,
+        "damage": {
+          "parts": []
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "AI",
+          "hash": "trinket_ai"
+        }
+      }
+    },
+    {
+      "_id": "0hcrSSgsG4jx6Fmc",
+      "name": "Wand of Polymorph",
+      "type": "consumable",
+      "img": "icons/weapons/staves/staff-engraved-red.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>This wand has 7 charges. While holding it, you can use an action to expend 1 of its charges to cast the @spell[polymorph] spell (save DC 15) from it.</p><p>The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "DMG",
+        "quantity": 1,
+        "weight": 1,
+        "price": null,
+        "attunement": 2,
+        "equipped": false,
+        "rarity": "veryRare",
+        "identified": true,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour"
+        },
+        "target": {
+          "value": 1,
+          "width": null,
+          "units": "",
+          "type": "creature"
+        },
+        "range": {
+          "value": 60,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": 7,
+          "max": 7,
+          "per": "charges",
+          "autoDestroy": false,
+          "autoUse": true
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": "",
+        "actionType": "save",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": "1d4 +1"
+        },
+        "formula": "1d6 +1",
+        "save": {
+          "ability": "wis",
+          "dc": 15,
+          "scaling": "flat"
+        },
+        "consumableType": "wand",
+        "attributes": {
+          "spelldc": 10
+        },
+        "proficient": true,
+        "attuned": true,
+        "armor": {
+          "value": null,
+          "dex": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "DMG",
+          "hash": "wand%20of%20polymorph_dmg"
+        }
+      }
+    },
+    {
+      "_id": "f0ObAOyN8iXLltVb",
+      "name": "Spell Scroll",
+      "type": "loot",
+      "img": "modules/plutonium/media/icon/tied-scroll.svg",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>Multiple variations of this item exist, as listed below:</p><ul class=\"rd__list\"><li class=\"rd__li \">@item[Spell Scroll (Cantrip)]</li><li class=\"rd__li \">@item[Spell Scroll (1st Level)]</li><li class=\"rd__li \">@item[Spell Scroll (2nd Level)]</li><li class=\"rd__li \">@item[Spell Scroll (3rd Level)]</li><li class=\"rd__li \">@item[Spell Scroll (4th Level)]</li><li class=\"rd__li \">@item[Spell Scroll (5th Level)]</li><li class=\"rd__li \">@item[Spell Scroll (6th Level)]</li><li class=\"rd__li \">@item[Spell Scroll (7th Level)]</li><li class=\"rd__li \">@item[Spell Scroll (8th Level)]</li><li class=\"rd__li \">@item[Spell Scroll (9th Level)]</li></ul></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "DMG",
+        "quantity": 1,
+        "weight": 0,
+        "price": null,
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": true,
+        "attuned": false,
+        "damage": {
+          "parts": []
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "DMG",
+          "hash": "spell%20scroll_dmg"
+        }
+      }
+    },
+    {
+      "_id": "S8MNhDaOZfzHn1q4",
+      "name": "Rod",
+      "type": "weapon",
+      "img": "icons/weapons/polearms/spear-hooked-blue.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 2,
+        "price": 10,
+        "attunement": 0,
+        "equipped": true,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": 5,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": ""
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "mwak",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [
+            [
+              "1d4 + @mod",
+              "bludgeoning"
+            ]
+          ],
+          "versatile": "",
+          "value": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "armor": {
+          "value": null,
+          "dex": null
+        },
+        "hp": {
+          "value": 0,
+          "max": 0,
+          "dt": null,
+          "conditions": ""
+        },
+        "weaponType": "simpleM",
+        "baseItem": "",
+        "properties": {
+          "amm": false,
+          "hvy": false,
+          "fin": false,
+          "fir": false,
+          "foc": true,
+          "lgt": false,
+          "lod": false,
+          "rch": false,
+          "rel": false,
+          "ret": false,
+          "spc": false,
+          "thr": false,
+          "two": false,
+          "ver": false,
+          "mgc": true
+        },
+        "proficient": true,
+        "attributes": {
+          "spelldc": 10
+        },
+        "attuned": false
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "rod_phb"
+        }
+      }
+    },
+    {
+      "_id": "zYD9WqDQPEoTn22q",
+      "name": "Wand",
+      "type": "weapon",
+      "img": "icons/weapons/staves/staff-simple-green.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 1,
+        "price": 10,
+        "attunement": 0,
+        "equipped": true,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": 0,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": ""
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "util",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": "",
+          "value": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "armor": {
+          "value": null,
+          "dex": null
+        },
+        "hp": {
+          "value": 0,
+          "max": 0,
+          "dt": null,
+          "conditions": ""
+        },
+        "weaponType": "simpleM",
+        "baseItem": "",
+        "properties": {
+          "value": "",
+          "foc": true,
+          "amm": false,
+          "hvy": false,
+          "fin": false,
+          "fir": false,
+          "lgt": false,
+          "lod": false,
+          "rch": false,
+          "rel": false,
+          "ret": false,
+          "spc": false,
+          "thr": false,
+          "two": false,
+          "ver": false,
+          "mgc": true
+        },
+        "proficient": true,
+        "attributes": {
+          "spelldc": 10
+        },
+        "attuned": false
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "wand_phb"
+        }
+      }
+    },
+    {
+      "_id": "eu8ynCveYg6w6Dok",
+      "name": "Breastplate",
+      "type": "equipment",
+      "img": "icons/equipment/chest/breastplate-layered-steel-black.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>This armor consists of a fitted metal chest piece worn with supple leather. Although it leaves the legs and arms relatively unprotected, this armor provides good protection for the wearer's vital organs while leaving the wearer relatively unencumbered.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 20,
+        "price": 400,
+        "attunement": 0,
+        "equipped": true,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "",
+          "cost": 0,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": 0,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "armor": {
+          "value": 14,
+          "type": "medium",
+          "dex": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0,
+          "dt": null,
+          "conditions": ""
+        },
+        "baseItem": "breastplate",
+        "speed": {
+          "value": null,
+          "conditions": ""
+        },
+        "strength": null,
+        "stealth": false,
+        "proficient": true,
+        "attuned": false
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "breastplate_phb"
+        }
+      }
+    },
+    {
+      "_id": "hAIOFXFA0weBJZzf",
+      "name": "Chain Mail",
+      "type": "equipment",
+      "img": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 55,
+        "price": 75,
+        "attunement": 0,
+        "equipped": true,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "",
+          "cost": 0,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": 0,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "armor": {
+          "value": 16,
+          "type": "heavy",
+          "dex": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0,
+          "dt": null,
+          "conditions": ""
+        },
+        "baseItem": "chainmail",
+        "speed": {
+          "value": null,
+          "conditions": ""
+        },
+        "strength": 13,
+        "stealth": true,
+        "proficient": true,
+        "attuned": false
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "chain%20mail_phb"
+        }
+      }
+    },
+    {
+      "_id": "x6szXqTL8YcOli2h",
+      "name": "Studded Leather Armor",
+      "type": "equipment",
+      "img": "icons/equipment/chest/breastplate-rivited-red.webp",
+      "data": {
+        "description": {
+          "value": "\n\t\t<div class=\"rd__b  rd__b--2\"><p>Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.</p></div>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": "PHB",
+        "quantity": 1,
+        "weight": 13,
+        "price": 45,
+        "attunement": 0,
+        "equipped": true,
+        "rarity": "",
+        "identified": false,
+        "activation": {
+          "type": "",
+          "cost": 0,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": 0,
+          "long": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "armor": {
+          "value": 12,
+          "type": "light",
+          "dex": null
+        },
+        "hp": {
+          "value": 0,
+          "max": 0,
+          "dt": null,
+          "conditions": ""
+        },
+        "baseItem": "studded",
+        "speed": {
+          "value": null,
+          "conditions": ""
+        },
+        "strength": null,
+        "stealth": false,
+        "proficient": true,
+        "attuned": false
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "IX3pCwW2Ehae5kKO": 3
+      },
+      "flags": {
+        "srd5e": {
+          "page": "items.html",
+          "source": "PHB",
+          "hash": "studded%20leather%20armor_phb"
         }
       }
     }

@@ -89,6 +89,7 @@ input[type="text"]:not(.browser-default):disabled {
 input[type=text]:not(.browser-default)[readonly=readonly]{
   color: white;
   border-bottom: 1px solid #9e9e9e;
+  text-transform: capitalize;
 }
 input[type=text]:not(.browser-default)[readonly=readonly]+label{
   color: white;

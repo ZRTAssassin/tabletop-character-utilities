@@ -82,7 +82,8 @@ module.exports = {
     if (typeof req.body.actionRechargeIsCharged === "object") {
       req.body.actionRechargeIsCharged = true;
     }
-    console.log(req.body.conditions, typeof req.body.conditions);
+    // console.log(req.body.conditions, typeof req.body.conditions);
+    console.log(req.body.damage);
     try {
       await Trait.create({
         traitName: req.body.traitName,

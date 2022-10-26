@@ -38,26 +38,35 @@ const TraitSchema = new mongoose.Schema({
   debuff: { type: Boolean, default: false, required: false },
   movement: { type: Boolean, default: false, required: false },
   utility: { type: Boolean, default: false, required: false },
+  weaponType: { type: String, default: "", required: false },
+  baseWeapon: { type: String, default: "", required: false },
+  attunement: { type: String, default: "", required: false },
+  proficient: { type: Boolean, default: false, required: false },
+  equipped: { type: Boolean, default: false, required: false },
+  damageStatus: { type: Boolean, default: false, required: false },
+  weaponPropertiesAdamantine: { type: Boolean, default: false, required: false },
+  weaponPropertiesAmmunition: { type: Boolean, default: false, required: false },
+  weaponPropertiesFinesse: { type: Boolean, default: false, required: false },
+  weaponPropertiesFirearm: { type: Boolean, default: false, required: false },
+  weaponPropertiesFocus: { type: Boolean, default: false, required: false },
+  weaponPropertiesHeavy: { type: Boolean, default: false, required: false },
+  weaponPropertiesLight: { type: Boolean, default: false, required: false },
+  weaponPropertiesLoading: { type: Boolean, default: false, required: false },
+  weaponPropertiesMagical: { type: Boolean, default: false, required: false },
+  weaponPropertiesReach: { type: Boolean, default: false, required: false },
+  weaponPropertiesReload: { type: Boolean, default: false, required: false },
+  weaponPropertiesReturning: { type: Boolean, default: false, required: false },
+  weaponPropertiesSilvered: { type: Boolean, default: false, required: false },
+  weaponPropertiesSpecial: { type: Boolean, default: false, required: false },
+  weaponPropertiesThrown: { type: Boolean, default: false, required: false },
+  weaponPropertiesTwoHanded: { type: Boolean, default: false, required: false },
+  weaponPropertiesVersatile: { type: Boolean, default: false, required: false },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 
 module.exports = mongoose.model("Trait", TraitSchema);
 
 /*
-actionTypeLabel
-actionType - done
-abilityModifierLabel
-abilityModifier done
-damageTypeFormula done
-damageType done
-saveLabel
-saveAbility done
-saveDC done
-saveScaling done
-tagDamage done
-tagBuff done
-tagDebuff done
-tagMovement done
-tagCondition done
-tagUtility done
+
+
 */

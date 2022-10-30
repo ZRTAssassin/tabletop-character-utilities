@@ -36,6 +36,28 @@ module.exports = {
     //   isLoggedIn: req.isAuthenticated(),
     // });
   },
+  // get traits by type
+  // @route /traits/type/:type
+  getTypeTraits: async (req, res) => {
+    let type = req.params.type;
+    console.log(type);
+    try {
+      const traitItems = await Trait.find({
+        user: req.user.id,
+      })
+        .where('traitType')
+        .equals(`${type}`)
+        .collation({ locale: "en" })
+        .sort({ traitName: 1 });
+      res.render("traits/traitCategory.ejs", {
+        traits: traitItems,
+        user: req.user,
+        isLoggedIn: req.isAuthenticated(),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  },
   // get category traits
   // @route /traits/category/:category
   getCategoryTraits: async (req, res) => {

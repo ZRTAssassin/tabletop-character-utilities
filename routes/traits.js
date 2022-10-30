@@ -9,6 +9,8 @@ router.get("/new/:traitType", traitsController.getAddTrait);
 
 // router.get("/add", ensureAuth, traitsController.getAddTrait);
 
+router.get("/type/:type", traitsController.getTypeTraits);
+
 router.get("/category/:category", traitsController.getCategoryTraits);
 
 router.get("/edit/:id", traitsController.editTrait);

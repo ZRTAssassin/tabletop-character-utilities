@@ -40,7 +40,7 @@ module.exports = {
   // @route /traits/type/:type
   getTypeTraits: async (req, res) => {
     let type = req.params.type;
-    console.log(type);
+    // console.log(type);
     try {
       const traitItems = await Trait.find({
         user: req.user.id,

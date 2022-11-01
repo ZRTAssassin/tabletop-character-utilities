@@ -1,0 +1,157 @@
+{
+  "success": true,
+  "build": {
+    "name": "Human Fighter - Disarm",
+    "class": "Fighter",
+    "level": 1,
+    "ancestry": "Human",
+    "heritage": "Versatile Heritage",
+    "background": "Sailor",
+    "alignment": "N",
+    "gender": "Not set",
+    "age": "Not set",
+    "deity": "Not set",
+    "size": 2,
+    "keyability": "str",
+    "languages": [],
+    "attributes": {
+      "ancestryhp": 8,
+      "classhp": 10,
+      "bonushp": 0,
+      "bonushpPerLevel": 1,
+      "speed": 25,
+      "speedBonus": 0
+    },
+    "abilities": {
+      "str": 18,
+      "dex": 12,
+      "con": 16,
+      "int": 10,
+      "wis": 10,
+      "cha": 12
+    },
+    "proficiencies": {
+      "classDC": 2,
+      "perception": 4,
+      "fortitude": 4,
+      "reflex": 4,
+      "will": 2,
+      "heavy": 2,
+      "medium": 2,
+      "light": 2,
+      "unarmored": 2,
+      "advanced": 2,
+      "martial": 4,
+      "simple": 4,
+      "unarmed": 4,
+      "castingArcane": 0,
+      "castingDivine": 0,
+      "castingOccult": 0,
+      "castingPrimal": 0,
+      "acrobatics": 2,
+      "arcana": 0,
+      "athletics": 2,
+      "crafting": 0,
+      "deception": 0,
+      "diplomacy": 2,
+      "intimidation": 0,
+      "medicine": 0,
+      "nature": 0,
+      "occultism": 0,
+      "performance": 0,
+      "religion": 0,
+      "society": 0,
+      "stealth": 2,
+      "survival": 2,
+      "thievery": 0
+    },
+    "feats": [
+      ["Underwater Marauder", null],
+      ["Shield Block", null],
+      ["Versatile Heritage", null, "Heritage", 1],
+      ["Toughness", null, "General Feat", 1],
+      ["Natural Ambition", null, "Ancestry Feat", 1],
+      ["Sudden Charge", null, "Class Feat", 1],
+      ["Snagging Strike", null, "Class Feat", 1]
+    ],
+    "specials": ["Attack of Opportunity", "Versatile Heritage"],
+    "lores": [["Sailing", 2]],
+    "equipment": [
+      ["Backpack", 1],
+      ["Bedroll", 1],
+      ["Chalk", 10],
+      ["Flint and Steel", 1],
+      ["Rope", 1],
+      ["Rations", 2],
+      ["Torch", 5],
+      ["Waterskin", 1],
+      ["Soap", 1],
+      ["Grappling Hook", 1],
+      ["Candle", 5],
+      ["Crowbar", 1]
+    ],
+    "specificProficiencies": {
+      "trained": [],
+      "expert": [],
+      "master": [],
+      "legendary": []
+    },
+    "weapons": [
+      {
+        "name": "Longsword",
+        "qty": 1,
+        "prof": "martial",
+        "die": "d8",
+        "pot": 0,
+        "str": "",
+        "mat": null,
+        "display": "Longsword",
+        "runes": []
+      },
+      {
+        "name": "Dagger",
+        "qty": 1,
+        "prof": "simple",
+        "die": "d4",
+        "pot": 0,
+        "str": "",
+        "mat": null,
+        "display": "Dagger",
+        "runes": []
+      }
+    ],
+    "money": { "pp": 0, "gp": 10, "sp": 6, "cp": 5 },
+    "armor": [
+      {
+        "name": "Hide",
+        "qty": 1,
+        "prof": "medium",
+        "pot": 0,
+        "res": "",
+        "mat": null,
+        "display": "Hide",
+        "worn": true,
+        "runes": []
+      },
+      {
+        "name": "Steel Shield",
+        "qty": 1,
+        "prof": "shield",
+        "pot": 0,
+        "res": 0,
+        "worn": true,
+        "runes": []
+      }
+    ],
+    "spellCasters": [],
+    "formula": [],
+    "pets": [],
+    "acTotal": {
+      "acProfBonus": 3,
+      "acAbilityBonus": 1,
+      "acItemBonus": 3,
+      "acTotal": 17,
+      "shieldBonus": "2"
+    }
+  }
+}

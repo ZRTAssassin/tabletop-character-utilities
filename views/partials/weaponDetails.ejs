@@ -82,8 +82,8 @@
                 <div class="input-field col s12 m6">
                     <select form="newAbility" name="attunement" id="attunement">
                         <option value="0" selected>Attunement Not Required</option>
-                        <option value="1">Simple Ranged</option>
-                        <option value="2">Martial Melee</option>
+                        <option value="1">Attunement Required</option>
+                        <option value="2">Attuned</option>
                     </select>
                 </div>
                 <label for="attunement"></label>
@@ -115,10 +115,11 @@
                 <div class="col s6 m4 input-field">
                     <p>
                         <label>
-                            <input type="hidden" class="filled-in" id="damageStatusHidden" name="damageStatus" value="false" />
-                            <input type="checkbox" class="filled-in" id="damageStatus" name="damageStatus" value="true" />
-                            <span>Damage</span>
-                        </label for="damageStatus">
+                            <input type="hidden" class="filled-in" id="identifiedHidden" name="identified"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="identified" name="identified" value="true" />
+                            <span>Identified</span>
+                        </label for="identified">
                     </p>
                 </div>
             </div>

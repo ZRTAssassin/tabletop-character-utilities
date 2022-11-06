@@ -172,6 +172,10 @@ table.highlight > tbody > tr:hover {
   cursor: pointer;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 #errorMessage {
   size: 1.5rem;
   color: white;

@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col s12">
+        <fieldset>
+            <legend>Consumable Details</legend>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="consumableTypeLabel" id="consumableTypeLabel" disabled />
+                    <label for="consumableTypeLabel">Consumable Type</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="consumableType" id="consumableType">
+                        <option value="ammo" selected>Ammunition</option>
+                        <option value="food">Food</option>
+                        <option value="poison">Poison</option>
+                        <option value="potion">Potion</option>
+                        <option value="rod">Rod</option>
+                        <option value="scroll">Scroll</option>
+                        <option value="trinket">Trinket</option>
+                        <option value="wand">Wand</option>
+                    </select>
+                </div>
+                <label for="consumableType"></label>
+
+
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="attunementLabel" id="attunementLabel" disabled />
+                    <label for="attunementLabel">Attunement</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="attunement" id="attunement">
+                        <option value="0" selected>Attunement Not Required</option>
+                        <option value="1">Attunement Required</option>
+                        <option value="2">Attuned</option>
+                    </select>
+                </div>
+                <label for="attunement"></label>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="consumableStatus" id="consumableStatus" disabled />
+                    <label for="consumableStatus">Consumable Status</label>
+                </div>
+                <div class="col s6 m4 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="equippedHidden" name="equipped" value="false" />
+                            <input type="checkbox" class="filled-in" id="equipped" name="equipped" value="true" />
+                            <span>Equipped</span>
+                        </label for="equipped">
+                    </p>
+                </div>
+                <div class="col s6 m4 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="identifiedHidden" name="identified"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="identified" name="identified" value="true" />
+                            <span>Identified</span>
+                        </label for="identified">
+                    </p>
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+</div>

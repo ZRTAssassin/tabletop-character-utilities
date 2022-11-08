@@ -4,7 +4,8 @@ This is a set of tabletop character utilies. This is a collection of tools for D
 
 **Link to project:** https://tabletop-character-utilities.cyclic.app/
 
-![imgur](https://i.imgur.com/15q1YrU.gif)
+![imgur](https://i.imgur.com/jiYTkJk.gif)
+
 
 ## How It's Made:
 

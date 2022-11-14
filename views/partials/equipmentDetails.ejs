@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col s12">
+        <fieldset>
+            <legend>Equipment Details</legend>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="armorTypeLabel" id="armorTypeLabel" disabled />
+                    <label for="armorTypeLabel">Equipment Type</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="armorType" id="armorType">
+                        <option value="light" selected>Light</option>
+                        <option value="medium">Medium</option>
+                        <option value="heavy">Heavy</option>
+                        <option value="natural">Natural</option>
+                        <option value="shield">Shield</option>
+                        <option value="scroll">Scroll</option>
+                        <option value="trinket">Trinket</option>
+                        <option value="wand">Wand</option>
+                    </select>
+                </div>
+                <label for="armorType"></label>
+
+
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="attunementLabel" id="attunementLabel" disabled />
+                    <label for="attunementLabel">Attunement</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select form="newAbility" name="attunement" id="attunement">
+                        <option value="0" selected>Attunement Not Required</option>
+                        <option value="1">Attunement Required</option>
+                        <option value="2">Attuned</option>
+                    </select>
+                </div>
+                <label for="attunement"></label>
+            </div>
+            <div class="row">
+
+                <div class="input-field col s12">
+                    <input type="text" name="equipmentStatus" id="equipmentStatus" disabled />
+                    <label for="equipmentStatus">Equipment Status</label>
+                </div>
+                <div class="col s6 m4 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="proficientHidden" name="proficient"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="proficient" name="proficient" value="true" />
+                            <span>Proficient</span>
+                        </label for="proficient">
+                    </p>
+                </div>
+                <div class="col s6 m4 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="equippedHidden" name="equipped" value="false" />
+                            <input type="checkbox" class="filled-in" id="equipped" name="equipped" value="true" />
+                            <span>Equipped</span>
+                        </label for="equipped">
+                    </p>
+                </div>
+                <div class="col s6 m4 input-field">
+                    <p>
+                        <label>
+                            <input type="hidden" class="filled-in" id="identifiedHidden" name="identified"
+                                value="false" />
+                            <input type="checkbox" class="filled-in" id="identified" name="identified" value="true" />
+                            <span>Identified</span>
+                        </label for="identified">
+                    </p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <input type="text" name="armorValueLabel" id="armorValueLabel" disabled />
+                    <label for="armorValueLabel">Armor Class</label>
+                </div>
+                <div class="input-field col s12 m8">
+                    <input type="text" name="armorValue" id="armorValue" />
+                    <label for="armorValue">Amor Class</label>
+                </div>
+
+            </div>
+
+        </fieldset>
+    </div>
+</div>
